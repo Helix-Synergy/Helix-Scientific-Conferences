@@ -1,0 +1,142 @@
+/* src/styles/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add any custom global CSS variables or styles below these directives if needed */
+
+/* Example of a custom CSS variable for primary color if you want to use it outside Tailwind classes */
+:root {
+  --primary-color: #5252b4; /* Matches primary.DEFAULT from tailwind.config.js */
+  --secondary-color: #00bcd4; /* Matches secondary.DEFAULT */
+  --dark-bg: #1f2937; /* Matches darkBg */
+  --text-color: #4B5563; /* Matches text */
+  --light-gray: #f8f8f8; /* Matches lightGray */
+  --white: #ffffff; /* Matches white */
+}
+
+/* Base styles for the body, using Tailwind defaults or custom fonts */
+body {
+  font-family: 'Inter', sans-serif; /* Or your chosen body font from tailwind.config.js */
+  color: #4B5563; /* Default text color */
+  cursor: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add any custom classes you might still need that are not easily done with Tailwind utilities */
+/* For example, if you have specific global container styles */
+.container {
+  max-width: 1200px; /* Example max width */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Basic animation classes for use with useIntersectionObserver if not using Framer Motion/GSAP for everything */
+/* These are for triggering the custom animations defined in tailwind.config.js */
+/* The 'forwards' keyword in animation definition means it stays at the end state */
+.animated-element {
+  opacity: 0;
+  transform: translateY(20px); /* Or translateX, scale, etc. */
+  /* Add a transition property if you want a smooth transition when 'is-visible' is applied */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animated-element.is-visible {
+  /* When 'is-visible' is added, trigger the animation */
+  animation: slideUp 0.8s ease-out forwards; /* Example: use your custom animation */
+}
+
+/* Glassmorphism effect for the header background */
+.glassmorphism-header {
+  background-color: rgba(0, 0, 0, 0.4); /* Dark translucent background */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border for depth */
+  /* You can adjust the rgba values and blur strength */
+}
+
+/* --- NEW: Glassmorphism effect for the footer background --- */
+.glassmorphism-footer {
+  background-color: rgba(0, 0, 0, 0.301); /* Black with 40% opacity */
+  backdrop-filter: blur(50px);           /* Blur effect for glassmorphism */
+  -webkit-backdrop-filter: blur(10px);   /* For Safari support */
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.6); /* Darker shadow for depth */
+}
+
+/* Custom glowing shadow for the "focus light" indicator (transparent background, glow via box-shadow) */
+.focus-light-shadow {
+  background-color: transparent; /* Ensure the indicator itself is transparent */
+  /* Using multiple box-shadows for a strong, spreading glow like a light source */
+  box-shadow:
+    0 0 8px 4px rgba(255, 255, 255, 0.4), /* Inner white glow, slightly spread */
+    0 0 15px 7px rgba(255, 255, 255, 0.2), /* Outer white glow, more spread */
+    0 0 25px 10px rgba(255, 255, 255, 0.1); /* Widest, softest glow for atmospheric effect */
+  /* This creates a glow originating from the element, not a solid background. */
+}
+
+.focus-light-line-glow {
+  background-color: white; /* The line itself is white */
+  box-shadow:
+    0 0 5px 2px rgba(255, 255, 255, 0.6), /* Inner glow */
+    0 0 10px 4px rgba(255, 255, 255, 0.3); /* Outer glow for the "light" effect */
+  /* This creates a glowing line, as requested. */
+}
+
+/* Ensure icons are visible and not inheriting unexpected colors */
+.text-gray-300 {
+  color: #D1D5DB; /* Light gray for inactive icons/text as per reference image */
+}
+
+/* Optional: Adjust default link styles if they interfere */
+a {
+  text-decoration: none; /* Remove default underline from all links */
+}
+
+
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 3s infinite ease-in-out;
+}
+
+
+
+/* In your src/index.css or App.css */
+
+/* For Webkit browsers (Chrome, Safari, Edge) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #333; /* Color of the track */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scroll thumb */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scroll thumb on hover */
+}
+
+/* For Firefox (requires scrollbar-width and scrollbar-color) */
+.custom-scrollbar {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #888 #333; /* thumb and track color */
+}
