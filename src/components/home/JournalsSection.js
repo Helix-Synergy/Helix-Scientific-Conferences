@@ -107,7 +107,7 @@ const JournalsSection = () => {
           Helix Open Access Journals
         </h2>
         <Link to="/journals">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-interactive">
             Discover More
           </button>
         </Link>

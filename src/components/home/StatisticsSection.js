@@ -4,7 +4,7 @@
 // import StatisticCounter from './StatisticCounter';
 // import { statisticsData } from '../data/homePageContent'; // Import your statistics data
 // import {
-//   UsersIcon, // Example icon for attendees
+//   UsersIcon, // Example icon for Eminent Speakers
 //   ClipboardDocumentCheckIcon, // Example icon for publications
 //   BriefcaseIcon, // Example icon for conferences
 //   SpeakerWaveIcon // Example icon for speakers
@@ -12,8 +12,8 @@
 
 // // Map the data labels to appropriate Heroicons
 // const iconMap = {
-//   "Conferences Conducted": BriefcaseIcon,
-//   "Attendees": UsersIcon,
+//   "Executed Conferences": BriefcaseIcon,
+//   "Eminent Speakers": UsersIcon,
 //   "Speakers": SpeakerWaveIcon,
 //   "Publications": ClipboardDocumentCheckIcon,
 // };
@@ -81,8 +81,8 @@ import {
 } from '@heroicons/react/24/solid';
 
 const iconMap = {
-  "Conferences Conducted": BriefcaseIcon,
-  "Attendees": UsersIcon,
+  "Executed Conferences": BriefcaseIcon,
+  "Eminent Speakers": UsersIcon,
   "Speakers": SpeakerWaveIcon,
   "Publications": ClipboardDocumentCheckIcon,
 };

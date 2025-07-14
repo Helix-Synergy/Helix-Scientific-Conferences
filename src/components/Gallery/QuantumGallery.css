@@ -1,0 +1,169 @@
+/* QuantumGallery.css */
+
+/* --- Base Gallery Container --- */
+.quantum-gallery-container {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #0d001a; /* Base dark purple-black */
+  color: white;
+}
+
+/* --- Background Effects --- */
+/* Dot pattern background */
+.bg-dot-pattern {
+  background-image: radial-gradient(#2c004d 1px, transparent 1px),
+                    radial-gradient(#2c004d 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  animation: backgroundPan 60s linear infinite; /* Subtle slow pan */
+}
+
+/* Faded radial glow */
+.bg-faded-radial-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(50, 0, 100, 0.2) 0%, transparent 50%),
+              radial-gradient(circle at 30% 80%, rgba(100, 0, 50, 0.15) 0%, transparent 50%);
+  animation: pulseGlow 30s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundPan {
+  from { background-position: 0 0, 20px 20px; }
+  to { background-position: 40px 40px, 60px 60px; }
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+@keyframes animate-fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes animate-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: animate-fade-in-up 1s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: animate-fade-in 1s ease-out forwards;
+  animation-delay: 0.3s; /* Delay for paragraph after title */
+}
+
+
+/* --- Quantum Grid Layout --- */
+.quantum-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+  gap: 24px; /* Gap between grid items */
+  padding: 2rem 0;
+  perspective: 1000px; /* For 3D transforms */
+}
+
+.quantum-grid-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 240px; /* Fixed height for consistent grid */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Caption at bottom */
+  align-items: center;
+  transition: all 0.3s ease-in-out; /* Base transition */
+  transform-style: preserve-3d; /* For child 3D transforms */
+}
+
+.quantum-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.quantum-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)); /* Dark gradient for readability */
+  color: white;
+  text-align: center;
+  font-size: 0.95rem;
+  z-index: 2; /* Ensure caption is above image */
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* --- Glass Morphism & Hover Effects --- */
+
+.inactive-glass {
+  background: rgba(255, 255, 255, 0.05); /* Base subtle glass */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.active-hover-glass {
+  /* This is for the currently hovered item */
+  background: rgba(255, 255, 255, 0.15); /* More opaque */
+  border: 2px solid rgba(255, 255, 255, 0.4); /* More visible border */
+  box-shadow: 0 0 25px rgba(100, 100, 255, 0.7), /* Blueish glow */
+              0 0 50px rgba(100, 100, 255, 0.5); /* Wider blueish glow */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* --- Modal Styles --- */
+.quantum-modal-content {
+  background: rgba(255, 255, 255, 0.15); /* Glass for modal */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 0 50px rgba(0,0,0,0.8),
+              0 0 80px rgba(150, 150, 255, 0.4); /* Subtle blue glow for modal */
+}
+
+/* --- Responsiveness --- */
+/* For screens smaller than 768px (tablets and smaller mobiles) */
+@media (max-width: 768px) {
+  .quantum-grid {
+      grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
+      gap: 16px;
+  }
+  .quantum-grid-item {
+      height: 180px; /* Adjust height for smaller screens */
+  }
+}
+
+/* For screens smaller than 480px (smaller mobiles) */
+@media (max-width: 480px) {
+  .quantum-grid {
+      grid-template-columns: repeat(3, 1fr); /* Maintain 3 columns */
+      gap: 12px;
+  }
+  .quantum-grid-item {
+      height: 120px; /* Further reduce height for very small screens */
+  }
+  .quantum-caption {
+      font-size: 0.75rem; /* Smaller font size for captions */
+      padding: 0.5rem;
+  }
+}
+
+
+
+
+

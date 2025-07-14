@@ -85,7 +85,7 @@ const Blog = () => {
           {blogPosts.map((post, index) => (
             <motion.div
               key={post.id}
-              className="bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group"
+              className="bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group cursor-interactive"
               variants={cardVariants}
               initial="hidden"
               animate={controls}
@@ -95,19 +95,19 @@ const Blog = () => {
                 <img
                   src={post.imageUrl}
                   alt={post.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 cursor-interactive"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-blue-300 transition-colors duration-300">
+                <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-blue-300 transition-colors duration-300 cursor-interactive">
                   {post.title}
                 </h3>
                 <p className="text-gray-400 text-sm mb-3">{post.date}</p>
                 <p className="text-gray-300 mb-4">{post.excerpt}</p>
                 <a
                   href={post.link}
-                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md text-sm font-medium transition-colors duration-300"
+                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md text-sm font-medium transition-colors duration-300 cursor-interactive"
                 >
                   Read More
                 </a>

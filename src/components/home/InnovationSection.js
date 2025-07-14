@@ -41,15 +41,15 @@ function InnovationSection() {
     ],
     // Layout 1: Staggered Collage (3 Images)
     [
-      { id: 'img0', src: aboutData.innovationImages[0], top: '20%', left: '8%', width: '65%', height: '65%', zIndex: 1, borderRadius: '12px' },
-      { id: 'img1', src: aboutData.innovationImages[1], top: '5%', left: '8%', width: '30%', height: '30%', zIndex: 2, borderRadius: '12px' },
-      { id: 'img2', src: aboutData.innovationImages[2], bottom: '5%', right: '18%', width: '35%', height: '35%', zIndex: 3, borderRadius: '12px' },
+      { id: 'img0', src: aboutData.innovationImages[1], top: '5%', right: '8%', width: '65%', height: '65%', zIndex: 1, borderRadius: '12px' },
+      { id: 'img1', src: aboutData.innovationImages[2], top: '5%', left: '8%', width: '30%', height: '30%', zIndex: 2, borderRadius: '12px' },
+      { id: 'img2', src: aboutData.innovationImages[3], bottom: '5%', right: '18%', width: '35%', height: '35%', zIndex: 3, borderRadius: '12px' },
     ],
     // Layout 2: Circles Layout (3 Images)
     [
-      { id: 'img0', src: aboutData.innovationImages[0], top: '15%', left: '15%', width: '60%', height: '60%', zIndex: 1, borderRadius: '50%' },
-      { id: 'img1', src: aboutData.innovationImages[1], top: '8%', right: '8%', width: '35%', height: '35%', zIndex: 2, borderRadius: '50%' },
-      { id: 'img2', src: aboutData.innovationImages[2], bottom: '15%', left: '8%', width: '25%', height: '25%', zIndex: 3, borderRadius: '50%' },
+      { id: 'img0', src: aboutData.innovationImages[2], top: '15%', left: '15%', width: '60%', height: '60%', zIndex: 1, borderRadius: '50%' },
+      { id: 'img1', src: aboutData.innovationImages[3], top: '8%', right: '8%', width: '35%', height: '35%', zIndex: 2, borderRadius: '50%' },
+      { id: 'img2', src: aboutData.innovationImages[0], bottom: '15%', left: '8%', width: '25%', height: '25%', zIndex: 3, borderRadius: '50%' },
     ],
     // Layout 3: Mixed Shapes (4 Images)
     [
@@ -292,7 +292,7 @@ function InnovationSection() {
             </ul>
 
             <motion.div variants={itemVariants}>
-              <Button to="/about">
+              <Button to="/about" className="w-[200px]">
                 {aboutData.buttonText}
               </Button>
             </motion.div>

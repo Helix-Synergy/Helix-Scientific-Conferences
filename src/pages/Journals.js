@@ -67,14 +67,13 @@ const Journals = () => {
           {journalCovers.map((journal, index) => (
             <motion.div
               key={journal.id}
-              className="bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 group
-                         perspective-[1000px] hover:shadow-2xl"
+              className="bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 group perspective-[1000px] hover:shadow-2xl cursor-interactive"
               variants={coverVariants}
               initial="hidden"
               animate={controls}
               custom={index}
             >
-              <div className="relative w-full h-auto [transform-style:preserve-3d] group-hover:rotate-y-10 transition-transform duration-500">
+              <div className="relative w-full h-auto [transform-style:preserve-3d] group-hover:rotate-y-10 transition-transform duration-500 cursor-interactive">
                 {/* Front of the journal cover */}
                 <div className="absolute w-full h-full backface-hidden">
                   <img
@@ -86,7 +85,7 @@ const Journals = () => {
                     <h3 className="text-xl font-semibold mb-2 text-white">{journal.title}</h3>
                     <a
                       href={journal.link}
-                      className="inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md text-sm font-medium transition-colors duration-300"
+                      className="inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md text-sm font-medium transition-colors duration-300 cursor-interactive"
                     >
                       View Journal
                     </a>

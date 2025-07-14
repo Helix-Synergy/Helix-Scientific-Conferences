@@ -21,6 +21,7 @@ body {
   font-family: 'Inter', sans-serif; /* Or your chosen body font from tailwind.config.js */
   color: #4B5563; /* Default text color */
   cursor: none;
+  background: linear-gradient(to bottom right, #eff6ff, #f3e8ff, #f3f4f6);
 }
 
 html {
@@ -137,6 +138,40 @@ a {
 
 /* For Firefox (requires scrollbar-width and scrollbar-color) */
 .custom-scrollbar {
-  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-width: none; /* "auto" or "thin" */
   scrollbar-color: #888 #333; /* thumb and track color */
+}
+
+
+/* Add this to your main CSS file (e.g., index.css, App.css, or QuantumGallery.css) */
+
+/* Basic styling for the cursor div */
+/* Ensure no default background color or other properties interfere */
+.custom-lightbulb-cursor {
+  /* These will be overridden by Framer Motion, but good as a fallback/initial state */
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+
+.gradient-glow-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.gradient-glow-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(to right, #6A3EFA, #496BFF);
+  filter: blur(10px);
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
 }

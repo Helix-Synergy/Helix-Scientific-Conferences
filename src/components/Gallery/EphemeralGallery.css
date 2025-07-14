@@ -1,0 +1,249 @@
+/* EphemeralGallery.css */
+
+/* --- Base Gallery Container --- */
+.ephemeral-gallery-container {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #0000ff; /* Dark blue-black base */
+    color: white;
+  }
+  
+  /* --- Dynamic, Scroll-Reactive Background --- */
+  .ephemeral-background {
+    background: radial-gradient(circle at center, #6b00ce 0%, #008550 100%);
+    animation: backgroundPulse 20s ease-in-out infinite alternate;
+  }
+  
+  .ephemeral-gradient-shift {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 10, 20, 0.5) 0%, rgba(20, 0, 40, 0.5) 50%, rgba(0, 10, 20, 0.5) 100%);
+    opacity: 0.6;
+    animation: gradientShift 40s linear infinite;
+  }
+  
+  .ephemeral-particle-overlay {
+    position: absolute;
+    inset: 0;
+    /* Using a subtle SVG particle pattern */
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='25' cy='25' r='1' fill='%2366b3ff' opacity='0.2'/%3E%3Ccircle cx='75' cy='75' r='1' fill='%2366b3ff' opacity='0.2'/%3E%3C/svg%3E");
+    background-size: 50px 50px;
+    animation: particleDrift 100s linear infinite;
+    opacity: 0.3;
+  }
+  
+  @keyframes backgroundPulse {
+    0% { background-color: #0c0c1a; }
+    50% { background-color: #1a002a; }
+    100% { background-color: #0c0c1a; }
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+  
+  @keyframes particleDrift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 200%; } /* Drifts across the screen */
+  }
+  
+  /* --- Utility Animations for Headers --- */
+  @keyframes animate-fade-in-up-custom {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes animate-fade-in-custom {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .animate-fade-in-up-custom {
+    animation: animate-fade-in-up-custom 1.2s ease-out forwards;
+  }
+  
+  .animate-fade-in-custom {
+    animation: animate-fade-in-custom 1.2s ease-out forwards;
+    animation-delay: 0.4s;
+  }
+  
+  /* --- Gallery Grid Layout --- */
+  .ephemeral-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Wider gap for more breathing room */
+    padding: 2rem 0;
+  }
+  
+  .ephemeral-grid-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5); /* Base shadow */
+  }
+  
+  .ephemeral-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Starts faded to be revealed */
+    opacity: 0.1;
+    transform: scale(1.05); /* Slightly zoomed in initially */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* For reveal animation */
+  }
+  
+  /* When in view, Framer Motion will set these */
+  .ephemeral-grid-item[data-framer-in-view] .ephemeral-image {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  
+  .ephemeral-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+    color: white;
+    text-align: center;
+    font-size: 0.95rem;
+    z-index: 2;
+    opacity: 1;
+    /* Initial state hidden, revealed by JS/Framer */
+    transform: translateY(20px);
+    transition: transform 0.5s ease-out; /* For reveal */
+  }
+  
+  /* When in view, Framer Motion will set these */
+  .ephemeral-grid-item[data-framer-in-view] .ephemeral-caption {
+    transform: translateY(0);
+  }
+  
+  
+  /* --- Glass Morphism & Light Glow --- */
+  .ephemeral-glass-card {
+    background: rgba(255, 255, 255, 0.06); /* Very subtle, cool white */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    /* Inner glowing border/shadow */
+    box-shadow: inset 0 0 15px rgba(0, 200, 255, 0.05),
+                inset 0 0 25px rgba(0, 200, 255, 0.02); /* Very subtle internal glow */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .ephemeral-glass-card:hover {
+    background: rgba(255, 255, 255, 0.1); /* Slightly brighter on hover */
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7),
+                inset 0 0 25px rgba(0, 200, 255, 0.1), /* More pronounced internal glow */
+                inset 0 0 40px rgba(0, 200, 255, 0.05);
+  }
+  
+  /* --- Light Trail Effect (simplified CSS version) --- */
+  /* This creates a subtle "wipe" effect. For true drawing, SVG is better. */
+  .ephemeral-light-trail-effect {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 0%, rgba(0, 200, 255, 0.3) 50%, transparent 100%); /* Blueish glow */
+    opacity: 0;
+    transform: translateX(-100%);
+    z-index: 3; /* Above image, below caption */
+    border-radius: inherit;
+    pointer-events: none; /* Allows clicks to pass through */
+  }
+  
+  /* When the item is in view, animate the light trail */
+  .ephemeral-grid-item[data-framer-in-view] .ephemeral-light-trail-effect {
+    animation: lightTrailReveal 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    animation-delay: var(--light-trail-delay, 0s); /* Custom property for staggered delay */
+  }
+  
+  @keyframes lightTrailReveal {
+    0% { opacity: 0; transform: translateX(-100%); }
+    50% { opacity: 1; transform: translateX(0%); }
+    100% { opacity: 0; transform: translateX(100%); }
+  }
+  
+  /* Adjusting the animation delay for each item based on its index */
+  .ephemeral-grid-item:nth-child(1) { --light-trail-delay: 0.3s; }
+  .ephemeral-grid-item:nth-child(2) { --light-trail-delay: 0.4s; }
+  .ephemeral-grid-item:nth-child(3) { --light-trail-delay: 0.5s; }
+  .ephemeral-grid-item:nth-child(4) { --light-trail-delay: 0.6s; }
+  .ephemeral-grid-item:nth-child(5) { --light-trail-delay: 0.7s; }
+  .ephemeral-grid-item:nth-child(6) { --light-trail-delay: 0.8s; }
+  /* ... continue for all items, or use JS to set custom property dynamically */
+  
+  
+  /* --- Modal Styles --- */
+  .ephemeral-modal-content {
+    background: rgba(255, 255, 255, 0.12); /* Glass for modal, slightly more opaque */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px); /* Stronger blur for modal */
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 0 50px rgba(0,0,0,0.8),
+                0 0 80px rgba(0, 200, 255, 0.4); /* Pronounced blue glow for modal */
+    position: relative; /* For button placement */
+  }
+  
+  /* Internal glow for modal */
+  .ephemeral-modal-content::before {
+    content: '';
+    position: absolute;
+    inset: -2px; /* Slightly outside border */
+    border-radius: inherit;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 255, 0.2));
+    filter: blur(15px);
+    opacity: 0.4;
+    z-index: -1; /* Behind content */
+    animation: modalGlowPulse 5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes modalGlowPulse {
+    0% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.01); }
+    100% { opacity: 0.4; transform: scale(1); }
+  }
+  
+  /* --- Responsiveness --- */
+  @media (max-width: 768px) {
+    .ephemeral-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .ephemeral-grid-item {
+      height: 200px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .ephemeral-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .ephemeral-grid-item {
+      height: 180px;
+    }
+  }
+
+
+
+
+
+
+  

@@ -107,7 +107,7 @@ const Speakers = () => {
           {speakers.map((speaker, index) => (
             <motion.div
               key={speaker.id}
-              className="bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.03] group relative"
+              className="bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.03] group relative cursor-interactive"
               variants={cardVariants}
               initial="hidden"
               animate={controls}

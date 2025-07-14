@@ -6,7 +6,7 @@ const hybridEventsData = [
       title: 'AI & DATA SCIENCE',
       date: 'FEB 2025',
       location: 'Hybrid / Virtual',
-      description: 'Explore the latest advancements in Artificial Intelligence and Data Science, covering machine learning, big data, and analytics.',
+      description: 'Explore The Latest Advancements In Artificial Intelligence And Data Science, Covering Machine Learning, Big Data, And Analytics.',
       link: 'https://example.com/hybrid/ai-data-science'
     },
     {
@@ -15,7 +15,7 @@ const hybridEventsData = [
       title: 'BIOTECHNOLOGY SUMMIT',
       date: 'MAR 2025',
       location: 'Hybrid / Virtual',
-      description: 'A comprehensive summit on cutting-edge biotechnology research, applications, and future trends in healthcare and agriculture.',
+      description: 'A Comprehensive Summit On Cutting-Edge Biotechnology Research, Applications, And Future Trends In Healthcare And Agriculture.',
       link: 'https://example.com/hybrid/biotech-summit'
     },
     {
@@ -24,7 +24,7 @@ const hybridEventsData = [
       title: 'FINTECH INNOVATIONS',
       date: 'APR 2025',
       location: 'Hybrid / Virtual',
-      description: 'Discover the next generation of financial technology, including blockchain, digital payments, and cybersecurity in finance.',
+      description: 'Discover The Next Generation Of Financial Technology, Including Blockchain, Digital Payments, And Cybersecurity In Finance.',
       link: 'https://example.com/hybrid/fintech-innovations'
     },
     {
@@ -33,7 +33,7 @@ const hybridEventsData = [
       title: 'SPACE EXPLORATION FORUM',
       date: 'MAY 2025',
       location: 'Hybrid / Virtual',
-      description: 'Join experts discussing the future of space travel, new discoveries, and the technologies enabling deep space missions.',
+      description: 'Join Experts Discussing The Future Of Space Travel, New Discoveries, And The Technologies Enabling Deep Space Missions.',
       link: 'https://example.com/hybrid/space-exploration'
     },
     {
@@ -42,7 +42,7 @@ const hybridEventsData = [
       title: 'SUSTAINABLE DEVELOPMENT',
       date: 'JUN 2025',
       location: 'Hybrid / Virtual',
-      description: 'Focus on global efforts towards sustainable development goals, environmental conservation, and green technologies.',
+      description: 'Focus On Global Efforts Towards Sustainable Development Goals, Environmental Conservation, And Green Technologies.',
       link: 'https://example.com/hybrid/sustainable-development'
     },
     {
@@ -51,7 +51,7 @@ const hybridEventsData = [
       title: 'ROBOTICS & AUTOMATION',
       date: 'JUL 2025',
       location: 'Hybrid / Virtual',
-      description: 'Deep dive into advancements in robotics, automation, and their applications across various industries from manufacturing to service.',
+      description: 'Deep Dive Into Advancements In Robotics, Automation, And Their Applications Across Various Industries From Manufacturing To Service.',
       link: 'https://example.com/hybrid/robotics-automation'
     },
     // Adding more entries to ensure enough data for a scrolling carousel
@@ -61,7 +61,7 @@ const hybridEventsData = [
       title: 'MEDICAL DEVICES EXPO',
       date: 'AUG 2025',
       location: 'Hybrid / Virtual',
-      description: 'Showcasing the latest innovations in medical devices and healthcare technology.',
+      description: 'Showcasing The Latest Innovations In Medical Devices And Healthcare Technology.',
       link: 'https://example.com/hybrid/medical-devices'
     },
     {
@@ -70,7 +70,7 @@ const hybridEventsData = [
       title: 'NANOTECHNOLOGY SUMMIT',
       date: 'SEP 2025',
       location: 'Hybrid / Virtual',
-      description: 'Cutting-edge research and applications in the field of nanotechnology.',
+      description: 'Cutting-Edge Research And Applications In The Field Of Nanotechnology.',
       link: 'https://example.com/hybrid/nanotech-summit'
     },
     {
@@ -79,7 +79,7 @@ const hybridEventsData = [
       title: 'AEROSPACE INNOVATION',
       date: 'OCT 2025',
       location: 'Hybrid / Virtual',
-      description: 'Exploring innovations in aerospace engineering, aviation, and space travel.',
+      description: 'Exploring Innovations In Aerospace Engineering, Aviation, And Space Travel.',
       link: 'https://example.com/hybrid/aerospace-innovation'
     },
     {
@@ -88,7 +88,7 @@ const hybridEventsData = [
       title: 'PHARMACEUTICAL RESEARCH',
       date: 'NOV 2025',
       location: 'Hybrid / Virtual',
-      description: 'Latest breakthroughs and trends in pharmaceutical research and drug development.',
+      description: 'Latest Breakthroughs And Trends In Pharmaceutical Research And Drug Development.',
       link: 'https://example.com/hybrid/pharma-research'
     }
   ];

@@ -62,12 +62,12 @@ const Button = ({ children, to, onClick, variant = 'primary', className = '' }) 
   // Removed 'buyTicket' variant.
   // 'navLink' variant added for the subtle hover animation on nav items.
   // 'primary' and 'secondary' remain for general buttons.
-  const baseClasses = "font-semibold py-3 px-6 rounded-lg text-lg transition-all duration-300 flex items-center justify-center whitespace-nowrap";
+  const baseClasses = "font-semibold py-3 px-6 rounded-lg text-lg transition-all duration-300 flex items-center justify-center whitespace-nowrap cursor-interactive";
 
   const variants = {
-    primary: "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg transform hover:-translate-y-1",
-    secondary: "bg-transparent border-2 border-white hover:border-primary text-white hover:text-primary transform hover:-translate-y-1",
-    navLink: "hover:scale-105 hover:rotate-[1deg] transform transition-transform duration-300 ease-out", // Apply a subtle scale/rotate on hover
+    primary: "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg transform hover:-translate-y-1 cursor-interactive",
+    secondary: "bg-transparent border-2 border-white hover:border-primary text-white hover:text-primary transform hover:-translate-y-1 cursor-interactive",
+    navLink: "hover:scale-105 hover:rotate-[1deg] transform transition-transform duration-300 ease-out cursor-interactive", // Apply a subtle scale/rotate on hover
   };
 
   const content = (

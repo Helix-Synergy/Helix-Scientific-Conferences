@@ -73,7 +73,7 @@ function StatisticCounter({ icon: IconComponent, value, label, isInView }) {
         className="text-2xl md:text-xl font-bold mb-0.5 leading-none text-white drop-shadow-md"
       >
         <span className="inline-block">{displayValue}</span>
-        {(label === "Conferences Conducted" || label === "Attendees" || label === "Speakers" || label === "Publications") && "+"}
+        {(label === "Executed Conferences" || label === "Eminent Speakers" || label === "Speakers" || label === "Publications") && "+"}
       </div>
       <p
         // Reduced font size for a minimal look
@@ -159,8 +159,8 @@ export default StatisticCounter;
 //       )}
 //       <div className="text-4xl md:text-3xl font-bold mb-1 leading-none text-white drop-shadow-md">
 //         <span className="inline-block">{displayValue}</span>
-//         {label === "Conferences Conducted" && "+"}
-//         {label === "Attendees" && "+"}
+//         {label === "Executed Conferences" && "+"}
+//         {label === "Eminent Speakers" && "+"}
 //         {label === "Speakers" && "+"}
 //         {label === "Publications" && "+"}
 //       </div>

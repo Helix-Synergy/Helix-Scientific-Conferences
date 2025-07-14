@@ -143,6 +143,13 @@
 
 // export default EventCard;
 
+
+
+
+
+
+
+
 // src/components/home/EventCard.js
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
@@ -199,11 +206,11 @@ const EventCard = ({ event }) => {
       href={event.link || '#'}
       target="_blank"
       rel="noopener noreferrer"
-      className="block cursor-pointer"
+      className="block"
     >
       <motion.div
         ref={cardRef}
-        className="flex flex-col p-5 rounded-2xl text-white w-64 md:w-72 lg:w-80 flex-shrink-0 relative overflow-hidden group h-full"
+        className="flex flex-col p-5 rounded-2xl text-white w-64 md:w-72 lg:w-80 flex-shrink-0 relative overflow-hidden group h-full cursor-interactive"
         style={{
           background: 'linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
           border: '1px solid rgba(255, 255, 255, 0.08)',
@@ -253,7 +260,7 @@ const EventCard = ({ event }) => {
               <img
                 src={event.image}
                 alt={event.title}
-                className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-102"
+                className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-102 cursor-interactive"
                 onError={(e) => { e.target.onerror = null; e.target.src="/images/placeholder.jpg" }}
               />
             </div>
@@ -283,7 +290,7 @@ const EventCard = ({ event }) => {
             </p>
           )}
 
-          <div className="text-sm text-blue-400 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translateZ(10px)">
+          <div className="text-sm text-blue-400 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translateZ(10px) cursor-interactive">
             Learn More <span className="ml-1">&rarr;</span>
           </div>
 
