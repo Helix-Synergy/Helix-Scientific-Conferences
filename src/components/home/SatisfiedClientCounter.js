@@ -220,11 +220,12 @@ function SatisfiedClientCounter({ data, isInView }) {
   }, [isInView, totalCount, countSpring]);
 
   useEffect(() => {
-    const unsubscribe = countSpring.onChange((latest) => {
-      setDisplayValue(Math.round(latest / 1000));
-    });
-    return () => unsubscribe();
-  }, [countSpring]);
+        // Fix: Replaced deprecated .onChange with .on("change", ...)
+        const unsubscribe = countSpring.on("change", (latest) => {
+          setDisplayValue(Math.round(latest / 1000));
+        });
+        return () => unsubscribe();
+      }, [countSpring]);
 
   return (
     <motion.div

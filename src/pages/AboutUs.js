@@ -150,9 +150,10 @@ const CreativeAboutUs = () => {
                     backgroundAttachment: 'fixed',
                 }}
             >
+                <div className="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
                 <div className="container mx-auto relative z-10 text-center px-4">
                     <motion.h1
-                        className="text-5xl md:text-7xl font-extrabold mb-4 drop-shadow-2xl text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-indigo-700"
+                        className="text-5xl md:text-7xl font-extrabold mb-4 drop-shadow-lg text-transparent bg-clip-text bg-gradient-to-br from-yellow-400 to-green-500 text-shadow-md"
                         initial="hidden"
                         animate="visible"
                         variants={itemVariants}
@@ -198,7 +199,7 @@ const CreativeAboutUs = () => {
                                         <i className={section.icon}></i>
                                     </div>
                                     <h4 className="text-3xl font-bold mb-3 text-gray-800">{section.title}</h4>
-                                    <h6 className="text-yellow-600 text-xl mb-4">{section.subtitle}</h6>
+                                    <h6 className="text-white text-xl mb-4">{section.subtitle}</h6>
                                     <p className="text-gray-700 text-base leading-relaxed fs-size">{section.text}</p>
                                 </div>
                             </motion.div>

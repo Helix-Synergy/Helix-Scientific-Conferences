@@ -126,7 +126,7 @@ const MagneticButton = ({ children, className }) => {
             
             {/* The main button content layer */}
             <motion.div
-                className="relative z-10 w-full h-full rounded-full backdrop-blur-lg bg-white/30 text-gray-900 border border-white/20 transition-all duration-300"
+                className="relative z-10 w-full h-full rounded-full backdrop-blur-lg text-white transition-all duration-300"
                 style={{
                     x: isHovered ? contentX.get() : 0,
                     y: isHovered ? contentY.get() : 0

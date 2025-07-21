@@ -261,7 +261,7 @@ const EventCard = ({ event }) => {
                 src={event.image}
                 alt={event.title}
                 className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-102 cursor-interactive"
-                onError={(e) => { e.target.onerror = null; e.target.src="/images/placeholder.jpg" }}
+                onError={(e) => { e.target.onerror = null; e.target.src="/images/lostChar.png" }}
               />
             </div>
           )}
@@ -275,7 +275,7 @@ const EventCard = ({ event }) => {
           </p>
           {event.location && (
             <p className="text-sm text-gray-300 mb-3 transform translateZ(10px)">
-              <span className="font-medium">Location:</span> {event.location}
+              <span className="font-medium">Venue:</span> {event.location}
             </p>
           )}
           {event.speaker && (

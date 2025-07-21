@@ -88,7 +88,7 @@ const NotFound = () => {
 
                 {/* Midground Layer (Online Video Conference) */}
                 <div ref={midLayerRef} className="absolute inset-0 flex items-center justify-center">
-                    <img src="" alt="Midground" className="w-3/4 h-3/4 object-contain opacity-80" />
+                    {/* <img src="" alt="Midground" className="w-3/4 h-3/4 object-contain opacity-80" /> */}
                 </div>
 
                 {/* Foreground Layer (Character, Text, Button) */}

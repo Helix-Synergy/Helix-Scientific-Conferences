@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -19,7 +18,10 @@ import { useCursor } from "../CustomCursor";
 import AnimatedHamburger from '../hamburger/AnimatedHamburger_AccordionFold';
 import Logo from '../../assets/images/Header-logo.png';
 
-const MotionNavLink = motion(NavLink);
+// Fix for the deprecated motion() warning.
+// Using motion.create() is the new recommended way.
+// This component is now used in the desktop navigation below.
+const MotionNavLink = motion.create(NavLink);
 
 // Variants for the mobile/main menu container (orchestrates children animation)
 const mobileMenuContainerVariants = {
@@ -124,6 +126,21 @@ function Header() {
         }
     }, []);
 
+    // Fix: Wrap `handleLinkMouseEnter` and `handleLinkMouseLeave` in useCallback
+    const handleLinkMouseEnter = useCallback(() => setCursorVariant("interactive"), [setCursorVariant]);
+    const handleLinkMouseLeave = useCallback(() => setCursorVariant("default"), [setCursorVariant]);
+
+    // Function to handle onMouseLeave for NavLinks to revert indicator
+    const handleNavLinkMouseLeave = useCallback(() => {
+        handleLinkMouseLeave(); // Reset cursor variant
+        const activeLinkElement = getActiveLinkElement(); // Get the currently active link
+        if (activeLinkElement) {
+            updateIndicator(activeLinkElement); // Update indicator to active link
+        } else {
+            setIndicatorStyle((prev) => ({ ...prev, opacity: 0 })); // Hide if no active link
+        }
+    }, [getActiveLinkElement, updateIndicator, handleLinkMouseLeave]);
+
     // Effect to set indicator on initial load and path change
     useEffect(() => {
         const setActiveIndicator = () => {
@@ -180,31 +197,11 @@ function Header() {
       transition-colors duration-200`;
     };
 
-    const handleLinkMouseEnter = () => setCursorVariant("interactive");
-    const handleLinkMouseLeave = () => setCursorVariant("default");
-
-    // Function to handle onMouseLeave for NavLinks to revert indicator
-    const handleNavLinkMouseLeave = useCallback(() => {
-        handleLinkMouseLeave(); // Reset cursor variant
-        const activeLinkElement = getActiveLinkElement(); // Get the currently active link
-        if (activeLinkElement) {
-            updateIndicator(activeLinkElement); // Update indicator to active link
-        } else {
-            setIndicatorStyle((prev) => ({ ...prev, opacity: 0 })); // Hide if no active link
-        }
-    }, [getActiveLinkElement, updateIndicator, handleLinkMouseLeave]);
-
-
     return (
         <header
             className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300
-             py-4 min-h-[80px] flex justify-between items-center px-6
-             bg-gradient-to-br from-[#e0e9f3] via-[#f3e6f9] to-[#ffebeb] backdrop-blur-xl border-b border-white/30 shadow-lg`}
-            // ^^^^^^ MODIFIED THESE CLASSES ^^^^^^
-            // bg-white/70: Slightly more transparent white (70% opacity)
-            // backdrop-blur-xl: Increased blur intensity
-            // border-b border-white/30: Added a subtle bottom border for definition
-            // shadow-lg: Added a larger, more pronounced shadow
+              py-4 min-h-[80px] flex justify-between items-center px-6
+              bg-white backdrop-blur-xl border-b border-white/30 shadow-lg`}
         >
             <Link
                 to="/"
@@ -224,25 +221,22 @@ function Header() {
             <nav
                 ref={navContainerRef}
                 className="relative hidden lg:flex items-center h-full"
-            // Removed onMouseLeave from parent nav to prevent indicator reset
             >
-                {/* Page Indicator - Reverted shadow to original blue */}
+                {/* Page Indicator */}
                 <span
                     className="absolute top-0 bottom-0 bg-transparent rounded-full transition-all duration-300 ease-in-out z-10"
                     style={{
                         left: indicatorStyle.left,
                         width: indicatorStyle.width,
                         opacity: indicatorStyle.opacity,
-                        boxShadow: '0 0 10px rgba(255, 105, 180, 0.26), 0 0 20px rgba(137, 43, 226, 0.39), 0 0 30px rgb(79, 135, 247)',
-                        // boxShadow: '0 0 10px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 191, 255, 0.6), 0 0 30px rgba(70, 130, 180, 0.6), 0 0 40px rgba(25, 25, 112, 0.6)',
-                        // boxShadow: '0 0 10px rgb(34, 114, 50), 0 0 20px rgb(207, 196, 244), 0 0 30px #496BFF, 0 0 40px #496BFF',
+                        boxShadow: '0 0 10px rgba(143, 255, 105, 0.26), 0 0 20px rgb(84, 105, 8), 0 0 30px rgba(235, 138, 47, 0.45)',
                         background: '#ffffff',
                     }}
                 ></span>
-             
+
 
                 {/* Home */}
-                <NavLink
+                <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
                     to="/"
                     className={`
             relative h-full flex items-center justify-center
@@ -254,10 +248,10 @@ function Header() {
                 >
                     <HomeIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
                     Home
-                </NavLink>
+                </MotionNavLink>
 
                 {/* About */}
-                <NavLink
+                <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
                     to="/about"
                     className={`
             relative h-full flex items-center justify-center
@@ -269,10 +263,10 @@ function Header() {
                 >
                     <BookOpenIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
                     About Us
-                </NavLink>
+                </MotionNavLink>
 
                 {/* Hybrids */}
-                <NavLink
+                <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
                     to="/hybrids"
                     className={`
             relative h-full flex items-center justify-center
@@ -284,10 +278,10 @@ function Header() {
                 >
                     <MicrophoneIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
                     Hybrids
-                </NavLink>
+                </MotionNavLink>
 
                 {/* Webinars */}
-                <NavLink
+                <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
                     to="/webinars"
                     className={`
             relative h-full flex items-center justify-center
@@ -299,10 +293,10 @@ function Header() {
                 >
                     <ComputerDesktopIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
                     Webinars
-                </NavLink>
+                </MotionNavLink>
 
                 {/* Gallery */}
-                <NavLink
+                <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
                     to="/gallery"
                     className={`
             relative h-full flex items-center justify-center
@@ -314,10 +308,10 @@ function Header() {
                 >
                     <PhotoIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
                     Gallery
-                </NavLink>
+                </MotionNavLink>
 
                 {/* Blog */}
-                <NavLink
+                <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
                     to="/blog"
                     className={`
             relative h-full flex items-center justify-center
@@ -329,10 +323,10 @@ function Header() {
                 >
                     <PencilSquareIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
                     Blog
-                </NavLink>
+                </MotionNavLink>
 
                 {/* Buy A Ticket (Desktop - styled as a normal NavLink) */}
-                <NavLink
+                <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
                     to="/buy-a-ticket"
                     className={`
             relative h-full flex items-center justify-center
@@ -344,7 +338,7 @@ function Header() {
                 >
                     <TicketIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
                     Buy A Ticket
-                </NavLink>
+                </MotionNavLink>
             </nav>
 
             {/* Right-aligned container for mobile Buy A Ticket and both Hamburger menus */}
@@ -379,7 +373,7 @@ function Header() {
                                 exit="exit"
                                 variants={desktopDropdownVariants}
                                 className={`absolute top-full right-0 mt-2 w-48 rounded-md shadow-lg py-2
-                                 bg-gradient-to-r from-white via-[#fefefe] to-[#f9f9f9]/95 backdrop-blur-md border border-gray-300/50`}
+                                bg-gradient-to-r from-white via-[#fefefe] to-[#f9f9f9]/95 backdrop-blur-md border border-gray-300/50`}
                                 onMouseEnter={handleLinkMouseEnter}
                                 onMouseLeave={() => { handleLinkMouseLeave(); setIsDesktopSecondaryMenuOpen(false); }}
                             >
@@ -427,7 +421,6 @@ function Header() {
                         animate="visible"
                         exit="exit"
                         variants={mobileMenuContainerVariants}
-                        // Z-INDEX INCREASED HERE TO ENSURE IT'S ON TOP
                         className="fixed inset-0 bg-gradient-to-r from-white via-[#fefefe] to-[#f9f9f9]/95 backdrop-blur-md z-[999] flex flex-col items-center justify-start pt-24 overflow-y-auto h-[100vh] lg:hidden"
                     >
                         {/* Close Button for Mobile Menu */}
@@ -536,7 +529,7 @@ function Header() {
 
                         {/* Secondary Menu Links (NOW USING NavLink) */}
                         <motion.div variants={mobileMenuItemVariants} className="w-full mt-4 border-t border-gray-200 pt-4">
-                            <NavLink // Changed from Link to NavLink in previous revision
+                            <NavLink
                                 to="/testimonials"
                                 className={mobileNavLinkClasses("/testimonials")}
                                 onClick={() => setIsMobileMenuOpen(false)}
@@ -549,7 +542,7 @@ function Header() {
                         </motion.div>
 
                         <motion.div variants={mobileMenuItemVariants} className="w-full">
-                            <NavLink // Changed from Link to NavLink in previous revision
+                            <NavLink
                                 to="/journals"
                                 className={mobileNavLinkClasses("/journals")}
                                 onClick={() => setIsMobileMenuOpen(false)}
@@ -562,7 +555,7 @@ function Header() {
                         </motion.div>
 
                         <motion.div variants={mobileMenuItemVariants} className="w-full">
-                            <NavLink // Changed from Link to NavLink in previous revision
+                            <NavLink
                                 to="/contact"
                                 className={mobileNavLinkClasses("/contact")}
                                 onClick={() => setIsMobileMenuOpen(false)}

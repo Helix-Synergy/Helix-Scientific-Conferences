@@ -982,7 +982,9 @@ const dropdownVariants = {
 };
 
 // Motion component for the link
-const MotionLink = motion(Link);
+// const MotionLink = motion(Link);
+
+const MotionLink = motion.create(Link);
 
 function Footer() {
   const [email, setEmail] = useState('');
@@ -1091,18 +1093,18 @@ function Footer() {
                       hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"
                     onMouseEnter={handleLinkMouseEnter}
                     onMouseLeave={handleLinkMouseLeave}
-                  >+1757 656 7778</a>
+                  >+1 757 656 7778</a>
                 </p>
                 <p className="flex items-center justify-start group">
                   <PhoneIcon className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0" />
                   <a
-                    href="tel:+919000146000"
+                    href="tel:+91 9000 146 000"
                     className="
                       transition-colors duration-200
                       hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"
                     onMouseEnter={handleLinkMouseEnter}
                     onMouseLeave={handleLinkMouseLeave}
-                  >+91 9000146000</a>
+                  >+91 949 211 7897</a>
                 </p>
                 <p className="flex items-center justify-start group">
                   <FontAwesomeIcon icon={faWhatsapp} className="w-5 h-5 mr-3 text-green-500 flex-shrink-0" />
@@ -1115,7 +1117,7 @@ function Footer() {
                       hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"
                     onMouseEnter={handleLinkMouseEnter}
                     onMouseLeave={handleLinkMouseLeave}
-                  >+17159905583</a>
+                  >+1 715 990 5583</a>
                 </p>
                 <p className="flex items-center justify-start group">
                   <EnvelopeIcon className="w-5 h-5 mr-3 text-red-500 flex-shrink-0" />
@@ -1128,10 +1130,10 @@ function Footer() {
                     onMouseLeave={handleLinkMouseLeave}
                   >hello@helixconferences.com</a>
                 </p>
-                <address className="not-italic flex items-start justify-start group">
-                  <MapPinIcon className="w-5 h-5 mr-3 text-yellow-500 flex-shrink-0 mt-1" />
+                <address className="not-italic flex font-bold items-start justify-start group">
+                  <MapPinIcon className="w-5 h-5 mr-3  text-yellow-500 flex-shrink-0 mt-1" />
                   <span className="max-w-[250px]">
-                    Helix Conferences <br />
+                    Helix Conferences LLC <br />
                     45573, Shepard Drive, Suit#101, <br />
                     Sterling, Virginia-20164, USA
                   </span>

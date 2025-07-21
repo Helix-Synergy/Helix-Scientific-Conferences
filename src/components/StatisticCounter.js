@@ -30,11 +30,12 @@ function StatisticCounter({ icon: IconComponent, value, label, isInView }) {
   }, [isInView, value, count]);
 
   useEffect(() => {
-    const unsubscribe = count.onChange((latest) => {
-      setDisplayValue(Math.round(latest));
-    });
-    return () => unsubscribe();
-  }, [count]);
+        // Fix: Replaced deprecated .onChange with .on("change", ...)
+        const unsubscribe = count.on("change", (latest) => {
+          setDisplayValue(Math.round(latest));
+        });
+        return () => unsubscribe();
+      }, [count]);
 
   return (
     <motion.div
