@@ -136,7 +136,7 @@ const InteractiveWebinarCard = ({ webinar }) => {
 
             try {
                 // *** API CALL TO YOUR BACKEND TO GET A REAL TOKEN ***
-                const response = await fetch(`http://localhost:5000/api/source/generate-token?sourceId=${sourceId}&conferenceType=${conferenceType}`);
+                const response = await fetch(`https://main-react-backend-code.onrender.com/api/source/generate-token?sourceId=${sourceId}&conferenceType=${conferenceType}`);
 
                 if (!response.ok) {
                     const errorData = await response.json();
@@ -284,7 +284,7 @@ const Webinars = () => {
             const genericConferenceType = 'webinar'; // The type for this generic button
 
             try {
-                const response = await fetch(`http://localhost:5000/api/source/generate-token?sourceId=${genericSourceId}&conferenceType=${genericConferenceType}`);
+                const response = await fetch(`https://main-react-backend-code.onrender.com/api/source/generate-token?sourceId=${genericSourceId}&conferenceType=${genericConferenceType}`);
                 if (!response.ok) {
                     const errorData = await response.json();
                     throw new Error(`Failed to fetch generic source token: ${errorData.message || response.statusText}`);
