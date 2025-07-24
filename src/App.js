@@ -13,7 +13,7 @@ import Testimonials from './pages/Testimonials';
 import Blog from './pages/Blog';
 import Journals from './pages/Journals';
 import Contact from './pages/Contact';
-import BuyATicket from './pages/BuyATicket';
+import BuyATicket from './pages/RegistrationPage';
 import Committees from './pages/Committees';
 import Speakers from './pages/Speakers';
 import Schedule from './pages/Schedule';
@@ -25,6 +25,7 @@ import ScrollToTop from './components/ScrollToTop';
 import NotFound from './pages/NotFound';
 
 // --- NEW: Import the RegistrationForm component ---
+import MultiStepForm from './pages/MultiStepForm'; // The new component
 import RegistrationForm from './pages/RegistrationPage'; // Assuming you saved it here
 
 // --- NEW: Placeholder components for PayPal redirects ---
@@ -87,6 +88,7 @@ function App() {
             
             {/* --- NEW: Route for the Registration Form --- */}
             {/* This route expects a sourceToken in the URL query parameters */}
+            <Route path="/multi-step-register" element={<MultiStepForm />} />
             <Route path="/registration" element={<RegistrationForm />} />
 
             {/* --- NEW: Routes for PayPal payment redirects --- */}
