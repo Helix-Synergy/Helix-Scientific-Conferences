@@ -892,7 +892,7 @@ import webinarsData from "../data/webinarsData1"; // Ensure these files exist an
 import hybridsData from "../data/hybridsData1"; // Ensure these files exist and have the 'date' field
 
 // Define your backend URL from environment variables or direct string
-const API_BASE_URL =  process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+const API_BASE_URL =  'https://main-react-backend-code.onrender.com' || 'http://localhost:5000';
 
 // Helper function to get category icons (retained as is)
 const getCategoryIcon = (category) => {
