@@ -802,6 +802,17 @@ const InteractiveCard = ({ event }) => {
 
                 {/* Flex container for buttons */}
                 <div className="flex gap-2 mt-auto">
+
+                    {event.link && (
+                        <Link
+                            to={event.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 text-center bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 text-sm"
+                        >
+                            Visit Site
+                        </Link>
+                    )}
                     {isLoadingToken ? (
                         <button disabled className="flex-1 text-center bg-gray-400 text-white font-bold py-2 px-6 rounded-full cursor-not-allowed text-sm">
                             Loading...
@@ -815,16 +826,7 @@ const InteractiveCard = ({ event }) => {
                         </Link>
                     )}
 
-                    {event.link && (
-                        <Link
-                            to={event.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 text-center bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 text-sm"
-                        >
-                            Learn More
-                        </Link>
-                    )}
+                    
                 </div>
             </div>
         </motion.div>

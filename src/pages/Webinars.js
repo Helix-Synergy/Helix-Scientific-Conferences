@@ -205,6 +205,16 @@ const InteractiveWebinarCard = ({ webinar }) => {
                 </div>
 
                 <div className="flex gap-2 mt-auto">
+                    {webinar.link && (
+                        <Link
+                            to={webinar.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 text-center bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 text-sm"
+                        >
+                            Visit Site
+                        </Link>
+                    )}
                     {isLoadingToken ? (
                         <button disabled className="flex-1 text-center bg-gray-400 text-white font-bold py-2 px-6 rounded-full cursor-not-allowed text-sm">
                             Loading...
@@ -215,17 +225,6 @@ const InteractiveWebinarCard = ({ webinar }) => {
                             className="flex-1 text-center bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 text-sm"
                         >
                             Register Now
-                        </Link>
-                    )}
-
-                    {webinar.link && (
-                        <Link
-                            to={webinar.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 text-center bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 text-sm"
-                        >
-                            Learn More
                         </Link>
                     )}
                 </div>

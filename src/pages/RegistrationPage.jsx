@@ -885,14 +885,14 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Select from "react-select";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { Mic2, Webcam, Pencil, ExternalLink } from "lucide-react";
 
 // Import your conference data
 import webinarsData from "../data/webinarsData1"; // Ensure these files exist and have the 'date' field
 import hybridsData from "../data/hybridsData1"; // Ensure these files exist and have the 'date' field
 
 // Define your backend URL from environment variables or direct string
-const API_BASE_URL =
-  "https://main-react-backend-code.onrender.com" || "http://localhost:5000";
+const API_BASE_URL =  process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
 // Helper function to get category icons (retained as is)
 const getCategoryIcon = (category) => {
@@ -1114,16 +1114,12 @@ const RegistrationPage = () => {
   const [participantPhone, setParticipantPhone] = useState("");
   const [participantOrganization, setParticipantOrganization] = useState("");
 
-  // Filter conferences for 2025 specifically for the display lists
-  const conferences2025 = useMemo(() => {
-    const currentYear = 2025; // As per explicit request
-    const hybridConfs2025 = hybridsData.filter(
-      (conf) => conf.year === currentYear
-    );
-    const webinarConfs2025 = webinarsData.filter(
-      (conf) => conf.year === currentYear
-    );
-    return { hybridConfs2025, webinarConfs2025 };
+  // Show all conferences for display lists (no year filtering)
+  const allConferenceLists = useMemo(() => {
+    const webinarConfsAll = webinarsData || [];
+    const hybridConfsAll = hybridsData || [];
+
+    return { webinarConfsAll, hybridConfsAll };
   }, []);
 
   // Combine all conferences for the dropdown and the upcoming events list
@@ -1150,7 +1146,7 @@ const RegistrationPage = () => {
       date: conf.date, // Use the 'date' field directly
     }));
 
-    return [...webinarConfs, ...hybridConfs].map((conf) => ({
+    return [ ...hybridConfs, ...webinarConfs].map((conf) => ({
       value: conf.id,
       label: `${conf.name} (${
         conf.type.charAt(0).toUpperCase() + conf.type.slice(1)
@@ -1393,45 +1389,45 @@ const RegistrationPage = () => {
     setSelectedConferenceOption(selectedOption);
   };
 
-//   // Consolidated function to proceed with a selected conference (from dropdown or list)
-//   const handleProceedWithConference = async (confOption) => {
-//     if (!confOption) {
-//       alert("Please select a conference.");
-//       return;
-//     }
+  //   // Consolidated function to proceed with a selected conference (from dropdown or list)
+  //   const handleProceedWithConference = async (confOption) => {
+  //     if (!confOption) {
+  //       alert("Please select a conference.");
+  //       return;
+  //     }
 
-//     setIsLoading(true);
-//     setError(null);
+  //     setIsLoading(true);
+  //     setError(null);
 
-//     const selectedConf = confOption.originalConf;
+  //     const selectedConf = confOption.originalConf;
 
-//     try {
-//       const response = await axios.post(
-//         `${API_BASE_URL}/api/source/get-source-token`,
-//         {
-//           sourceId: selectedConf.id,
-//           conferenceType: selectedConf.type,
-//           date: selectedConf.date, // Pass the 'date' field
-//         }
-//       );
+  //     try {
+  //       const response = await axios.post(
+  //         `${API_BASE_URL}/api/source/get-source-token`,
+  //         {
+  //           sourceId: selectedConf.id,
+  //           conferenceType: selectedConf.type,
+  //           date: selectedConf.date, // Pass the 'date' field
+  //         }
+  //       );
 
-//       if (response.data.token) {
-//         navigate(`/registration?sourceToken=${response.data.token}`);
-//       } else {
-//         setError("Failed to generate token. Please try again.");
-//       }
-//     } catch (err) {
-//       console.error("Error generating token:", err);
-//       setError(
-//         err.response?.data?.message ||
-//           "Failed to generate token. Please try again."
-//       );
-//     } finally {
-//       setIsLoading(false);
-//     }
-//   };
+  //       if (response.data.token) {
+  //         navigate(`/registration?sourceToken=${response.data.token}`);
+  //       } else {
+  //         setError("Failed to generate token. Please try again.");
+  //       }
+  //     } catch (err) {
+  //       console.error("Error generating token:", err);
+  //       setError(
+  //         err.response?.data?.message ||
+  //           "Failed to generate token. Please try again."
+  //       );
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   };
 
-const handleProceedWithConference = async (confOption) => {
+  const handleProceedWithConference = async (confOption) => {
     if (!confOption) {
       alert("Please select a conference.");
       return;
@@ -1449,7 +1445,8 @@ const handleProceedWithConference = async (confOption) => {
       const response = await axios.get(
         `${API_BASE_URL}/api/source/generate-token`, // Updated endpoint path
         {
-          params: { // Use 'params' for GET requests
+          params: {
+            // Use 'params' for GET requests
             sourceId: selectedConf.id,
             conferenceType: selectedConf.type,
             date: selectedConf.date, // Pass the 'date' field
@@ -1471,7 +1468,7 @@ const handleProceedWithConference = async (confOption) => {
     } finally {
       setIsLoading(false);
     }
-};
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -1603,9 +1600,9 @@ const handleProceedWithConference = async (confOption) => {
                 onClick={() =>
                   handleProceedWithConference(selectedConferenceOption)
                 }
-                className="w-full sm:w-auto bg-indigo-600 text-white px-6 py-3 rounded-xl text-base font-semibold
-                                    hover:bg-indigo-700 transition duration-300 transform hover:scale-105 shadow-md
-                                    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="w-full sm:w-auto bg-purple-300 text-purple px-6 py-3 rounded-xl text-base font-semibold
+                                    hover:bg-purple-400 transition duration-300 transform hover:scale-105 shadow-md
+                                    focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
               >
                 Proceed to Registration
               </button>
@@ -1634,9 +1631,9 @@ const handleProceedWithConference = async (confOption) => {
 
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 py-8 md:py-10 bg-white rounded-2xl shadow-xl border border-gray-200">
           <h3 className="text-3xl md:text-4xl font-extrabold text-center mb-10 text-gray-800">
-            Browse Our{" "}
+            Engage with Experts at{" "}
             <span className="bg-gradient-to-r from-teal-500 to-green-600 bg-clip-text text-transparent">
-              2025 Conference Series
+              Our Upcoming Events
             </span>
           </h3>
           <p className="text-lg text-center text-gray-600 mb-8 max-w-xl mx-auto">
@@ -1644,120 +1641,133 @@ const handleProceedWithConference = async (confOption) => {
           </p>
 
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
+            {/* Hybrids Section */}
             <div className="w-full lg:w-1/2 flex flex-col">
-              <h4 className="text-2xl font-bold text-purple-800 mb-6 text-center lg:text-left">
-                Hybrid Conferences
+              <h4 className="text-2xl font-bold text-amber-800 mb-6 text-center lg:text-center">
+                Hybrids
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow">
-                {conferences2025.hybridConfs2025.map((conf) => (
+                {allConferenceLists.hybridConfsAll.map((conf) => (
                   <div
                     key={conf.code}
-                    onClick={() =>
-                      handleProceedWithConference(
-                        allConferences.find(
-                          (option) => option.value === conf.code
-                        )
-                      )
-                    }
-                    className="flex flex-col items-center justify-center bg-purple-50 rounded-xl shadow-md border border-purple-200 p-5 cursor-pointer
-                                            hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                    className="flex flex-col justify-between bg-fuchsia-50 rounded-xl shadow-md border border-fuchsia-200 p-5 min-h-[250px] transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                   >
-                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-purple-200 text-purple-700 mb-3">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                        <path d="M2 17l10 5 10-5" />
-                        <path d="M2 12l10 5 10-5" />
-                      </svg>
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-fuchsia-200 text-fuchsia-700 mb-3">
+                      <Mic2 className="h-6 w-6" />
                     </div>
-                    <h5 className="font-extrabold text-lg text-purple-900 mb-2 text-center leading-tight">
-                      {conf.title}
-                    </h5>
-                    {conf.date && (
-                      <p className="text-sm text-gray-600 mb-2">{conf.date}</p>
-                    )}
-                    <div
-                      className="inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide
-                                            bg-purple-100 text-purple-800"
-                    >
-                      {conf.type}
+
+                    <div className="flex flex-col items-center text-center flex-1">
+                      <h5 className="font-extrabold text-lg text-fuchsia-900 mb-1 leading-tight">
+                        {conf.title}
+                      </h5>
+                      {conf.date && (
+                        <p className="text-lg font-bold text-gray-600 mb-2">
+                          {conf.date}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex gap-3 justify-center mt-2">
+                      {/* Register Button */}
+                      <button
+                        onClick={() =>
+                          handleProceedWithConference(
+                            allConferences.find(
+                              (option) => option.value === conf.code
+                            )
+                          )
+                        }
+                        className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide bg-purple-100 text-purple-800"
+                      >
+                        <Pencil className="w-4 h-4" />
+                        Register
+                      </button>
+
+                      {/* Visit Button */}
+                      {conf.link && (
+                        <a
+                          href={conf.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide bg-purple-100 text-purple-800"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          Visit
+                        </a>
+                      )}
                     </div>
                   </div>
                 ))}
-                {conferences2025.hybridConfs2025.length === 0 && (
+
+                {allConferenceLists.hybridConfsAll.length === 0 && (
                   <p className="text-gray-500 text-center col-span-full text-base">
-                    No Hybrid Conferences for 2025 available yet.
+                    No Hybrid Conferences available yet.
                   </p>
                 )}
               </div>
             </div>
 
+            {/* Webinars Section */}
             <div className="w-full lg:w-1/2 flex flex-col">
-              <h4 className="text-2xl font-bold text-blue-800 mb-6 text-center lg:text-left">
-                Webinar Conferences
+              <h4 className="text-2xl font-bold text-yellow-500 mb-6 text-center lg:text-center">
+                Webinars
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow">
-                {conferences2025.webinarConfs2025.map((conf) => (
+                {allConferenceLists.webinarConfsAll.map((conf) => (
                   <div
                     key={conf.code}
-                    onClick={() =>
-                      handleProceedWithConference(
-                        allConferences.find(
-                          (option) => option.value === conf.code
-                        )
-                      )
-                    }
-                    className="flex flex-col items-center justify-center bg-blue-50 rounded-xl shadow-md border border-blue-200 p-5 cursor-pointer
-                                            hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                    className="flex flex-col justify-between bg-yellow-50 rounded-xl shadow-md border border-yellow-200 p-5 min-h-[250px] transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                   >
-                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-200 text-blue-700 mb-3">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <rect
-                          x="2"
-                          y="3"
-                          width="20"
-                          height="14"
-                          rx="2"
-                          ry="2"
-                        ></rect>
-                        <line x1="8" y1="21" x2="16" y2="21"></line>
-                        <line x1="12" y1="17" x2="12" y2="21"></line>
-                      </svg>
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-200 text-yellow-700 mb-3">
+                      <Webcam className="h-6 w-6" />
                     </div>
-                    <h5 className="font-extrabold text-lg text-blue-900 mb-2 text-center leading-tight">
-                      {conf.title}
-                    </h5>
-                    {conf.date && (
-                      <p className="text-sm text-gray-600 mb-2">{conf.date}</p>
-                    )}
-                    <div
-                      className="inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide
-                                            bg-blue-100 text-blue-800"
-                    >
-                      {conf.type}
+
+                    <div className="flex flex-col items-center text-center flex-1">
+                      <h5 className="font-extrabold text-lg text-yellow-900 mb-1 leading-tight">
+                        {conf.title}
+                      </h5>
+                      {conf.date && (
+                        <p className="text-lg font-bold text-gray-600 mb-2">
+                          {conf.date}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex gap-3 justify-center mt-2">
+                      {/* Register Button */}
+                      <button
+                        onClick={() =>
+                          handleProceedWithConference(
+                            allConferences.find(
+                              (option) => option.value === conf.code
+                            )
+                          )
+                        }
+                        className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide bg-yellow-100 text-yellow-800"
+                      >
+                        <Pencil className="w-4 h-4" />
+                        Register
+                      </button>
+
+                      {/* Visit Button */}
+                      {conf.link && (
+                        <a
+                          href={conf.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide bg-yellow-100 text-yellow-800"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          Visit
+                        </a>
+                      )}
                     </div>
                   </div>
                 ))}
-                {conferences2025.webinarConfs2025.length === 0 && (
+
+                {allConferenceLists.webinarConfsAll.length === 0 && (
                   <p className="text-gray-500 text-center col-span-full text-base">
-                    No Webinar Conferences for 2025 available yet.
+                    No Webinar Conferences available yet.
                   </p>
                 )}
               </div>
@@ -1770,13 +1780,13 @@ const handleProceedWithConference = async (confOption) => {
 
   const getCardColors = (category, isSelected) => {
     let iconBg = "";
-    let iconText = "text-white"; // Icons themselves will be white for contrast
-    let overlayBg = ""; // Translucent top overlay
-    let buttonBg = "";
+    let iconText = "";
+    let overlayBg = "";
+    let buttonBg = "text-black";
     let buttonHover = "";
     let borderAccent = "";
-    let shadow = "shadow-md";
-    let overlayOpacity = isSelected ? "bg-opacity-80" : "bg-opacity-60";
+    let shadow = "shadow-lg";
+    let overlayOpacity = isSelected ? "bg-opacity-90" : "bg-opacity-70";
 
     switch (category) {
       case "e-Poster":
@@ -1784,54 +1794,67 @@ const handleProceedWithConference = async (confOption) => {
       case "Virtual Presentation":
       case "Oral Presentation":
       case "Delegate":
-        // Primary categories - purple tones
-        iconBg = "bg-purple-600";
-        overlayBg = "bg-purple-100";
-        buttonBg = "bg-purple-600";
-        buttonHover = "hover:bg-purple-700";
-        borderAccent = "border-purple-600";
+        // Vibrant lime and fresh yellow
+        iconBg = "bg-[#a2e635]";
+        overlayBg =
+          "bg-gradient-to-br from-[#fef9c3] via-[#ecfccb] to-[#d9f99d]";
+        buttonBg = "bg-gradient-to-r from-[#a2e635] via-[#84cc16] to-[#65a30d]";
+        buttonHover =
+          "hover:from-[#bef264] hover:via-[#a3e635] hover:to-[#65a30d]";
+        borderAccent = "border-2 border-[#a2e635]";
         break;
+
       case "Article Publication":
       case "Exhibitor":
       case "Standard Pass":
       case "VIP Pass":
-        // Secondary categories / Add-ons - green tones
-        iconBg = "bg-green-600";
-        overlayBg = "bg-green-100";
-        buttonBg = "bg-green-600";
-        buttonHover = "hover:bg-green-700";
-        borderAccent = "border-green-600";
+        // Peach & pastel coral
+        iconBg = "bg-gradient-to-br from-[#fcd34d] via-[#fbbf24] to-[#fcd34d]";
+        overlayBg =
+          "bg-gradient-to-br from-[#fff7ed] via-[#fef3c7] to-[#fde68a]";
+        buttonBg = "bg-gradient-to-r from-[#fcd34d] via-[#fbbf24] to-[#f59e0b]";
+        buttonHover =
+          "hover:from-[#fde68a] hover:via-[#fcd34d] hover:to-[#fbbf24]";
+        borderAccent = "border-2 border-[#fbbf24]";
         break;
+
       case "Suit - A (OP + 2N stay)":
       case "Suit - B (OP + 3N stay)":
       case "Accompanying Person":
       case "Extra N-Stay":
-        // Tertiary categories / Accommodation - indigo tones
-        iconBg = "bg-indigo-600";
-        overlayBg = "bg-indigo-100";
-        buttonBg = "bg-indigo-600";
-        buttonHover = "hover:bg-indigo-700";
-        borderAccent = "border-indigo-600";
+        // Bold and bright palette with strong contrast
+        iconBg = "bg-gradient-to-br from-[#f43f5e] via-[#f97316] to-[#facc15]"; // Rose, orange, bright yellow
+        overlayBg =
+          "bg-gradient-to-br from-[#fef3c7] via-[#ffe4e6] to-[#fff7ed]"; // Warm peachy blend
+        buttonBg = "bg-gradient-to-r from-[#f43f5e] via-[#f97316] to-[#facc15]"; // Strong warm gradient
+        buttonHover =
+          "hover:from-[#e11d48] hover:via-[#ea580c] hover:to-[#eab308]"; // Even deeper contrast on hover
+        borderAccent = "border-2 border-[#f97316]"; // Bright orange border
+        iconText = "text-black"; // Ensure visibility over light icon backgrounds
+
         break;
+
       default:
-        // Fallback
-        iconBg = "bg-gray-600";
-        overlayBg = "bg-gray-100";
-        buttonBg = "bg-gray-600";
-        buttonHover = "hover:bg-gray-700";
-        borderAccent = "border-gray-600";
+        // Soft lime fallback
+        iconBg = "bg-gradient-to-br from-[#a2e635] via-[#d9f99d] to-[#ecfccb]";
+        overlayBg =
+          "bg-gradient-to-br from-[#f7fee7] via-[#fef9c3] to-[#ecfccb]";
+        buttonBg = "bg-gradient-to-r from-[#bef264] via-[#a2e635] to-[#84cc16]";
+        buttonHover =
+          "hover:from-[#d9f99d] hover:via-[#a2e635] hover:to-[#65a30d]";
+        borderAccent = "border-2 border-[#a2e635]";
         break;
     }
 
     return {
       cardBg: "bg-white",
-      cardBorder: isSelected ? `border-2 ${borderAccent}` : "border-gray-200",
+      cardBorder: isSelected ? `${borderAccent}` : "border border-gray-200",
       cardShadow: shadow,
-      iconBg: iconBg,
-      iconText: iconText,
+      iconBg,
+      iconText,
       overlayBg: `${overlayBg} ${overlayOpacity}`,
-      buttonBg: buttonBg,
-      buttonHover: buttonHover,
+      buttonBg,
+      buttonHover,
     };
   };
 
@@ -1840,7 +1863,7 @@ const handleProceedWithConference = async (confOption) => {
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-center mb-4 leading-tight text-gray-800">
           Secure Your Spot for{" "}
-          <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-lime-400 to-green-500 bg-clip-text text-transparent">
             {conferenceDetails.name}
           </span>
         </h1>
@@ -1861,23 +1884,23 @@ const handleProceedWithConference = async (confOption) => {
                 type="button"
                 className={`px-4 py-2.5 md:px-6 md:py-3 rounded-full text-base font-semibold transition-colors duration-300 ${
                   participantType === "academic"
-                    ? "bg-indigo-600 text-white shadow-sm"
+                    ? "bg-lime-600 text-white shadow-sm"
                     : "text-gray-600 hover:bg-gray-100"
                 }`}
                 onClick={() => setParticipantType("academic")}
               >
-                Academic Rate
+                Academic
               </button>
               <button
                 type="button"
                 className={`px-4 py-2.5 md:px-6 md:py-3 rounded-full text-base font-semibold transition-colors duration-300 ${
                   participantType === "business"
-                    ? "bg-indigo-600 text-white shadow-sm"
+                    ? "bg-lime-600 text-white shadow-sm"
                     : "text-gray-600 hover:bg-gray-100"
                 }`}
                 onClick={() => setParticipantType("business")}
               >
-                Business Rate
+                Business
               </button>
             </div>
           </div>
@@ -1962,7 +1985,7 @@ const handleProceedWithConference = async (confOption) => {
                             />
                           </svg>
                         </button>
-                        <span className="text-2xl font-semibold text-gray-900 w-10 text-center">
+                        <span className="text-2xl font-semibold text-black-900 w-10 text-center">
                           {quantity}
                         </span>
                         <button
@@ -1998,7 +2021,7 @@ const handleProceedWithConference = async (confOption) => {
             <>
               <h2 className="text-2xl md:text-3xl font-extrabold text-center text-gray-800 mt-12 mb-8">
                 Enhance Your Experience{" "}
-                <span className="text-indigo-600">(Add-Ons)</span>
+                <span className="text-cyan-600">(Add-Ons)</span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {addOnCategories.map((category) => {
@@ -2080,7 +2103,7 @@ const handleProceedWithConference = async (confOption) => {
                               />
                             </svg>
                           </button>
-                          <span className="text-2xl font-semibold text-gray-900 w-10 text-center">
+                          <span className="text-2xl font-semibold text-black-900 w-10 text-center">
                             {quantity}
                           </span>
                           <button
@@ -2224,476 +2247,3 @@ const handleProceedWithConference = async (confOption) => {
 };
 
 export default RegistrationPage;
-
-// // src/pages/RegistrationPage.jsx
-// import React, { useState, useEffect, useMemo } from 'react';
-// import { useLocation, useNavigate } from 'react-router-dom';
-// import axios from 'axios';
-// import Select from 'react-select'; // Import react-select
-
-// // Import your conference data
-// import  webinarsData  from '../data/webinarsData1';
-// import  hybridsData  from '../data/hybridsData1';
-
-// // Define your backend URL from environment variables or direct string
-// const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
-
-// const RegistrationPage = () => {
-//     const location = useLocation();
-//     const navigate = useNavigate();
-
-//     // State for loading, errors, and fetched conference data
-//     const [isLoading, setIsLoading] = useState(true);
-//     const [error, setError] = useState(null);
-//     const [conferenceDetails, setConferenceDetails] = useState(null);
-
-//     // State for selected registration items and quantities
-//     const [selectedItems, setSelectedItems] = useState({});
-//     const [participantType, setParticipantType] = useState('academic');
-
-//     // State for overall total amount
-//     const [totalAmount, setTotalAmount] = useState(0);
-
-//     // State for react-select's selected option object
-//     const [selectedConferenceOption, setSelectedConferenceOption] = useState(null);
-
-//     // Combine all conferences for the dropdown
-//     const allConferences = useMemo(() => {
-//         const webinarConfs = webinarsData.map(conf => ({
-//             id: conf.code,
-//             name: conf.title,
-//             type: conf.type.toLowerCase()
-//         }));
-
-//         const hybridConfs = hybridsData.map(conf => ({
-//             id: conf.code,
-//             name: conf.title,
-//             type: 'hybrid'
-//         }));
-
-//         // Format for react-select: { value: id, label: name (type) }
-//         return [...webinarConfs, ...hybridConfs].map(conf => ({
-//             value: conf.id,
-//             label: `${conf.name} (${conf.type.charAt(0).toUpperCase() + conf.type.slice(1)})`,
-//             originalConf: conf // Store the original conference object for easy access
-//         }));
-//     }, []);
-
-//     // Effect to handle token verification or initial dropdown display
-//     useEffect(() => {
-//         const queryParams = new URLSearchParams(location.search);
-//         const sourceToken = queryParams.get('sourceToken');
-
-//         if (sourceToken) {
-//             const verifyToken = async () => {
-//                 try {
-//                     const response = await axios.get(`${API_BASE_URL}/api/source/verify-token`, {
-//                         params: { token: sourceToken }
-//                     });
-
-//                     if (response.data.isValid) {
-//                         setConferenceDetails({
-//                             name: response.data.conferenceName,
-//                             type: response.data.conferenceType,
-//                             pricingPlans: response.data.pricingPlans,
-//                             sourceId: response.data.sourceId
-//                         });
-//                         setError(null);
-//                         // If coming from a token, pre-select the conference in the dropdown
-//                         const preselectedOption = allConferences.find(
-//                             option => option.value === response.data.sourceId
-//                         );
-//                         setSelectedConferenceOption(preselectedOption || null);
-//                     } else {
-//                         setError('Invalid or expired registration token. Please select a conference.');
-//                         setConferenceDetails(null);
-//                         setSelectedConferenceOption(null); // Clear selection
-//                     }
-//                 } catch (err) {
-//                     console.error('Error verifying token:', err);
-//                     setError(err.response?.data?.message || 'Failed to verify token. Please select a conference.');
-//                     setConferenceDetails(null);
-//                     setSelectedConferenceOption(null); // Clear selection
-//                 } finally {
-//                     setIsLoading(false);
-//                 }
-//             };
-//             verifyToken();
-//         } else {
-//             setError('Please select a conference to proceed with registration.');
-//             setIsLoading(false);
-//             setConferenceDetails(null);
-//             setSelectedConferenceOption(null); // Clear selection
-//         }
-//     }, [location.search, API_BASE_URL, allConferences]); // Add allConferences to dependencies
-
-//     const registrationCategories = useMemo(() => {
-//         if (!conferenceDetails?.pricingPlans) return [];
-//         const mainCategories = Object.keys(conferenceDetails.pricingPlans).filter(
-//             key => key !== "Add-Ons"
-//         );
-//         return mainCategories;
-//     }, [conferenceDetails]);
-
-//     const addOnCategories = useMemo(() => {
-//         if (!conferenceDetails?.pricingPlans?.["Add-Ons"]) return [];
-//         return Object.keys(conferenceDetails.pricingPlans["Add-Ons"]);
-//     }, [conferenceDetails]);
-
-//     useEffect(() => {
-//         if (!conferenceDetails?.pricingPlans) {
-//             setTotalAmount(0);
-//             return;
-//         }
-
-//         let currentTotal = 0;
-//         const mainPricing = conferenceDetails.pricingPlans;
-//         const addOnPricing = conferenceDetails.pricingPlans["Add-Ons"] || {};
-
-//         for (const category in selectedItems) {
-//             const item = selectedItems[category];
-//             const quantity = item.quantity;
-//             const type = item.type || participantType;
-
-//             let price = 0;
-//             if (mainPricing[category]) {
-//                 price = mainPricing[category][type];
-//             } else if (addOnPricing[category]) {
-//                 price = addOnPricing[category][type];
-//             }
-
-//             if (price && quantity) {
-//                 currentTotal += price * quantity;
-//             }
-//         }
-//         setTotalAmount(currentTotal);
-//     }, [selectedItems, participantType, conferenceDetails]);
-
-//     const handleQuantityChange = (category, value) => {
-//         const quantity = parseInt(value, 10);
-//         setSelectedItems(prev => {
-//             const currentType = prev[category]?.type || participantType;
-
-//             const newItem = {
-//                 quantity: quantity > 0 ? quantity : 0,
-//                 type: currentType
-//             };
-
-//             if (newItem.quantity === 0) {
-//                 const newState = { ...prev };
-//                 delete newState[category];
-//                 return newState;
-//             }
-//             return { ...prev, [category]: newItem };
-//         });
-//     };
-
-//     const handleParticipantTypeChange = (category, type) => {
-//         setSelectedItems(prev => ({
-//             ...prev,
-//             [category]: {
-//                 quantity: prev[category]?.quantity || 1,
-//                 type: type
-//             }
-//         }));
-//     };
-
-//     // Handler for when a conference is selected from the react-select dropdown
-//     const handleReactSelectChange = (selectedOption) => {
-//         setSelectedConferenceOption(selectedOption);
-//     };
-
-//     // Handler to generate token and navigate when "Proceed" is clicked from dropdown
-//     const handleProceedWithSelectedConference = async () => {
-//         if (!selectedConferenceOption) {
-//             alert('Please select a conference.');
-//             return;
-//         }
-
-//         setIsLoading(true);
-//         setError(null);
-
-//         // Access the original conference data from the selected option
-//         const selectedConf = selectedConferenceOption.originalConf;
-
-//         try {
-//             const response = await axios.post(`${API_BASE_URL}/api/source/get-source-token`, {
-//                 sourceId: selectedConf.id,
-//                 conferenceType: selectedConf.type
-//             });
-
-//             if (response.data.token) {
-//                 navigate(`/registration?sourceToken=${response.data.token}`);
-//             } else {
-//                 setError('Failed to generate token. Please try again.');
-//             }
-//         } catch (err) {
-//             console.error('Error generating token from dropdown:', err);
-//             setError(err.response?.data?.message || 'Failed to generate token. Please try again.');
-//         } finally {
-//             setIsLoading(false);
-//         }
-//     };
-
-//     // Placeholder for actual form submission
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-//         console.log('Registration details:', {
-//             conferenceId: conferenceDetails?.sourceId,
-//             conferenceName: conferenceDetails?.name,
-//             selectedItems,
-//             totalAmount
-//         });
-
-//         alert(`Total Amount to pay: $${totalAmount.toFixed(2)}. Proceeding to payment gateway... (This is a placeholder)`);
-//     };
-
-//     // --- Conditional Rendering for Loading, Error, and Dropdown vs. Form ---
-//     if (isLoading) {
-//         return (
-//             <div className="min-h-screen flex items-center justify-center font-sans">
-//                 <p className="text-xl text-gray-700">Loading conference details...</p>
-//             </div>
-//         );
-//     }
-
-//     // Display dropdown if there's an error OR no conference details (meaning no valid token was found initially)
-//     if (error || !conferenceDetails) {
-//         return (
-//             <div className="min-h-screen flex flex-col items-center justify-center font-sans bg-gray-100 p-4">
-//                 <div className="bg-white p-8 rounded-lg shadow-md text-center border border-gray-200 w-full max-w-md">
-//                     <p className="text-xl text-red-600 mb-4">{error}</p>
-//                     <h2 className="text-2xl font-semibold text-gray-700 mb-6">Select a Conference</h2>
-//                     {/* Replaced <select> with <Select> from react-select */}
-//                     <Select
-//                         value={selectedConferenceOption}
-//                         onChange={handleReactSelectChange}
-//                         options={allConferences}
-//                         placeholder="Type to search or select a conference..."
-//                         isClearable
-//                         isSearchable
-//                         className="mb-4"
-//                         classNamePrefix="react-select" // For custom styling if needed
-//                     />
-//                     <button
-//                         onClick={handleProceedWithSelectedConference}
-//                         className="bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition duration-300 transform hover:scale-105"
-//                     >
-//                         Proceed to Registration
-//                     </button>
-//                     <button
-//                         onClick={() => navigate('/')}
-//                         className="mt-4 bg-gray-300 text-gray-800 px-6 py-3 rounded-md hover:bg-gray-400 transition duration-300 transform hover:scale-105 ml-2"
-//                     >
-//                         Go to Home
-//                     </button>
-//                 </div>
-//             </div>
-//         );
-//     }
-
-//     // Main registration form if conferenceDetails are successfully loaded
-//     return (
-//         <div className="min-h-screen bg-gray-100 py-12 font-sans">
-//             <div className="container mx-auto p-6 bg-white rounded-lg shadow-xl">
-//                 <h1 className="text-4xl font-bold text-center text-indigo-800 mb-8">
-//                     Register for {conferenceDetails.name}
-//                     <span className="block text-xl font-normal text-gray-600 mt-2">({conferenceDetails.type.charAt(0).toUpperCase() + conferenceDetails.type.slice(1)} Event)</span>
-//                 </h1>
-
-//                 <form onSubmit={handleSubmit} className="space-y-8">
-//                     {/* Participant Details Section (Basic fields) */}
-//                     <section className="p-6 border border-gray-200 rounded-lg shadow-sm bg-gray-50">
-//                         <h2 className="text-2xl font-semibold text-gray-700 mb-4">Participant Information</h2>
-//                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//                             <div>
-//                                 <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">Full Name</label>
-//                                 <input type="text" id="fullName" name="fullName" required className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500" />
-//                             </div>
-//                             <div>
-//                                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
-//                                 <input type="email" id="email" name="email" required className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500" />
-//                             </div>
-//                             <div>
-//                                 <label htmlFor="country" className="block text-sm font-medium text-gray-700">Country</label>
-//                                 <input type="text" id="country" name="country" required className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500" />
-//                             </div>
-//                             <div>
-//                                 <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
-//                                 <input type="tel" id="phone" name="phone" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500" />
-//                             </div>
-//                              <div>
-//                                 <label htmlFor="organization" className="block text-sm font-medium text-gray-700">Organization / University</label>
-//                                 <input type="text" id="organization" name="organization" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500" />
-//                             </div>
-//                         </div>
-//                     </section>
-
-//                     {/* Registration Options Section */}
-//                     <section className="p-6 border border-gray-200 rounded-lg shadow-sm bg-gray-50">
-//                         <h2 className="text-2xl font-semibold text-gray-700 mb-4">Registration Options</h2>
-//                         <p className="text-gray-600 mb-6">Select your desired registration categories and quantities.</p>
-
-//                         <div className="overflow-x-auto">
-//                             <table className="min-w-full divide-y divide-gray-200">
-//                                 <thead className="bg-gray-100">
-//                                     <tr>
-//                                         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
-//                                         <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Academic Price (USD)</th>
-//                                         <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Business Price (USD)</th>
-//                                         <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Your Type</th>
-//                                         <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
-//                                         <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Subtotal</th>
-//                                     </tr>
-//                                 </thead>
-//                                 <tbody className="bg-white divide-y divide-gray-200">
-//                                     {registrationCategories.map(category => (
-//                                         <React.Fragment key={category}>
-//                                             <tr>
-//                                                 <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-//                                                     {category}
-//                                                 </td>
-//                                                 <td className="px-4 py-4 whitespace-nowrap text-center text-sm text-gray-500">
-//                                                     ${conferenceDetails.pricingPlans[category].academic.toFixed(2)}
-//                                                 </td>
-//                                                 <td className="px-4 py-4 whitespace-nowrap text-center text-sm text-gray-500">
-//                                                     ${conferenceDetails.pricingPlans[category].business.toFixed(2)}
-//                                                 </td>
-//                                                 <td className="px-4 py-4 whitespace-nowrap text-center text-sm">
-//                                                     <div className="flex justify-center space-x-2">
-//                                                         <label className="inline-flex items-center">
-//                                                             <input
-//                                                                 type="radio"
-//                                                                 name={`type-${category}`}
-//                                                                 value="academic"
-//                                                                 checked={(selectedItems[category]?.type || participantType) === 'academic'}
-//                                                                 onChange={() => handleParticipantTypeChange(category, 'academic')}
-//                                                                 className="form-radio text-indigo-600"
-//                                                             />
-//                                                             <span className="ml-1 text-gray-700">Academic</span>
-//                                                         </label>
-//                                                         <label className="inline-flex items-center">
-//                                                             <input
-//                                                                 type="radio"
-//                                                                 name={`type-${category}`}
-//                                                                 value="business"
-//                                                                 checked={(selectedItems[category]?.type || participantType) === 'business'}
-//                                                                 onChange={() => handleParticipantTypeChange(category, 'business')}
-//                                                                 className="form-radio text-indigo-600"
-//                                                             />
-//                                                             <span className="ml-1 text-gray-700">Business</span>
-//                                                         </label>
-//                                                     </div>
-//                                                 </td>
-//                                                 <td className="px-4 py-4 whitespace-nowrap text-center text-sm">
-//                                                     <input
-//                                                         type="number"
-//                                                         min="0"
-//                                                         value={selectedItems[category]?.quantity || ''}
-//                                                         onChange={(e) => handleQuantityChange(category, e.target.value)}
-//                                                         className="w-20 text-center border border-gray-300 rounded-md shadow-sm p-1 focus:ring-indigo-500 focus:border-indigo-500"
-//                                                     />
-//                                                 </td>
-//                                                 <td className="px-4 py-4 whitespace-nowrap text-right text-sm text-gray-900">
-//                                                     ${(
-//                                                         (selectedItems[category]?.quantity || 0) *
-//                                                         (conferenceDetails.pricingPlans[category]?.[selectedItems[category]?.type || participantType] || 0)
-//                                                     ).toFixed(2)}
-//                                                 </td>
-//                                             </tr>
-//                                         </React.Fragment>
-//                                     ))}
-
-//                                     {/* Add-Ons Section */}
-//                                     {addOnCategories.length > 0 && (
-//                                         <tr>
-//                                             <td colSpan="6" className="px-4 py-4 text-left text-lg font-semibold text-gray-700 bg-gray-100">
-//                                                 Add-Ons
-//                                             </td>
-//                                         </tr>
-//                                     )}
-//                                     {addOnCategories.map(category => (
-//                                         <tr key={category}>
-//                                             <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-//                                                 {category}
-//                                             </td>
-//                                             <td className="px-4 py-4 whitespace-nowrap text-center text-sm text-gray-500">
-//                                                 ${conferenceDetails.pricingPlans["Add-Ons"][category].academic.toFixed(2)}
-//                                             </td>
-//                                             <td className="px-4 py-4 whitespace-nowrap text-center text-sm text-gray-500">
-//                                                 ${conferenceDetails.pricingPlans["Add-Ons"][category].business.toFixed(2)}
-//                                             </td>
-//                                             <td className="px-4 py-4 whitespace-nowrap text-center text-sm">
-//                                                 <div className="flex justify-center space-x-2">
-//                                                         <label className="inline-flex items-center">
-//                                                             <input
-//                                                                 type="radio"
-//                                                                 name={`type-${category}`}
-//                                                                 value="academic"
-//                                                                 checked={(selectedItems[category]?.type || participantType) === 'academic'}
-//                                                                 onChange={() => handleParticipantTypeChange(category, 'academic')}
-//                                                                 className="form-radio text-indigo-600"
-//                                                             />
-//                                                             <span className="ml-1 text-gray-700">Academic</span>
-//                                                         </label>
-//                                                         <label className="inline-flex items-center">
-//                                                             <input
-//                                                                 type="radio"
-//                                                                 name={`type-${category}`}
-//                                                                 value="business"
-//                                                                 checked={(selectedItems[category]?.type || participantType) === 'business'}
-//                                                                 onChange={() => handleParticipantTypeChange(category, 'business')}
-//                                                                 className="form-radio text-indigo-600"
-//                                                             />
-//                                                             <span className="ml-1 text-gray-700">Business</span>
-//                                                         </label>
-//                                                     </div>
-//                                             </td>
-//                                             <td className="px-4 py-4 whitespace-nowrap text-center text-sm">
-//                                                 <input
-//                                                     type="number"
-//                                                     min="0"
-//                                                     value={selectedItems[category]?.quantity || ''}
-//                                                     onChange={(e) => handleQuantityChange(category, e.target.value)}
-//                                                     className="w-20 text-center border border-gray-300 rounded-md shadow-sm p-1 focus:ring-indigo-500 focus:border-indigo-500"
-//                                                 />
-//                                             </td>
-//                                             <td className="px-4 py-4 whitespace-nowrap text-right text-sm text-gray-900">
-//                                                 ${(
-//                                                     (selectedItems[category]?.quantity || 0) *
-//                                                     (conferenceDetails.pricingPlans["Add-Ons"][category]?.[selectedItems[category]?.type || participantType] || 0)
-//                                                 ).toFixed(2)}
-//                                             </td>
-//                                         </tr>
-//                                     ))}
-
-//                                     {/* Total Amount Row */}
-//                                     <tr>
-//                                         <td colSpan="5" className="px-4 py-4 text-right text-base font-bold text-gray-900">
-//                                             Total Amount:
-//                                         </td>
-//                                         <td className="px-4 py-4 whitespace-nowrap text-right text-lg font-extrabold text-indigo-800">
-//                                             ${totalAmount.toFixed(2)}
-//                                         </td>
-//                                     </tr>
-//                                 </tbody>
-//                             </table>
-//                         </div>
-//                     </section>
-
-//                     {/* Submit Button */}
-//                     <div className="flex justify-center mt-8">
-//                         <button
-//                             type="submit"
-//                             className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-//                         >
-//                             Proceed to Payment
-//                         </button>
-//                     </div>
-//                 </form>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default RegistrationPage;
