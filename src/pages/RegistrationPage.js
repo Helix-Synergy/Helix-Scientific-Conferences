@@ -11,7 +11,7 @@ import webinarsData from "../data/webinarsData1";
 import hybridsData from "../data/hybridsData1";
 
 // Define your backend URL from environment variables or direct string
-const API_BASE_URL = "https://main-react-backend-code.onrender.com";
+const API_BASE_URL = "https://backend-code-6vqy.onrender.com";
 
 // Helper function to get category icons (retained as is)
 const getCategoryIcon = (category) => {
