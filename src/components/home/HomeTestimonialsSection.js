@@ -3,6 +3,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import srividyaNarayananImg from '../../assets/images/testimonials/srividya-narayanan.jpg';
+import julieCondliffeImg from '../../assets/images/testimonials/julie-condliffe.jpg';
+import amyGutmanImg from '../../assets/images/testimonials/amy-gutman.jpg';
+import esraaMohamedElsisyImg from '../../assets/images/testimonials/esraa-mohamed-elsisy.jpg';
+// import aishaSharmaImg from '../../assets/images/testimonials/aisha-sharma.jpg';
+// import drKenjiTanakaImg from '../../assets/images/testimonials/dr-kenji-tanaka.jpg';
+// import sophiaRossiImg from '../../assets/images/testimonials/sophia-rossi.jpg';
+// import drDavidKimImg from '../../assets/images/testimonials/dr-david-kim.jpg';
+// import graceAdebayoImg from '../../assets/images/testimonials/grace-adebayo.jpg';
+// import drChloeMartinImg from '../../assets/images/testimonials/dr-chloe-martin.jpg';
+
+
 // Your testimonial data
 const homeTestimonials = [
     {
@@ -11,7 +23,7 @@ const homeTestimonials = [
         author: "Srividya Narayanan",
         role: "Northeastern University",
         rating: 5,
-        imageUrl: "https://placehold.co/100x100/1E90FF/FFFFFF?text=SN",
+        imageUrl: srividyaNarayananImg,
     },
     {
         id: 2,
@@ -19,7 +31,7 @@ const homeTestimonials = [
         author: "Julie Condliffe",
         role: "Keynote speaker | De Montford University",
         rating: 5,
-        imageUrl: "https://placehold.co/100x100/FFD700/000000?text=JC",
+        imageUrl: julieCondliffeImg,
     },
     {
         id: 3,
@@ -27,7 +39,7 @@ const homeTestimonials = [
         author: "Amy Gutman",
         role: "CEO & Founder of ToughLoveMD | Keynote Speaker",
         rating: 5,
-        imageUrl: "https://placehold.co/100x100/FF69B4/FFFFFF?text=AG",
+        imageUrl: amyGutmanImg,
     },
     {
         id: 4,
@@ -35,7 +47,7 @@ const homeTestimonials = [
         author: "Esraa Mohamed Elsisy",
         role: "Dietitian, Saudi Arabia",
         rating: 5,
-        imageUrl: "https://placehold.co/100x100/8A2BE2/FFFFFF?text=EM",
+        imageUrl: esraaMohamedElsisyImg,
     },
     {
         id: 5,
@@ -231,7 +243,7 @@ const HomeTestimonialsSection = () => {
                                             <img
                                                 src={testimonial.imageUrl}
                                                 alt={testimonial.author}
-                                                className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover mb-2"
+                                                className="w-32 h-32 md:w-[150px] md:h-[150px] rounded-full object-cover mb-2"
                                             />
                                             <p className="font-semibold text-black text-sm md:text-base">{testimonial.author}</p>
                                             <p className="text-xs text-black mt-1">{testimonial.role}</p>
@@ -272,7 +284,7 @@ const HomeTestimonialsSection = () => {
                                     alt={activeTestimonial.author}
                                     className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-4 border-white shadow-md mb-4"
                                 />
-                                <div className="max-w-sm h-32 overflow-y-auto pr-2 mb-4 scrollbar-custom">
+                                <div className="max-w-sm h-auto overflow-y-auto pr-2 mb-4 scrollbar-hidden scrollbar-width: none;">
                                     <p className="text-base md:text-lg text-gray-800 italic font-light">
                                         "{activeTestimonial.quote}"
                                     </p>

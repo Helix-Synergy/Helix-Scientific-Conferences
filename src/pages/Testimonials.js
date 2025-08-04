@@ -3,6 +3,12 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { StarIcon } from '@heroicons/react/24/solid'; // For rating stars
 
+
+import srividyaNarayananImg from '../assets/images/testimonials/srividya-narayanan.jpg';
+import julieCondliffeImg from '../assets/images/testimonials/julie-condliffe.jpg';
+import amyGutmanImg from '../assets/images/testimonials/amy-gutman.jpg';
+import esraaMohamedElsisyImg from '../assets/images/testimonials/esraa-mohamed-elsisy.jpg';
+
 const Testimonials = () => {
   const testimonials = [
     {
@@ -11,7 +17,7 @@ const Testimonials = () => {
         author: "Srividya Narayanan",
         role: "Northeastern University",
         rating: 5,
-        imageUrl: "https://placehold.co/100x100/1E90FF/FFFFFF?text=SN",
+        imageUrl: srividyaNarayananImg,
     },
     {
         id: 2,
@@ -19,7 +25,7 @@ const Testimonials = () => {
         author: "Julie Condliffe",
         role: "Keynote speaker | De Montford University",
         rating: 5,
-        imageUrl: "https://placehold.co/100x100/FFD700/000000?text=JC",
+        imageUrl: julieCondliffeImg,
     },
     {
         id: 3,
@@ -27,7 +33,7 @@ const Testimonials = () => {
         author: "Amy Gutman",
         role: "CEO & Founder of ToughLoveMD | Keynote Speaker",
         rating: 5,
-        imageUrl: "https://placehold.co/100x100/FF69B4/FFFFFF?text=AG",
+        imageUrl: amyGutmanImg,
     },
     {
         id: 4,
@@ -35,7 +41,7 @@ const Testimonials = () => {
         author: "Esraa Mohamed Elsisy",
         role: "Dietitian, Saudi Arabia",
         rating: 5,
-        imageUrl: "https://placehold.co/100x100/8A2BE2/FFFFFF?text=EM",
+        imageUrl: esraaMohamedElsisyImg,
     },
     {
         id: 5,
