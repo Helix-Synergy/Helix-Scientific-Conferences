@@ -569,9 +569,12 @@ const RegistrationPage = () => {
             const rawPricingPlans = response.data.pricingPlans || [];
             const transformedPricingPlans = {};
             const transformedAddOns = {};
-
+console.log("Debugging 't':", rawPricingPlans);
+console.log("Type of 't':", typeof rawPricingPlans);
+console.log("Is 't' an Array?", Array.isArray(rawPricingPlans));
             rawPricingPlans.forEach((plan) => {
               // Now, we just use basePrice as the single price
+              
               const singlePrice = plan.basePrice;
 
               const planData = {
