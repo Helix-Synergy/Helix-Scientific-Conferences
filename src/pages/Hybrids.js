@@ -732,7 +732,7 @@ const InteractiveCard = ({ event }) => {
 
             try {
                 // *** THIS IS THE CRUCIAL API CALL TO YOUR BACKEND TO GET A REAL TOKEN ***
-                const response = await fetch(`https://main-react-backend-code.onrender.com/api/source/generate-token?sourceId=${encodeURIComponent(sourceId)}&conferenceType=${conferenceType}`);
+                const response = await fetch(`https://backend-code-6vqy.onrender.com/api/source/generate-token?sourceId=${encodeURIComponent(sourceId)}&conferenceType=${conferenceType}`);
 
                 if (!response.ok) {
                     const errorData = await response.json();
@@ -875,7 +875,7 @@ const Hybrids = () => {
             const genericConferenceType = 'hybrid'; // The type for this generic button (already lowercase)
 
             try {
-                const response = await fetch(`https://main-react-backend-code.onrender.com/api/source/generate-token?sourceId=${encodeURIComponent(genericSourceId)}&conferenceType=${genericConferenceType}`);
+                const response = await fetch(`https://backend-code-6vqy.onrender.com/api/source/generate-token?sourceId=${encodeURIComponent(genericSourceId)}&conferenceType=${genericConferenceType}`);
                 if (!response.ok) {
                     const errorData = await response.json();
                     throw new Error(`Failed to fetch generic source token: ${errorData.message || response.statusText}`);
