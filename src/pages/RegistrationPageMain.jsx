@@ -12,6 +12,7 @@ import hybridsData from "../data/hybridsData1"; // Ensure these files exist and 
 
 // Define your backend URL from environment variables or direct string
 const API_BASE_URL = "https://backend-code-6vqy.onrender.com";
+// const API_BASE_URL = "http://localhost:5000";
 
 // Helper function to get category icons (retained as is)
 const getCategoryIcon = (category) => {

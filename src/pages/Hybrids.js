@@ -731,6 +731,7 @@ const InteractiveCard = ({ event }) => {
 
         try {
             const response = await fetch(`https://backend-code-6vqy.onrender.com/api/source/generate-token?sourceId=${sourceId}&conferenceType=${conferenceType}&conferenceYear=${conferenceYear}`);
+            // const response = await fetch(`http://localhost:5000/api/source/generate-token?sourceId=${sourceId}&conferenceType=${conferenceType}&conferenceYear=${conferenceYear}`);
 
             if (!response.ok) {
                 const errorData = await response.json();
@@ -879,6 +880,7 @@ const Hybrids = () => {
 
             try {
                 const response = await fetch(`https://backend-code-6vqy.onrender.com/api/source/generate-token?sourceId=${encodeURIComponent(genericSourceId)}&conferenceType=${genericConferenceType}&conferenceYear=${conferenceYear}`);
+                // const response = await fetch(`http://localhost:5000/api/source/generate-token?sourceId=${encodeURIComponent(genericSourceId)}&conferenceType=${genericConferenceType}&conferenceYear=${conferenceYear}`);
                 if (!response.ok) {
                     const errorData = await response.json();
                     throw new Error(`Failed to fetch generic source token: ${errorData.message || response.statusText}`);

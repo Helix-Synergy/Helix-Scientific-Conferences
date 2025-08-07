@@ -179,7 +179,8 @@ const StripeCancelPage = () => (
 // It's highly recommended to use environment variables for this in a real project:
 // const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
 // For demonstration, hardcoding for now, but switch to env var in production.
-const API_BASE_URL = 'https://backend-code-6vqy.onrender.com'; 
+const API_BASE_URL = 'https://backend-code-6vqy.onrender.com';
+// const API_BASE_URL = 'http://localhost:5000'; // Use this for local development,
 
 function App() {
   // --- NEW: useEffect hook to fetch and store the source token ---

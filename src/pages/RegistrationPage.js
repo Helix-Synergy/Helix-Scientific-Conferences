@@ -13,6 +13,7 @@ import hybridsData from "../data/hybridsData1";
 
 // Define your backend URL from environment variables or direct string
 const API_BASE_URL = "https://backend-code-6vqy.onrender.com";
+// const API_BASE_URL = "http://localhost:5000"; // Change this to your backend URL
 const stripePromise = loadStripe('pk_test_51R1tM1Li7mWRrUj3uuKpRmRiibLed5pn6994X5z0IYkezj9r6eANZPvB0R3H1E6xyoFmkoiexBuUKQtnq4xIkhNV00MWhaySio');
 
 // Helper function to get category icons (retained as is)
@@ -998,25 +999,40 @@ const handleProceedToPayment = async () => {
       return;
     }
 
+    // Build clean orderDetails with validated pricing
     const orderDetails = Object.entries(selectedItems)
-      .map(([category, { price, quantity }]) => {
+      .map(([category, { quantity }]) => {
+        // Try to resolve price from both main and add-on plans
+        let price = conferenceDetails.pricingPlans?.[category]?.price;
+        if (!price && conferenceDetails.pricingPlans?.["Add-Ons"]?.[category]?.price) {
+          price = conferenceDetails.pricingPlans["Add-Ons"][category].price;
+        }
+
         const validPrice = Number(price);
         if (!validPrice || isNaN(validPrice)) {
           console.warn(`⚠️ Invalid price for '${category}' — skipping.`);
           return null;
         }
+
         return {
           name: category,
           price: validPrice,
           quantity: quantity,
         };
       })
-      .filter(Boolean); // Remove any nulls
+      .filter(Boolean); // remove any nulls
+
+    if (orderDetails.length === 0) {
+      alert("Your selected items have missing prices. Please reselect valid options.");
+      setIsLoading(false);
+      return;
+    }
+
+    console.log("✅ Final orderDetails for Stripe:", orderDetails);
 
     const response = await axios.post(
       `${API_BASE_URL}/api/payment/initiate`,
       { orderDetails },
-      console.log("✅ Final orderDetails for Stripe:", orderDetails),
       {
         headers: {
           'x-access-token': token,
@@ -1040,6 +1056,7 @@ const handleProceedToPayment = async () => {
     setIsLoading(false);
   }
 };
+
 
 
 const handleFullRegistrationAndPayment = async (event) => {

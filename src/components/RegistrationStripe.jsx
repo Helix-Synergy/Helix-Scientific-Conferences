@@ -10,7 +10,7 @@ import { loadStripe } from "@stripe/stripe-js";
 // Stripe public key from your Stripe Dashboard
 // IMPORTANT: Replace 'YOUR_STRIPE_PUBLIC_KEY' with your actual key
 const stripePromise = loadStripe(
-  "pk_test_51R1tMEPsMBn7O9MOD4n1IAk73xq9eoXqdux5vXA1db86TELFWKYyUGGcwMGr2wtDjj8Su7gNKmm2GkyosfyqwHlM00U9TfpHUm"
+  "pk_test_51R1tM1Li7mWRrUj3uuKpRmRiibLed5pn6994X5z0IYkezj9r6eANZPvB0R3H1E6xyoFmkoiexBuUKQtnq4xIkhNV00MWhaySio"
 );
 
 const CheckoutForm = ({ totalAmount, participantDetails, selectedItems }) => {
