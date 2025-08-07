@@ -183,30 +183,7 @@ const API_BASE_URL = 'https://backend-code-6vqy.onrender.com';
 // const API_BASE_URL = 'http://localhost:5000'; // Use this for local development,
 
 function App() {
-  // --- NEW: useEffect hook to fetch and store the source token ---
-  useEffect(() => {
-    const fetchAndStoreSourceToken = async () => {
-      if (!localStorage.getItem('sourceToken')) {
-        try {
-          const sourceId = 'GBS-2025';
-          const conferenceType = 'hybrid';
 
-          console.log(`Attempting to fetch source token for sourceId: ${sourceId}, conferenceType: ${conferenceType}`);
-          const response = await axios.get(`${API_BASE_URL}/api/source/generate-token?sourceId=${sourceId}&conferenceType=${conferenceType}`);
-          
-          const token = response.data.token;
-          localStorage.setItem('sourceToken', token);
-          console.log('✅ Successfully fetched and stored new source token.');
-        } catch (error) {
-          console.error('❌ Error fetching source token:', error.response ? error.response.data : error.message);
-        }
-      } else {
-        console.log('Source token already exists in localStorage.');
-      }
-    };
-
-    fetchAndStoreSourceToken();
-  }, []);
 
   return (
     <Router>
