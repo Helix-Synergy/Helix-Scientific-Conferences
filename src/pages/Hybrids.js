@@ -590,20 +590,13 @@
 // export default Hybrids;
 
 
-
-
-
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react'; // Added useCallback
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AdjustmentsHorizontalIcon, CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import MagneticButton from '../components/MagneticButton';
-
-// Make sure this import path is correct for your project structure
-// Assuming your hybrid data is in 'src/data/hybridsData1.js'
 import hybridsData from '../data/hybridsData1';
 
-// The ParticleTrail component (replicated for self-containment, or move to a shared file if used elsewhere)
 const ParticleTrail = ({ children }) => {
     const [particles, setParticles] = useState([]);
     const containerRef = useRef(null);
@@ -630,7 +623,7 @@ const ParticleTrail = ({ children }) => {
         const cleanupInterval = setInterval(() => {
             setParticles(prevParticles => {
                 const now = Date.now();
-                return prevParticles.filter(p => now - p.createdAt < 1500); // Filter out particles older than 1.5 seconds
+                return prevParticles.filter(p => now - p.createdAt < 1500);
             });
         }, 100);
 
@@ -686,11 +679,13 @@ const ParticleTrail = ({ children }) => {
     );
 };
 
-// ---- Interactive Card Component ----
+// ---- Interactive Card Component (Refactored) ----
 const InteractiveCard = ({ event }) => {
     const cardRef = useRef(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
+    const [isLoadingToken, setIsLoadingToken] = useState(false);
+    const navigate = useNavigate();
 
     const handleMouseMove = (e) => {
         if (!cardRef.current) return;
@@ -700,7 +695,7 @@ const InteractiveCard = ({ event }) => {
     };
 
     const handleMouseLeave = () => {
-        x.set(0.5); // Reset to center (0.5) when mouse leaves for a smoother effect
+        x.set(0.5);
         y.set(0.5);
     };
 
@@ -712,53 +707,53 @@ const InteractiveCard = ({ event }) => {
         skewY: 1.5,
     };
 
-    // --- State for the dynamically generated registration link and loading ---
-    const [registrationLink, setRegistrationLink] = useState('');
-    const [isLoadingToken, setIsLoadingToken] = useState(true);
+    const handleRegisterClick = useCallback(async () => {
+        setIsLoadingToken(true);
+        const sourceId = event.code || event.id;
+        const conferenceType = (event.type || 'hybrid').toLowerCase();
 
-    useEffect(() => {
-        const fetchToken = async () => {
-            setIsLoadingToken(true);
-            const sourceId = event.code || event.id; // Use 'code' or 'id' as sourceId
-            // Ensure conferenceType is always lowercase 'hybrid'
-            const conferenceType = (event.type || 'hybrid').toLowerCase(); // <-- CRITICAL FIX HERE!
+        // --- FIX IS HERE: Use the event.year property directly instead of parsing the date string ---
+        const conferenceYear = event.year;
 
-            if (!sourceId) {
-                console.error("Missing sourceId for event:", event);
-                setRegistrationLink('/registration?error=missing_event_data');
-                setIsLoadingToken(false);
-                return;
+        if (!sourceId) {
+            console.error("Missing sourceId for event:", event);
+            navigate('/registration?error=missing_event_data');
+            setIsLoadingToken(false);
+            return;
+        }
+
+        if (!conferenceYear) {
+            console.error("Missing conferenceYear for event:", event);
+            navigate('/registration?error=missing_year_data');
+            setIsLoadingToken(false);
+            return;
+        }
+
+        try {
+            const response = await fetch(`https://backend-code-6vqy.onrender.com/api/source/generate-token?sourceId=${sourceId}&conferenceType=${conferenceType}&conferenceYear=${conferenceYear}`);
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(`Failed to fetch source token from backend: ${errorData.message || response.statusText}`);
             }
+            const data = await response.json();
+            const token = data.token;
 
-            try {
-                // *** THIS IS THE CRUCIAL API CALL TO YOUR BACKEND TO GET A REAL TOKEN ***
-                const response = await fetch(`https://main-react-backend-code.onrender.com/api/source/generate-token?sourceId=${encodeURIComponent(sourceId)}&conferenceType=${conferenceType}`);
+            const encodedConferenceId = encodeURIComponent(sourceId);
+            const encodedConferenceName = encodeURIComponent(event.title || event.name || 'Untitled Conference');
+            const encodedConferenceDate = encodeURIComponent(event.date || '');
 
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    throw new Error(`Failed to fetch source token from backend: ${errorData.message || response.statusText}`);
-                }
-                const data = await response.json();
-                const token = data.token; // This is the REAL JWT from your backend
+            const registrationLink = `/registration?sourceToken=${encodeURIComponent(token)}&conferenceType=${conferenceType}&conferenceId=${encodedConferenceId}&conferenceName=${encodedConferenceName}&conferenceDate=${encodedConferenceDate}`;
 
-                // Encode all parameters for the URL safely
-                const encodedConferenceId = encodeURIComponent(sourceId);
-                const encodedConferenceName = encodeURIComponent(event.title || event.name || 'Untitled Conference');
-                const encodedConferenceDate = encodeURIComponent(event.date || '');
+            navigate(registrationLink);
+        } catch (error) {
+            console.error("Error fetching token for event:", event.title || event.name, error);
+            navigate('/registration?error=token_failed');
+        } finally {
+            setIsLoadingToken(false);
+        }
+    }, [event, navigate]);
 
-                setRegistrationLink(
-                    `/registration?sourceToken=${encodeURIComponent(token)}&conferenceType=${conferenceType}&conferenceId=${encodedConferenceId}&conferenceName=${encodedConferenceName}&conferenceDate=${encodedConferenceDate}`
-                );
-            } catch (error) {
-                console.error("Error fetching token for event:", event.title || event.name, error);
-                setRegistrationLink('/registration?error=token_failed'); // Fallback link with error
-            } finally {
-                setIsLoadingToken(false);
-            }
-        };
-
-        fetchToken();
-    }, [event]); // Re-run effect if the 'event' prop changes
 
     return (
         <motion.div
@@ -795,14 +790,16 @@ const InteractiveCard = ({ event }) => {
                     <CalendarIcon className="w-5 h-5 mr-2 text-blue-500" />
                     <span>{event.date}</span>
                 </div>
-                <div className="flex items-center text-gray-700 mb-4">
+                <div className="flex items-center text-gray-700 mb-2">
                     <MapPinIcon className="w-5 h-5 mr-2 text-purple-500" />
                     <span>{event.location}</span>
                 </div>
-
-                {/* Flex container for buttons */}
+                {event.price && (
+                    <div className="flex items-center text-gray-700 font-semibold mb-4">
+                        <span className="text-lg text-green-600">${event.price}</span>
+                    </div>
+                )}
                 <div className="flex gap-2 mt-auto">
-
                     {event.link && (
                         <Link
                             to={event.link}
@@ -813,28 +810,38 @@ const InteractiveCard = ({ event }) => {
                             Visit Site
                         </Link>
                     )}
-                    {isLoadingToken ? (
-                        <button disabled className="flex-1 text-center bg-gray-400 text-white font-bold py-2 px-6 rounded-full cursor-not-allowed text-sm">
-                            Loading...
-                        </button>
-                    ) : (
-                        <Link
-                            to={registrationLink}
-                            className="flex-1 text-center bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 text-sm"
-                        >
-                            Register Now
-                        </Link>
-                    )}
-
-                    
+                    <button
+                        onClick={handleRegisterClick}
+                        disabled={isLoadingToken}
+                        className={`flex-1 text-center font-bold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 text-sm
+                            ${isLoadingToken ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600 text-white'}
+                        `}
+                    >
+                        {isLoadingToken ? 'Loading...' : 'Register Now'}
+                    </button>
                 </div>
             </div>
         </motion.div>
     );
 };
 
-// ---- Main Page Component ----
+// ---- Main Page Component (Refactored) ----
 const Hybrids = () => {
+    const createSortableDate = (dateString) => {
+        if (!dateString) return new Date(0);
+        const cleanedDateString = dateString.replace(/-\d+/g, '').trim();
+        return new Date(cleanedDateString);
+    };
+
+    const allConferences = useMemo(() => {
+        const sortedData = [...hybridsData].sort((a, b) => {
+            const dateA = createSortableDate(a.date);
+            const dateB = createSortableDate(b.date);
+            return dateA - dateB;
+        });
+        return sortedData;
+    }, []);
+
     const cardItemVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: {
@@ -860,22 +867,18 @@ const Hybrids = () => {
         },
     };
 
-    const allConferences = useMemo(() => {
-        return hybridsData;
-    }, []);
-
-    // --- State for the generic "Register for a Hybrid Event" button link and loading ---
     const [genericRegistrationLink, setGenericRegistrationLink] = useState('');
     const [isGenericLoading, setIsGenericLoading] = useState(true);
 
     useEffect(() => {
         const fetchGenericToken = async () => {
             setIsGenericLoading(true);
-            const genericSourceId = 'hybrids_page'; // A general ID for the Hybrids page itself
-            const genericConferenceType = 'hybrid'; // The type for this generic button (already lowercase)
+            const genericSourceId = 'hybrids_page';
+            const genericConferenceType = 'hybrid';
+            const conferenceYear = new Date().getFullYear();
 
             try {
-                const response = await fetch(`https://main-react-backend-code.onrender.com/api/source/generate-token?sourceId=${encodeURIComponent(genericSourceId)}&conferenceType=${genericConferenceType}`);
+                const response = await fetch(`https://backend-code-6vqy.onrender.com/api/source/generate-token?sourceId=${encodeURIComponent(genericSourceId)}&conferenceType=${genericConferenceType}&conferenceYear=${conferenceYear}`);
                 if (!response.ok) {
                     const errorData = await response.json();
                     throw new Error(`Failed to fetch generic source token: ${errorData.message || response.statusText}`);
@@ -883,9 +886,9 @@ const Hybrids = () => {
                 const data = await response.json();
                 const token = data.token;
 
-                setGenericRegistrationLink(
-                    `/registration?sourceToken=${encodeURIComponent(token)}&conferenceType=${genericConferenceType}&conferenceId=${encodeURIComponent(genericSourceId)}&conferenceName=${encodeURIComponent("Hybrid Conferences Page")}`
-                );
+                const registrationLink = `/registration?sourceToken=${encodeURIComponent(token)}&conferenceType=${genericConferenceType}&conferenceId=${encodeURIComponent(genericSourceId)}&conferenceName=${encodeURIComponent("Hybrid Conferences Page")}`;
+
+                setGenericRegistrationLink(registrationLink);
             } catch (error) {
                 console.error("Error fetching generic hybrid token:", error);
                 setGenericRegistrationLink('/registration?error=generic_token_failed');
@@ -895,13 +898,10 @@ const Hybrids = () => {
         };
 
         fetchGenericToken();
-    }, []); // Run once on component mount
+    }, []);
 
     return (
         <div className="min-h-screen relative overflow-hidden text-white py-12 sm:py-20 px-4 sm:px-8 bg-gray-100">
-            {/* Bright, Animated Gradient Background Layer */}
-            {/* IMPORTANT: Add the @keyframes hybrid-blend to your CSS file (e.g., src/index.css or src/App.css) */}
-            {/* Removed the 'jsx' attribute that caused the warning */}
             <style>
                 {`
                 @keyframes hybrid-blend {
@@ -938,7 +938,7 @@ const Hybrids = () => {
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 mb-12 sm:mb-20">
                                 {allConferences.map((event) => (
                                     <motion.div
-                                        key={event.code || event.id} // Use event.id as fallback if code is missing
+                                        key={event.code || event.id}
                                         variants={cardItemVariants}
                                         initial="hidden"
                                         whileInView="visible"
@@ -964,7 +964,6 @@ const Hybrids = () => {
                             Our hybrid model ensures a cohesive experience for all Eminent Speakers, regardless of their mode of participation.
                             Cutting-edge technology facilitates smooth interactions between in-person and virtual audiences.
                         </p>
-                        {/* The MagneticButton now points to the registration page with generic source info */}
                         <Link to={genericRegistrationLink} className="inline-block mt-6 sm:mt-8">
                             <MagneticButton className="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95">
                                 {isGenericLoading ? 'Loading...' : 'Register for a Hybrid Event'}

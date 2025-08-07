@@ -5,18 +5,20 @@ import axios from "axios";
 import Select from "react-select";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { Mic2, Webcam, Pencil, ExternalLink } from "lucide-react";
+import { loadStripe } from '@stripe/stripe-js';
 
 // Import your conference data - ensure these files exist and have the 'date' field
 import webinarsData from "../data/webinarsData1";
 import hybridsData from "../data/hybridsData1";
 
 // Define your backend URL from environment variables or direct string
-const API_BASE_URL = "https://main-react-backend-code.onrender.com";
+const API_BASE_URL = "https://backend-code-6vqy.onrender.com";
+const stripePromise = loadStripe('pk_test_51R1tM1Li7mWRrUj3uuKpRmRiibLed5pn6994X5z0IYkezj9r6eANZPvB0R3H1E6xyoFmkoiexBuUKQtnq4xIkhNV00MWhaySio');
 
 // Helper function to get category icons (retained as is)
 const getCategoryIcon = (category) => {
   switch (category) {
-    case "E-Poster Presentation":
+    case "e-Poster Presentation":
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -375,106 +377,104 @@ const RegistrationPage = () => {
 
   // Helper to provide placeholder features (should come from backend)
   const getPlaceholderFeatures = (category) => {
-    switch (category) {
-      case "E-Poster Presentation":
-        return [
-          "Digital E-Poster Display",
-          "Abstract in Conference Proceedings",
-          "Certificate of Presentation",
-        ];
-      case "Poster Presentation":
-        return [
-          "Physical Poster Display",
-          "Abstract in Conference Proceedings",
-          "Certificate of Presentation",
-        ];
-      case "Video Presentation":
-        return [
-          "Pre-recorded video presentation slot",
-          "Publication in e-proceedings",
-          "Certificate of Presentation",
-          "Online access to all webinar sessions",
-        ];
-      case "Virtual Presentation":
-        return [
-          "Live virtual presentation slot",
-          "Interactive Q&A session",
-          "Publication in e-proceedings",
-          "Certificate of Presentation",
-          "Online access to all webinar sessions",
-        ];
-      case "Oral Presentation":
-        return [
-          "20 Min Oral Slot",
-          "Publication Opportunity",
-          "Conference Kit",
-          "Networking Access",
-          "Priority Seating",
-        ];
-      case "Delegate Access":
-        return [
-          "Online access to all webinar sessions",
-          "Digital Certificate of Participation",
-          "Q&A opportunities with speakers",
-        ];
-      case "Suit - A (OP + 2N stay)":
-        return [
-          "Oral Presentation Benefits",
-          "2 Nights Accommodation",
-          "Airport Transfers (optional)",
-          "Exclusive Delegate Lounge Access",
-        ];
-      case "Suit - B (OP + 3N stay)":
-        return [
-          "Oral Presentation Benefits",
-          "3 Nights Accommodation",
-          "Airport Transfers (optional)",
-          "Exclusive Delegate Lounge Access",
-          "City Tour",
-        ];
-      case "Accompanying Person":
-        return [
-          "Access to social events",
-          "Meals & Coffee Breaks",
-          "City Tour (optional)",
-        ];
-      case "Extra N-Stay":
-        return [
-          "Additional Night(s) at Conference Hotel",
-          "Breakfast Included",
-        ];
-      case "Article Publication (Additional)":
-        return [
-          "Full Paper Publication in Journal",
-          "Peer Review Process",
-          "DOI Assignment",
-        ];
-      case "Virtual Exhibitor Booth":
-        return [
-          "Dedicated Exhibition Booth",
-          "Company Logo on Website",
-          "Networking with Attendees",
-          "Lead Generation Opportunities",
-        ];
-      case "Standard Pass":
-        return [
-          "Access to all main sessions",
-          "Digital conference proceedings",
-          "Networking events",
-          "Coffee breaks & lunch",
-        ];
-      case "VIP Pass":
-        return [
-          "All Standard Pass features",
-          "Exclusive VIP lounge access",
-          "Priority seating",
-          "Meet & Greet with keynote speakers",
-          "Premium gift bag",
-        ];
-      default:
-        return ["Conference Access", "Networking", "Certificate"];
-    }
-  };
+  switch (category) {
+    case "e-Poster Presentation":
+      return [
+        "Digital e-poster Display",
+        "Abstract in Conference Proceedings",
+        "Certificate of Presentation",
+      ];
+    case "Poster Presentation":
+      return [
+        "Boost your Profile",
+        "Networking",
+        "Certificate of Presentation",
+      ];
+    case "Video Presentation":
+      return [
+        "10-15 minutes Video Slot",
+        "Online Access for 1 hour",
+        "Certificate of Presentation",
+      ];
+    case "Virtual Presentation":
+      return [
+        "Online Slot for 20 minutes",
+        "Global Networking",
+        "Promotions",
+        "Certificate of Presentation",
+      ];
+    case "Oral Presentation":
+      return [
+        "Keynote Slot Eligibility",
+        "Promotions",
+        "Conference Kit",
+        "Networking Access",
+      ];
+    case "Delegate Access":
+      return [
+        "Access to all sessions",
+        "Conference Handbook",
+        "Coffee Break & Lunch",
+        "Networking Opportunities",
+      ];
+    case "Suit - A (OP + 2N stay)":
+      return [
+        "Oral Presentation",
+        "2 Night’s Accommodation",
+        "Shuttle Service",
+        "Certificate & Promotions",
+        "Queen Size Room",
+      ];
+    case "Suit - B (OP + 3N stay)":
+      return [
+        "Oral Presentation",
+        "3 Night’s Accommodation",
+        "Shuttle Service",
+        "Certificate & Promotions",
+        "Queen Size Room",
+      ];
+    case "Accompanying Person":
+      return [
+        "Access to social events",
+        "Meals & Coffee Breaks",
+      ];
+    case "Extra N-Stay":
+      return [
+        "Additional Night(s) at Conference Hotel",
+        "Breakfast Included",
+      ];
+    case "Article Publication (Additional)":
+      return [
+        "Full Paper Publication in Journal",
+        "Peer Review Process",
+        "DOI Assignment",
+      ];
+    case "Virtual Exhibitor Booth":
+      return [
+        "Dedicated Exhibition Booth",
+        "Company Logo on Website",
+        "Networking with Attendees",
+        "Lead Generation Opportunities",
+      ];
+    case "Standard Pass":
+      return [
+        "Access to all main sessions",
+        "Digital conference proceedings",
+        "Networking events",
+        "Coffee breaks & lunch",
+      ];
+    case "VIP Pass":
+      return [
+        "All Standard Pass features",
+        "Exclusive VIP lounge access",
+        "Priority seating",
+        "Meet & Greet with keynote speakers",
+        "Premium gift bag",
+      ];
+    default:
+      return ["Conference Access", "Networking", "Certificate"];
+  }
+};
 
   // New helper function for dynamic card colors based on category and selection
   const getCardColors = (category, isSelected) => {
@@ -490,7 +490,7 @@ const RegistrationPage = () => {
     };
 
     switch (category) {
-      case "E-Poster Presentation":
+      case "e-Poster Presentation":
       case "Video Presentation":
       case "Virtual Presentation":
       case "Oral Presentation":
@@ -720,122 +720,335 @@ console.log("Is 't' an Array?", Array.isArray(rawPricingPlans));
     setConferenceDetails(null);
   };
 
-  const handleProceedWithConference = async (confOption) => {
-    if (!confOption) {
-      alert("Please select a conference.");
-      return;
-    }
+  // const handleProceedWithConference = async (confOption) => {
+  //   if (!confOption) {
+  //     alert("Please select a conference.");
+  //     return;
+  //   }
 
-    setIsLoading(true);
-    setError(null);
+  //   setIsLoading(true);
+  //   setError(null);
 
-    const selectedConf = confOption.originalConf;
+  //   const selectedConf = confOption.originalConf;
 
-    try {
-      const response = await axios.get(
-        `${API_BASE_URL}/api/source/generate-token`,
-        {
-          params: {
-            sourceId: selectedConf.id,
-            conferenceType: selectedConf.type,
-            date: selectedConf.date,
-            conferenceYear: selectedConf.year,
-          },
-        }
-      );
+  //   try {
+  //     const response = await axios.get(
+  //       `${API_BASE_URL}/api/source/generate-token`,
+  //       {
+  //         params: {
+  //           sourceId: selectedConf.id,
+  //           conferenceType: selectedConf.type,
+  //           date: selectedConf.date,
+  //           conferenceYear: selectedConf.year,
+  //         },
+  //       }
+  //     );
 
-      if (response.data.token) {
-        navigate(`/registration?sourceToken=${response.data.token}`);
-      } else {
-        setError("Failed to generate token. Please try again.");
+  //     if (response.data.token) {
+  //       navigate(`/registration?sourceToken=${response.data.token}`);
+  //     } else {
+  //       setError("Failed to generate token. Please try again.");
+  //     }
+  //   } catch (err) {
+  //     console.error("Error generating token:", err);
+  //     setError(
+  //       err.response?.data?.message ||
+  //         "Failed to generate token. Please try again."
+  //     );
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     if (!participantFullName || !participantEmail || !participantCountry) {
+//       alert("Please fill in all required participant information.");
+//       return;
+//     }
+
+//     if (totalAmount <= 0 && Object.keys(selectedItems).length === 0) {
+//       alert("Please select at least one registration item.");
+//       return;
+//     }
+
+//     // Ensure selectedItems reflects the correct price at the time of submission
+//     const finalSelectedItems = {};
+//     for (const category in selectedItems) {
+//       const price =
+//         conferenceDetails.pricingPlans[category]?.price ||
+//         conferenceDetails.pricingPlans["Add-Ons"]?.[category]?.price;
+
+//       finalSelectedItems[category] = {
+//         quantity: selectedItems[category].quantity,
+//         price: price, // Now directly referencing the single 'price'
+//       };
+//     }
+
+//     const registrationData = {
+//       conferenceId: conferenceDetails.sourceId,
+//       conferenceName: conferenceDetails.name,
+//       selectedItems: finalSelectedItems,
+//       totalAmount: totalAmount,
+//       participantInfo: {
+//         fullName: participantFullName,
+//         email: participantEmail,
+//         country: participantCountry,
+//         phone: participantPhone,
+//         organization: participantOrganization,
+//         // Removed participantType as it's no longer relevant for pricing
+//       },
+//     };
+
+//     console.log("Sending registration details to backend:", registrationData);
+
+//     try {
+//       const response = await axios.post(
+//         `${API_BASE_URL}/api/send-registration-email`,
+//         registrationData
+//       );
+
+//       if (response.status === 200) {
+//         alert(
+//           "Registration submitted successfully! You will receive a confirmation email shortly."
+//         );
+//         // navigate('/thank-you'); // Uncomment if you have a thank you page
+//         // Optional: Reset form after successful submission
+//         setSelectedItems({});
+//         setParticipantFullName("");
+//         setParticipantEmail("");
+//         setParticipantCountry("");
+//         setParticipantPhone("");
+//         setParticipantOrganization("");
+//         setTotalAmount(0);
+//       } else {
+//         alert(
+//           "There was an issue submitting your registration. Please try again."
+//         );
+//       }
+//     } catch (error) {
+//       console.error("Error submitting registration:", error);
+//       alert(
+//         `Failed to submit registration: ${
+//           error.response?.data?.message || error.message
+//         }. Please try again.`
+//       );
+//     }
+//   };
+
+// const handleProceedToPayment = async () => {
+//   try {
+//     setIsLoading(true);
+
+//     const response = await axios.post(
+//       `${API_BASE_URL}/api/payment/initiate`,
+//       {
+//         orderDetails: [
+//           {
+//             name: 'e-Poster Presentation',
+//             price: 139,
+//             quantity: 1,
+//           },
+//         ],
+//       },
+//       {
+//         headers: {
+//           'x-access-token': localStorage.getItem('sourceToken'),
+//         },
+//       }
+//     );
+
+//     const { sessionId } = response.data;
+
+//     const stripe = await stripePromise;
+//     const result = await stripe.redirectToCheckout({ sessionId });
+
+//     if (result.error) {
+//       console.error("Stripe redirect error:", result.error.message);
+//       alert("Stripe payment redirect failed.");
+//     }
+//   } catch (error) {
+//     console.error("Error initiating payment:", error);
+//     alert("Failed to initiate payment.");
+//   } finally {
+//     setIsLoading(false);
+//   }
+// };
+
+
+// const handleFullRegistrationAndPayment = async (event) => {
+//     event.preventDefault();
+//   await handleSubmit(); // optional: save to DB
+//   await handleProceedToPayment(); // redirect to Stripe
+// };
+
+const handleProceedWithConference = async (confOption) => {
+  if (!confOption) {
+    alert("Please select a conference.");
+    return;
+  }
+
+  setIsLoading(true);
+  setError(null);
+
+  const selectedConf = confOption.originalConf;
+
+  try {
+    const response = await axios.get(
+      `${API_BASE_URL}/api/source/generate-token`,
+      {
+        params: {
+          sourceId: selectedConf.id,
+          conferenceType: selectedConf.type,
+          date: selectedConf.date,
+          conferenceYear: selectedConf.year,
+        },
       }
-    } catch (err) {
-      console.error("Error generating token:", err);
-      setError(
-        err.response?.data?.message ||
-          "Failed to generate token. Please try again."
-      );
-    } finally {
-      setIsLoading(false);
+    );
+
+    if (response.data.token) {
+      localStorage.setItem("sourceToken", response.data.token); // ✅ Save token locally
+      navigate(`/registration?sourceToken=${response.data.token}`);
+    } else {
+      setError("Failed to generate token. Please try again.");
     }
-  };
+  } catch (err) {
+    console.error("Error generating token:", err);
+    setError(
+      err.response?.data?.message ||
+        "Failed to generate token. Please try again."
+    );
+  } finally {
+    setIsLoading(false);
+  }
+};
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (event) => {
+  event.preventDefault();
 
-    if (!participantFullName || !participantEmail || !participantCountry) {
-      alert("Please fill in all required participant information.");
-      return;
-    }
+  if (!participantFullName || !participantEmail || !participantCountry) {
+    alert("Please fill in all required participant information.");
+    return;
+  }
 
-    if (totalAmount <= 0 && Object.keys(selectedItems).length === 0) {
-      alert("Please select at least one registration item.");
-      return;
-    }
+  if (totalAmount <= 0 && Object.keys(selectedItems).length === 0) {
+    alert("Please select at least one registration item.");
+    return;
+  }
 
-    // Ensure selectedItems reflects the correct price at the time of submission
-    const finalSelectedItems = {};
-    for (const category in selectedItems) {
-      const price =
-        conferenceDetails.pricingPlans[category]?.price ||
-        conferenceDetails.pricingPlans["Add-Ons"]?.[category]?.price;
+  const finalSelectedItems = {};
+  for (const category in selectedItems) {
+    const price =
+      conferenceDetails.pricingPlans[category]?.price ||
+      conferenceDetails.pricingPlans["Add-Ons"]?.[category]?.price;
 
-      finalSelectedItems[category] = {
-        quantity: selectedItems[category].quantity,
-        price: price, // Now directly referencing the single 'price'
-      };
-    }
-
-    const registrationData = {
-      conferenceId: conferenceDetails.sourceId,
-      conferenceName: conferenceDetails.name,
-      selectedItems: finalSelectedItems,
-      totalAmount: totalAmount,
-      participantInfo: {
-        fullName: participantFullName,
-        email: participantEmail,
-        country: participantCountry,
-        phone: participantPhone,
-        organization: participantOrganization,
-        // Removed participantType as it's no longer relevant for pricing
-      },
+    finalSelectedItems[category] = {
+      quantity: selectedItems[category].quantity,
+      price: price,
     };
+  }
 
-    console.log("Sending registration details to backend:", registrationData);
-
-    try {
-      const response = await axios.post(
-        `${API_BASE_URL}/api/send-registration-email`,
-        registrationData
-      );
-
-      if (response.status === 200) {
-        alert(
-          "Registration submitted successfully! You will receive a confirmation email shortly."
-        );
-        // navigate('/thank-you'); // Uncomment if you have a thank you page
-        // Optional: Reset form after successful submission
-        setSelectedItems({});
-        setParticipantFullName("");
-        setParticipantEmail("");
-        setParticipantCountry("");
-        setParticipantPhone("");
-        setParticipantOrganization("");
-        setTotalAmount(0);
-      } else {
-        alert(
-          "There was an issue submitting your registration. Please try again."
-        );
-      }
-    } catch (error) {
-      console.error("Error submitting registration:", error);
-      alert(
-        `Failed to submit registration: ${
-          error.response?.data?.message || error.message
-        }. Please try again.`
-      );
-    }
+  const registrationData = {
+    conferenceId: conferenceDetails.sourceId,
+    conferenceName: conferenceDetails.name,
+    selectedItems: finalSelectedItems,
+    totalAmount: totalAmount,
+    participantInfo: {
+      fullName: participantFullName,
+      email: participantEmail,
+      country: participantCountry,
+      phone: participantPhone,
+      organization: participantOrganization,
+    },
   };
+  setSelectedItems(finalSelectedItems);
+
+  console.log("Sending registration details to backend:", registrationData);
+
+  try {
+    const response = await axios.post(
+      `${API_BASE_URL}/api/send-registration-email`,
+      registrationData
+    );
+
+    if (response.status === 200) {
+      console.log("Registration submitted successfully.");
+    } else {
+      alert("There was an issue submitting your registration.");
+    }
+  } catch (error) {
+    console.error("Error submitting registration:", error);
+    alert(
+      `Failed to submit registration: ${
+        error.response?.data?.message || error.message
+      }. Please try again.`
+    );
+  }
+};
+
+const handleProceedToPayment = async () => {
+  try {
+    setIsLoading(true);
+
+    const token = localStorage.getItem('sourceToken');
+    if (!token) {
+      alert("Conference token missing. Please go back and select a conference again.");
+      setIsLoading(false);
+      return;
+    }
+
+    const orderDetails = Object.entries(selectedItems)
+      .map(([category, { price, quantity }]) => {
+        const validPrice = Number(price);
+        if (!validPrice || isNaN(validPrice)) {
+          console.warn(`⚠️ Invalid price for '${category}' — skipping.`);
+          return null;
+        }
+        return {
+          name: category,
+          price: validPrice,
+          quantity: quantity,
+        };
+      })
+      .filter(Boolean); // Remove any nulls
+
+    const response = await axios.post(
+      `${API_BASE_URL}/api/payment/initiate`,
+      { orderDetails },
+      console.log("✅ Final orderDetails for Stripe:", orderDetails),
+      {
+        headers: {
+          'x-access-token': token,
+        },
+      }
+    );
+
+    const { sessionId } = response.data;
+
+    const stripe = await stripePromise;
+    const result = await stripe.redirectToCheckout({ sessionId });
+
+    if (result.error) {
+      console.error("Stripe redirect error:", result.error.message);
+      alert("Stripe payment redirect failed.");
+    }
+  } catch (error) {
+    console.error("Error initiating payment:", error);
+    alert("Failed to initiate payment.");
+  } finally {
+    setIsLoading(false);
+  }
+};
+
+
+const handleFullRegistrationAndPayment = async (event) => {
+  event.preventDefault();
+  await handleSubmit(event);
+  await handleProceedToPayment();
+};
+
+
 
   if (isLoading) {
     return (
@@ -1427,7 +1640,7 @@ console.log("Is 't' an Array?", Array.isArray(rawPricingPlans));
               ${totalAmount.toFixed(2)}
             </p>
             <button
-              type="submit"
+              onClick={handleFullRegistrationAndPayment}
               className="w-full max-w-sm bg-green-600 text-white px-7 py-3.5 rounded-xl text-lg font-bold
                                 hover:bg-green-700 transition duration-300 transform hover:scale-105 shadow-md
                                 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
