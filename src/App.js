@@ -184,6 +184,23 @@ const API_BASE_URL = 'https://backend-code-6vqy.onrender.com';
 
 function App() {
 
+  useEffect(() => {
+  const keepServerAwake = () => {
+    fetch("https://backend-code-6vqy.onrender.com/")
+      .then(() => console.log("✅ Warm-up ping sent to backend."))
+      .catch((err) => console.warn("⚠️ Warm-up ping failed:", err.message));
+  };
+
+  // Ping immediately on load
+  keepServerAwake();
+
+  // ⏱️ Ping every 1 minute (60,000 ms)
+  const interval = setInterval(keepServerAwake, 60000);
+
+  // Clear interval on unmount
+  return () => clearInterval(interval);
+}, []);
+
 
   return (
     <Router>
