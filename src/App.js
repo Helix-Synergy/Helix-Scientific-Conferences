@@ -201,6 +201,41 @@ function App() {
   return () => clearInterval(interval);
 }, []);
 
+useEffect(() => {
+  const fetchAndStoreSourceToken = async () => {
+    if (!localStorage.getItem('sourceToken')) {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const sourceId = urlParams.get('sourceId');
+        const conferenceType = urlParams.get('conferenceType');
+        const conferenceYear = urlParams.get('conferenceYear'); // if backend requires it
+
+        if (!sourceId || !conferenceType) {
+          console.error("❌ Missing sourceId or conferenceType in URL");
+          return;
+        }
+
+        console.log(`Attempting to fetch source token for sourceId: ${sourceId}, conferenceType: ${conferenceType}, conferenceYear: ${conferenceYear || 'N/A'}`);
+        
+        const response = await axios.get(
+          `${API_BASE_URL}/api/source/generate-token?sourceId=${sourceId}&conferenceType=${conferenceType}${conferenceYear ? `&conferenceYear=${conferenceYear}` : ''}`
+        );
+
+        const token = response.data.token;
+        localStorage.setItem('sourceToken', token);
+        console.log('✅ Successfully fetched and stored new source token.');
+      } catch (error) {
+        console.error('❌ Error fetching source token:', error.response ? error.response.data : error.message);
+      }
+    } else {
+      console.log('Source token already exists in localStorage.');
+    }
+  };
+
+  fetchAndStoreSourceToken();
+}, []);
+
+
 
   return (
     <Router>
