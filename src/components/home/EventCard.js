@@ -260,6 +260,7 @@ const EventCard = ({ event }) => {
               <img
                 src={event.image}
                 alt={event.title}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-102 cursor-interactive"
                 onError={(e) => { e.target.onerror = null; e.target.src="/images/lostChar.png" }}
               />

@@ -243,6 +243,7 @@ const HomeTestimonialsSection = () => {
                                             <img
                                                 src={testimonial.imageUrl}
                                                 alt={testimonial.author}
+                                                loading="lazy"
                                                 className="w-32 h-32 md:w-[150px] md:h-[150px] rounded-full object-cover mb-2"
                                             />
                                             <p className="font-semibold text-black text-sm md:text-base">{testimonial.author}</p>
@@ -282,6 +283,7 @@ const HomeTestimonialsSection = () => {
                                 <img
                                     src={activeTestimonial.imageUrl}
                                     alt={activeTestimonial.author}
+                                    loading="lazy"
                                     className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-4 border-white shadow-md mb-4"
                                 />
                                 <div className="max-w-sm h-auto overflow-y-auto pr-2 mb-4 scrollbar-hidden scrollbar-width: none;">

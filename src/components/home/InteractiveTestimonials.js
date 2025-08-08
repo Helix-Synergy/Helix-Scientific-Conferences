@@ -105,6 +105,7 @@ export default function Stack({
               <img
                 src={card.img}
                 alt={`card-${card.id}`}
+                loading="lazy"
                 className="w-full h-full object-cover pointer-events-none"
               />
             </motion.div>

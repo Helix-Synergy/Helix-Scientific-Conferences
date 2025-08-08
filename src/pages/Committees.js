@@ -120,6 +120,7 @@ const Committees = () => {
                   <img
                     src={member.imageUrl}
                     alt={member.name}
+                    loading="lazy"
                     className="w-full h-64 object-cover object-center"
                   />
                   <div className="p-6 text-center">

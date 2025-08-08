@@ -584,6 +584,7 @@ const ScatteredGallery = () => {
               <img
                 src={selectedImage.src}
                 alt={selectedImage.alt}
+                loading="lazy"
                 className="w-full h-auto max-h-[70vh] object-contain rounded-lg shadow-lg"
               />
               <p className="text-center text-gray-200 text-xl mt-4 font-semibold">{selectedImage.caption}</p>

@@ -79,6 +79,7 @@ const Journals = () => {
                   <img
                     src={journal.imageUrl}
                     alt={journal.title}
+                    loading="lazy"
                     className="w-full h-80 object-cover object-center"
                   />
                   <div className="p-4 text-center">

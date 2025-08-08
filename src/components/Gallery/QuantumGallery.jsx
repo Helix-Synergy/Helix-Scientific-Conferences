@@ -162,7 +162,7 @@ const QuantumGallery = () => {
               onHoverEnd={() => setHoveredId(null)}
               onClick={() => handleImageClick(image)}
             >
-              <img src={image.src} alt={image.alt} className="quantum-image" />
+              <img src={image.src} alt={image.alt} loading="lazy" className="quantum-image" />
               <div className="quantum-caption">
                 <p className="font-semibold">{image.caption}</p>
               </div>
@@ -200,6 +200,7 @@ const QuantumGallery = () => {
               <img
                 src={selectedImage.src}
                 alt={selectedImage.alt}
+                loading="lazy"
                 className="w-full h-auto max-h-[70vh] object-contain rounded-lg shadow-lg"
               />
               <p className="text-center text-gray-200 text-xl mt-4 font-semibold">{selectedImage.caption}</p>

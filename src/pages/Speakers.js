@@ -122,6 +122,7 @@ const Speakers = () => {
                   <img
                     src={speaker.imageUrl}
                     alt={speaker.name}
+                    loading="lazy"
                     className="w-full h-full object-cover object-center transform transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>

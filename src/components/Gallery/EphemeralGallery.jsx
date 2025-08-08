@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer'; // For scroll-triggered
 import './EphemeralGallery.css'; // Import the CSS file
 
 const images = [
-  { id: 1, src: 'https://images.unsplash.com/photo-1540575467063-162579c20d75?q=80&w=600&auto=format&fit=crop', alt: 'Event 1', caption: 'Opening Keynote - Vision for the Future' },
+  { id: 1, src: 'https://images.unsplash.com/photo-1540575467063-162579c20d75?q=80&w=600&auto=format&fit=crop', alt: 'Event 1', caption: 'Opening Keynote - Vision for the Future', },
   { id: 2, src: 'https://images.unsplash.com/photo-1505373877845-8c2aace4d816?q=80&w=600&auto=format&fit=crop', alt: 'Event 2', caption: 'Interactive Workshops & Learning' },
   { id: 3, src: 'https://images.unsplash.com/photo-1504384764586-bb4cdc1706b5?q=80&w=600&auto=format&fit=crop', alt: 'Event 3', caption: 'Dynamic Networking Sessions' },
   { id: 4, src: 'https://images.unsplash.com/photo-1531051515914-1e0c60c2394e?q=80&w=600&auto=format&fit=crop', alt: 'Event 4', caption: 'Exhibition Hall - Innovation Showcase' },
@@ -92,7 +92,7 @@ const EphemeralGallery = () => {
         custom={index} // Pass index as custom prop for staggered animation
       >
         <div className="ephemeral-light-trail-effect"></div> {/* Light trail overlay */}
-        <img src={image.src} alt={image.alt} className="ephemeral-image" />
+        <img src={image.src} alt={image.alt} loading="lazy" className="ephemeral-image" />
         <div className="ephemeral-caption">
           <p className="font-semibold">{image.caption}</p>
         </div>
@@ -153,6 +153,7 @@ const EphemeralGallery = () => {
               <img
                 src={selectedImage.src}
                 alt={selectedImage.alt}
+                loading="lazy"
                 className="w-full h-auto max-h-[70vh] object-contain rounded-lg shadow-lg"
               />
               <p className="text-center text-gray-200 text-xl mt-4 font-semibold">{selectedImage.caption}</p>

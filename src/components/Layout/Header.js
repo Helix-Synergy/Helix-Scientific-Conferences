@@ -214,6 +214,7 @@ function Header() {
                     src={Logo}
                     alt="Helix Conferences Logo"
                     className="h-12"
+                    loading="lazy"
                 />
             </Link>
 

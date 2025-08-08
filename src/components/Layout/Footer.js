@@ -1040,8 +1040,8 @@ function Footer() {
   ];
 
   const socialMediaLinks = [
-    { name: 'Facebook', icon: faFacebookF, href: 'https://www.facebook.com/people/Helix-Conference-LLC/61570321457803/', brandColor: 'bg-blue-600' },
-    { name: 'Instagram', icon: faInstagram, href: 'https://www.instagram.com/helix_scientific_conferences/?fbclid=IwY2xjawLPDsJleHRuA2FlbQIxMQBicmlkETFHY1owa2l4SVh3a1U4dUJiAR5fK64x9qd1yRrehrq3_DcHRirw6NfGpHHFF2CeeIh1zexrKM8wb5Lw_8SVsg_aem__iAurQPmLh5EAw3hA20cAw', brandColor: 'bg-pink-500' },
+    { name: 'Facebook', icon: faFacebookF, href: 'https://www.facebook.com/profile.php?id=61576697796195', brandColor: 'bg-blue-600' },
+    { name: 'Instagram', icon: faInstagram, href: 'https://www.instagram.com/helix_conferences/', brandColor: 'bg-pink-500' },
     { name: 'LinkedIn', icon: faLinkedinIn, href: 'https://www.linkedin.com/company/helixscientificconferences/?viewAsMember=true', brandColor: 'bg-blue-700' },
     { name: 'Twitter', icon: faTwitter, href: 'https://x.com/Helixconfe69272', brandColor: 'bg-blue-400' },
     { name: 'YouTube', icon: faYoutube, href: 'https://www.youtube.com/@Helixconferences', brandColor: 'bg-red-600' },
@@ -1079,7 +1079,7 @@ function Footer() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <img src={Logo} alt="Helix Conferences Logo" className="h-14 w-auto" />
+                  <img src={Logo} alt="Helix Conferences Logo" loading="lazy" className="h-14 w-auto" />
                 </MotionLink>
               </div>
               <div className="space-y-5 text-sm">

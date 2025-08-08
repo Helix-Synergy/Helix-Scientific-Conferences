@@ -95,6 +95,7 @@ const Blog = () => {
                 <img
                   src={post.imageUrl}
                   alt={post.title}
+                  loading="lazy"
                   className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 cursor-interactive"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

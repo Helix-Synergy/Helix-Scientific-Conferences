@@ -783,6 +783,7 @@ const InteractiveCard = ({ event }) => {
                     <img
                         src={event.image}
                         alt={event.title}
+                        loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-500 transform group-hover:scale-110"
                     />
                 </div>

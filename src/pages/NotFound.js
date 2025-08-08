@@ -83,7 +83,7 @@ const NotFound = () => {
             <div ref={sceneRef} className="relative w-full h-[calc(100vh-80px)] max-w-6xl mx-auto flex items-center justify-center perspective-[1000px] transform-style-preserve-3d">
                 {/* Background Layer (Conference Hall Stage) */}
                 <div ref={bgLayerRef} className="absolute inset-0 flex items-center justify-center">
-                    <img src="https://img.freepik.com/free-vector/conference-hall-stage-presentation-scene_33099-1886.jpg" alt="Background" className="w-full h-full object-cover opacity-60" />
+                    <img src="https://img.freepik.com/free-vector/conference-hall-stage-presentation-scene_33099-1886.jpg" alt="Background" loading="lazy" className="w-full h-full object-cover opacity-60" />
                 </div>
 
                 {/* Midground Layer (Online Video Conference) */}

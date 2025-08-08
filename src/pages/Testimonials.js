@@ -155,6 +155,7 @@ const Testimonials = () => {
                 <img
                   src={testimonial.imageUrl}
                   alt={testimonial.author}
+                  loading="lazy"
                   className="w-16 h-16 rounded-full object-cover mr-4 border-2 border-blue-400 flex-shrink-0"
                 />
                 <div>
