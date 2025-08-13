@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Block non-SEO or transactional paths
+Disallow: /stripe-success
+Disallow: /stripe-cancel
+Disallow: /register
+Disallow: /api/
+Disallow: /admin/
+
+# Primary sitemap
+Sitemap: https://helixconferences.com/sitemap.xml

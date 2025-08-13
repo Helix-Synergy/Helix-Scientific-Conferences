@@ -460,15 +460,7 @@ const WebinarsData = [
     link: "https://women.helixconferences.com/",
     year: 2025
   },
-  {
-    title: "Global Summit on Nano Engineering & Smart Technology (NEST 2025)",
-    code: "NEST-2025",
-    date: "Oct 14, 2025",
-    type: "webinar",
-    image: NEST2025,
-    link: "",
-    year: 2025
-  },
+  
 
 
   // Updated 2026 webinars

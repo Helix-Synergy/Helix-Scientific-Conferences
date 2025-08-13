@@ -10,68 +10,106 @@ import BiotechLifeSciencesForum from '../assets/images/homePage/BiotechLifeScien
 import RenewableEnergySustainability from '../assets/images/homePage/RenewableEnergySustainability.jpg'
 import ConnectInspireInnovate from '../assets/images/homePage/ConnectInspireInnovate..jpg'
 
+import innovationImageA from '../assets/images/homePage/innovationImageA.jpg'
+import innovationImageB from '../assets/images/homePage/innovationImageB.jpg'
+import innovationImageC from '../assets/images/homePage/innovationImageC.jpg'
+import innovationImageD from '../assets/images/homePage/innovationImageD.jpg'
+import innovationImageE from '../assets/images/homePage/innovationImageE.jpg'
+import Foodmeet_2026 from "../assets/images/Hybrid/Foodmeet_2026.jpg";
+import Techmatics_2026 from '../assets/images/Hybrid/TECHMATICS_2026.jpg'
+import Biocon_2025 from '../assets/images/Hybrid/BIOCON_2025.jpg'
+import Pharmatech_2025 from '../assets/images/Hybrid/PHARMATECH_2025.jpg'
+import Mediclave_2025 from '../assets/images/Hybrid/MEDICLAVE_2025.jpg'
+
+
+
+
 
 // About Section Images (Pexels URLs related to collaboration/work)
 const aboutImg1 = "https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 const aboutImg2 = "https://images.pexels.com/photos/1708936/pexels-photo-1708936.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 
-// Conference Section Images (Pexels URLs for conference-like visuals)
-const confImg1 = "https://images.pexels.com/photos/3184643/pexels-photo-3184643.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-const confImg2 = "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-const confImg3 = "https://images.pexels.com/photos/1181534/pexels-photo-1181534.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-
-// Webinar Section Images (Pexels URLs for online learning/webinars)
-const webinarImg1 = "https://images.pexels.com/photos/4144933/pexels-photo-4144933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-const webinarImg2 = "https://images.pexels.com/photos/3762804/pexels-photo-3762804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-const webinarImg3 = "https://images.pexels.com/photos/5926399/pexels-photo-5926399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 
 // Testimonial Avatars (Pexels URLs for diverse headshots)
 const testimonialAvatar1 = "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 const testimonialAvatar2 = "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 const testimonialAvatar3 = "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 
-// Four distinct images for the dynamic innovation section layouts (Pexels URLs for various work/collaboration scenes)
-const innovationImageA = "https://media.istockphoto.com/id/1363105039/photo/businesspeople-do-video-conference-call-with-big-wall-tv-in-office-meeting-room-diverse-team.jpg?s=612x612&w=0&k=20&c=o7UjhyG3YmLj7jTtSdMkN-K_tE4HSfAq9wWdhiRDFAA=";
-const innovationImageB = "https://media.istockphoto.com/id/1481370371/photo/portrait-of-enthusiastic-hispanic-young-woman-working-on-computer-in-a-modern-bright-office.jpg?s=612x612&w=0&k=20&c=8kNce9Ruc9F2KXvnwf0stWQXCwwQTBCrW8efrqhUIa4=";
-const innovationImageC = "https://images.pexels.com/photos/3184424/pexels-photo-3184424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-const innovationImageD = "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 
-// heroData is now an array of slides
+// // heroData is now an array of slides
+// export const heroSlides = [
+//   {
+//     backgroundImage: GlobalScienceTechnology,
+//     mainTitle: "Global Science & Technology Summit 2025",
+//     subHeading: "Driving Innovation, Collaboration, And Discovery Across Disciplines",
+//     button1: { text: "Explore Conferences", link: "/hybrids" },
+//     button2: { text: "About Helix", link: "/about" },
+//   },
+//   {
+//     backgroundImage: ArtificialIntelligenceMachineLearning,
+//     mainTitle: "Artificial Intelligence & Machine Learning Congress",
+//     subHeading: "Join Global Leaders Shaping The Future Of Intelligent Systems",
+//     button1: { text: "AI & Robotics Tracks", link: "https://arm.helixconferences.com/", target: "_blank" },
+//     button2: { text: "Submit Your Abstract", link: "/contact" },
+//   },
+//   {
+//     backgroundImage: BiotechLifeSciencesForum,
+//     mainTitle: "International Biotech & Life Sciences Forum",
+//     subHeading: "Breakthrough Research In Genomics, Proteomics & Medical Innovation",
+//     button1: { text: "Biotech Conference Agenda", link: "https://biocon.helixconferences.com/", target: "_blank" },
+//     button2: { text: "Register To Attend", link: "/buy-a-ticket" },
+//   },
+//   {
+//     backgroundImage: RenewableEnergySustainability,
+//     mainTitle: "Genetic Engineering & Nanotechnology Summit",
+//     subHeading: "Bridging Genetics And Nanotechnology For Future Innovations",
+//     button1: { text: "Explore GENT Sessions", link: "https://gent.helixconferences.com/", target: "_blank" },
+//     button2: { text: "Partner With Helix", link: "/contact" },
+//   },
+//   {
+//     backgroundImage: ConnectInspireInnovate,
+//     mainTitle: "Connect. Inspire. Innovate.",
+//     subHeading: "Empowering Global Scientific Dialogue Through Helix Conferences",
+//     button1: { text: "Apply As A Speaker", link: "/speakers" },
+//     button2: { text: "Success Stories", link: "/testimonials" },
+//   },
+// ];
+
 export const heroSlides = [
   {
-    backgroundImage: GlobalScienceTechnology,
-    mainTitle: "Global Science & Technology Summit 2025",
-    subHeading: "Driving Innovation, Collaboration, And Discovery Across Disciplines",
-    button1: { text: "Explore Conferences", link: "/hybrids" },
-    button2: { text: "About Helix", link: "/about" },
+    backgroundImage: Foodmeet_2026,
+    mainTitle: "World Agriculture & Food Sciences Conclave",
+    subHeading: "Nov 25-27, 2025 | Valencia, Spain | (FOODMEET-2025)",
+    button1: { text: "View Conference Details", link: "https://foodmeet.helixconferences.com/", target: "_blank" },
+    button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
-    backgroundImage: ArtificialIntelligenceMachineLearning,
-    mainTitle: "Artificial Intelligence & Machine Learning Congress",
-    subHeading: "Join Global Leaders Shaping The Future Of Intelligent Systems",
-    button1: { text: "AI & Robotics Tracks", link: "https://arm.helixconferences.com/", target: "_blank" },
-    button2: { text: "Submit Your Abstract", link: "/contact" },
+    backgroundImage: Techmatics_2026,
+    mainTitle: "International Science & Technology Summit",
+    subHeading: "Nov 25-27, 2025 | Valencia, Spain | (TECHMATICS-2025)",
+    button1: { text: "View Conference Details", link: "https://techmatics.helixconferences.com/", target: "_blank" },
+    button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
-    backgroundImage: BiotechLifeSciencesForum,
-    mainTitle: "International Biotech & Life Sciences Forum",
-    subHeading: "Breakthrough Research In Genomics, Proteomics & Medical Innovation",
-    button1: { text: "Biotech Conference Agenda", link: "https://biocon.helixconferences.com/", target: "_blank" },
-    button2: { text: "Register To Attend", link: "/buy-a-ticket" },
+    backgroundImage: Pharmatech_2025,
+    mainTitle: "Global Pharmaceutical Conclave",
+    subHeading: "Nov 25-27, 2025 | Valencia, Spain | (PHARMATECH-2025)",
+    button1: { text: "View Conference Details", link: "https://pharmatech.helixconferences.com/", target: "_blank" },
+    button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
-    backgroundImage: RenewableEnergySustainability,
-    mainTitle: "Genetic Engineering & Nanotechnology Summit",
-    subHeading: "Bridging Genetics And Nanotechnology For Future Innovations",
-    button1: { text: "Explore GENT Sessions", link: "https://gent.helixconferences.com/", target: "_blank" },
-    button2: { text: "Partner With Helix", link: "/contact" },
+    backgroundImage: Biocon_2025,
+    mainTitle: "World Biotechnology Summit",
+    subHeading: "Nov 25-27, 2025 | Valancia, Spain | (BIOCON-2025)",
+    button1: { text: "View Conference Details", link: "https://biocon.helixconferences.com/", target: "_blank" },
+    button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
-    backgroundImage: ConnectInspireInnovate,
-    mainTitle: "Connect. Inspire. Innovate.",
-    subHeading: "Empowering Global Scientific Dialogue Through Helix Conferences",
-    button1: { text: "Apply As A Speaker", link: "/speakers" },
-    button2: { text: "Success Stories", link: "/testimonials" },
+    backgroundImage: Mediclave_2025,
+    mainTitle: "Global Medical Conclave",
+    subHeading: "Nov 25-27, 2025 | Valancia, Spain | (MEDICLAVE-2025)",
+    button1: { text: "View Conference Details", link: "https://mediclave.helixconferences.com/", target: "_blank" },
+    button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
 ];
 
@@ -105,6 +143,7 @@ export const aboutData = {
     innovationImageB,
     innovationImageC,
     innovationImageD,
+    innovationImageE
   ],
   satisfiedClients: {
     count: 3500,
@@ -118,59 +157,9 @@ export const aboutData = {
   },
 };
 
-export const conferencesData = [
-  {
-    type: "Conference",
-    title: "Global Summit on AI & Robotics",
-    date: "November 10-12, 2025",
-    location: "Virtual/Hybrid",
-    image: confImg1,
-    link: "/conferences/ai-robotics"
-  },
-  {
-    type: "Conference",
-    title: "International Symposium on Biotechnology",
-    date: "December 5-7, 2025",
-    location: "London, UK",
-    image: confImg2,
-    link: "/conferences/biotechnology"
-  },
-  {
-    type: "Conference",
-    title: "Future of Renewable Energy",
-    date: "January 20-22, 2026",
-    location: "Dubai, UAE",
-    image: confImg3,
-    link: "/conferences/renewable-energy"
-  },
-];
 
-export const webinarsData = [
-  {
-    type: "Webinar",
-    title: "Advancements in Quantum Computing",
-    date: "October 15, 2025",
-    speaker: "Dr. Jane Doe",
-    image: webinarImg1,
-    link: "/webinars/quantum-computing"
-  },
-  {
-    type: "Webinar",
-    title: "Sustainable Urban Development",
-    date: "November 1, 2025",
-    speaker: "Prof. John Smith",
-    image: webinarImg2,
-    link: "/webinars/urban-development"
-  },
-  {
-    type: "Webinar",
-    title: "Blockchain in Healthcare",
-    date: "November 25, 2025",
-    speaker: "Dr. Alice Brown",
-    image: webinarImg3,
-    link: "/webinars/blockchain"
-  },
-];
+
+
 
 export const journalsData = {
   heading: "Helix Open Access Journals",

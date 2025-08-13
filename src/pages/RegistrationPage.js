@@ -5,16 +5,19 @@ import axios from "axios";
 import Select from "react-select";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { Mic2, Webcam, Pencil, ExternalLink } from "lucide-react";
-import { loadStripe } from '@stripe/stripe-js';
+import { loadStripe } from "@stripe/stripe-js";
 
 // Import your conference data - ensure these files exist and have the 'date' field
 import webinarsData from "../data/webinarsData1";
 import hybridsData from "../data/hybridsData1";
+import SEO from "../components/SEO";
 
 // Define your backend URL from environment variables or direct string
 const API_BASE_URL = "https://backend-code-6vqy.onrender.com";
 // const API_BASE_URL = "http://localhost:5000"; // Change this to your backend URL
-const stripePromise = loadStripe('pk_test_51R1tM1Li7mWRrUj3uuKpRmRiibLed5pn6994X5z0IYkezj9r6eANZPvB0R3H1E6xyoFmkoiexBuUKQtnq4xIkhNV00MWhaySio');
+const stripePromise = loadStripe(
+  "pk_test_51R1tM1Li7mWRrUj3uuKpRmRiibLed5pn6994X5z0IYkezj9r6eANZPvB0R3H1E6xyoFmkoiexBuUKQtnq4xIkhNV00MWhaySio"
+);
 
 // Helper function to get category icons (retained as is)
 const getCategoryIcon = (category) => {
@@ -378,104 +381,101 @@ const RegistrationPage = () => {
 
   // Helper to provide placeholder features (should come from backend)
   const getPlaceholderFeatures = (category) => {
-  switch (category) {
-    case "e-Poster Presentation":
-      return [
-        "Digital e-poster Display",
-        "Abstract in Conference Proceedings",
-        "Certificate of Presentation",
-      ];
-    case "Poster Presentation":
-      return [
-        "Boost your Profile",
-        "Networking",
-        "Certificate of Presentation",
-      ];
-    case "Video Presentation":
-      return [
-        "10-15 minutes Video Slot",
-        "Online Access for 1 hour",
-        "Certificate of Presentation",
-      ];
-    case "Virtual Presentation":
-      return [
-        "Online Slot for 20 minutes",
-        "Global Networking",
-        "Promotions",
-        "Certificate of Presentation",
-      ];
-    case "Oral Presentation":
-      return [
-        "Keynote Slot Eligibility",
-        "Promotions",
-        "Conference Kit",
-        "Networking Access",
-      ];
-    case "Delegate Access":
-      return [
-        "Access to all sessions",
-        "Conference Handbook",
-        "Coffee Break & Lunch",
-        "Networking Opportunities",
-      ];
-    case "Suit - A (OP + 2N stay)":
-      return [
-        "Oral Presentation",
-        "2 Night’s Accommodation",
-        "Shuttle Service",
-        "Certificate & Promotions",
-        "Queen Size Room",
-      ];
-    case "Suit - B (OP + 3N stay)":
-      return [
-        "Oral Presentation",
-        "3 Night’s Accommodation",
-        "Shuttle Service",
-        "Certificate & Promotions",
-        "Queen Size Room",
-      ];
-    case "Accompanying Person":
-      return [
-        "Access to social events",
-        "Meals & Coffee Breaks",
-      ];
-    case "Extra N-Stay":
-      return [
-        "Additional Night(s) at Conference Hotel",
-        "Breakfast Included",
-      ];
-    case "Article Publication (Additional)":
-      return [
-        "Full Paper Publication in Journal",
-        "Peer Review Process",
-        "DOI Assignment",
-      ];
-    case "Virtual Exhibitor Booth":
-      return [
-        "Dedicated Exhibition Booth",
-        "Company Logo on Website",
-        "Networking with Attendees",
-        "Lead Generation Opportunities",
-      ];
-    case "Standard Pass":
-      return [
-        "Access to all main sessions",
-        "Digital conference proceedings",
-        "Networking events",
-        "Coffee breaks & lunch",
-      ];
-    case "VIP Pass":
-      return [
-        "All Standard Pass features",
-        "Exclusive VIP lounge access",
-        "Priority seating",
-        "Meet & Greet with keynote speakers",
-        "Premium gift bag",
-      ];
-    default:
-      return ["Conference Access", "Networking", "Certificate"];
-  }
-};
+    switch (category) {
+      case "e-Poster Presentation":
+        return [
+          "Digital e-poster Display",
+          "Abstract in Conference Proceedings",
+          "Certificate of Presentation",
+        ];
+      case "Poster Presentation":
+        return [
+          "Boost your Profile",
+          "Networking",
+          "Certificate of Presentation",
+        ];
+      case "Video Presentation":
+        return [
+          "10-15 minutes Video Slot",
+          "Online Access for 1 hour",
+          "Certificate of Presentation",
+        ];
+      case "Virtual Presentation":
+        return [
+          "Online Slot for 20 minutes",
+          "Global Networking",
+          "Promotions",
+          "Certificate of Presentation",
+        ];
+      case "Oral Presentation":
+        return [
+          "Keynote Slot Eligibility",
+          "Promotions",
+          "Conference Kit",
+          "Networking Access",
+        ];
+      case "Delegate Access":
+        return [
+          "Access to all sessions",
+          "Conference Handbook",
+          "Coffee Break & Lunch",
+          "Networking Opportunities",
+        ];
+      case "Suit - A (OP + 2N stay)":
+        return [
+          "Oral Presentation",
+          "2 Night’s Accommodation",
+          "Shuttle Service",
+          "Certificate & Promotions",
+          "Queen Size Room",
+        ];
+      case "Suit - B (OP + 3N stay)":
+        return [
+          "Oral Presentation",
+          "3 Night’s Accommodation",
+          "Shuttle Service",
+          "Certificate & Promotions",
+          "Queen Size Room",
+        ];
+      case "Accompanying Person":
+        return ["Access to social events", "Meals & Coffee Breaks"];
+      case "Extra N-Stay":
+        return [
+          "Additional Night(s) at Conference Hotel",
+          "Breakfast Included",
+        ];
+      case "Article Publication (Additional)":
+        return [
+          "Full Paper Publication in Journal",
+          "Peer Review Process",
+          "DOI Assignment",
+        ];
+      case "Virtual Exhibitor Booth":
+        return [
+          "Dedicated Exhibition Booth",
+          "Company Logo on Website",
+          "Networking with Attendees",
+          "Lead Generation Opportunities",
+        ];
+      case "Standard Pass":
+        return [
+          "Access to all main sessions",
+          "Digital conference proceedings",
+          "Networking events",
+          "Coffee breaks & lunch",
+        ];
+      case "VIP Pass":
+        return [
+          "All Standard Pass features",
+          "Exclusive VIP lounge access",
+          "Priority seating",
+          "Meet & Greet with keynote speakers",
+          "Premium gift bag",
+        ];
+      default:
+        return ["Conference Access", "Networking", "Certificate"];
+    }
+  };
 
   // New helper function for dynamic card colors based on category and selection
   const getCardColors = (category, isSelected) => {
@@ -570,12 +570,12 @@ const RegistrationPage = () => {
             const rawPricingPlans = response.data.pricingPlans || [];
             const transformedPricingPlans = {};
             const transformedAddOns = {};
-console.log("Debugging 't':", rawPricingPlans);
-console.log("Type of 't':", typeof rawPricingPlans);
-console.log("Is 't' an Array?", Array.isArray(rawPricingPlans));
+            console.log("Debugging 't':", rawPricingPlans);
+            console.log("Type of 't':", typeof rawPricingPlans);
+            console.log("Is 't' an Array?", Array.isArray(rawPricingPlans));
             rawPricingPlans.forEach((plan) => {
               // Now, we just use basePrice as the single price
-              
+
               const singlePrice = plan.basePrice;
 
               const planData = {
@@ -721,370 +721,210 @@ console.log("Is 't' an Array?", Array.isArray(rawPricingPlans));
     setConferenceDetails(null);
   };
 
-  // const handleProceedWithConference = async (confOption) => {
-  //   if (!confOption) {
-  //     alert("Please select a conference.");
-  //     return;
-  //   }
-
-  //   setIsLoading(true);
-  //   setError(null);
-
-  //   const selectedConf = confOption.originalConf;
-
-  //   try {
-  //     const response = await axios.get(
-  //       `${API_BASE_URL}/api/source/generate-token`,
-  //       {
-  //         params: {
-  //           sourceId: selectedConf.id,
-  //           conferenceType: selectedConf.type,
-  //           date: selectedConf.date,
-  //           conferenceYear: selectedConf.year,
-  //         },
-  //       }
-  //     );
-
-  //     if (response.data.token) {
-  //       navigate(`/registration?sourceToken=${response.data.token}`);
-  //     } else {
-  //       setError("Failed to generate token. Please try again.");
-  //     }
-  //   } catch (err) {
-  //     console.error("Error generating token:", err);
-  //     setError(
-  //       err.response?.data?.message ||
-  //         "Failed to generate token. Please try again."
-  //     );
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     if (!participantFullName || !participantEmail || !participantCountry) {
-//       alert("Please fill in all required participant information.");
-//       return;
-//     }
-
-//     if (totalAmount <= 0 && Object.keys(selectedItems).length === 0) {
-//       alert("Please select at least one registration item.");
-//       return;
-//     }
-
-//     // Ensure selectedItems reflects the correct price at the time of submission
-//     const finalSelectedItems = {};
-//     for (const category in selectedItems) {
-//       const price =
-//         conferenceDetails.pricingPlans[category]?.price ||
-//         conferenceDetails.pricingPlans["Add-Ons"]?.[category]?.price;
-
-//       finalSelectedItems[category] = {
-//         quantity: selectedItems[category].quantity,
-//         price: price, // Now directly referencing the single 'price'
-//       };
-//     }
-
-//     const registrationData = {
-//       conferenceId: conferenceDetails.sourceId,
-//       conferenceName: conferenceDetails.name,
-//       selectedItems: finalSelectedItems,
-//       totalAmount: totalAmount,
-//       participantInfo: {
-//         fullName: participantFullName,
-//         email: participantEmail,
-//         country: participantCountry,
-//         phone: participantPhone,
-//         organization: participantOrganization,
-//         // Removed participantType as it's no longer relevant for pricing
-//       },
-//     };
-
-//     console.log("Sending registration details to backend:", registrationData);
-
-//     try {
-//       const response = await axios.post(
-//         `${API_BASE_URL}/api/send-registration-email`,
-//         registrationData
-//       );
-
-//       if (response.status === 200) {
-//         alert(
-//           "Registration submitted successfully! You will receive a confirmation email shortly."
-//         );
-//         // navigate('/thank-you'); // Uncomment if you have a thank you page
-//         // Optional: Reset form after successful submission
-//         setSelectedItems({});
-//         setParticipantFullName("");
-//         setParticipantEmail("");
-//         setParticipantCountry("");
-//         setParticipantPhone("");
-//         setParticipantOrganization("");
-//         setTotalAmount(0);
-//       } else {
-//         alert(
-//           "There was an issue submitting your registration. Please try again."
-//         );
-//       }
-//     } catch (error) {
-//       console.error("Error submitting registration:", error);
-//       alert(
-//         `Failed to submit registration: ${
-//           error.response?.data?.message || error.message
-//         }. Please try again.`
-//       );
-//     }
-//   };
-
-// const handleProceedToPayment = async () => {
-//   try {
-//     setIsLoading(true);
-
-//     const response = await axios.post(
-//       `${API_BASE_URL}/api/payment/initiate`,
-//       {
-//         orderDetails: [
-//           {
-//             name: 'e-Poster Presentation',
-//             price: 139,
-//             quantity: 1,
-//           },
-//         ],
-//       },
-//       {
-//         headers: {
-//           'x-access-token': localStorage.getItem('sourceToken'),
-//         },
-//       }
-//     );
-
-//     const { sessionId } = response.data;
-
-//     const stripe = await stripePromise;
-//     const result = await stripe.redirectToCheckout({ sessionId });
-
-//     if (result.error) {
-//       console.error("Stripe redirect error:", result.error.message);
-//       alert("Stripe payment redirect failed.");
-//     }
-//   } catch (error) {
-//     console.error("Error initiating payment:", error);
-//     alert("Failed to initiate payment.");
-//   } finally {
-//     setIsLoading(false);
-//   }
-// };
-
-
-// const handleFullRegistrationAndPayment = async (event) => {
-//     event.preventDefault();
-//   await handleSubmit(); // optional: save to DB
-//   await handleProceedToPayment(); // redirect to Stripe
-// };
-
-const handleProceedWithConference = async (confOption) => {
-  if (!confOption) {
-    alert("Please select a conference.");
-    return;
-  }
-
-  setIsLoading(true);
-  setError(null);
-
-  const selectedConf = confOption.originalConf;
-
-  try {
-    const response = await axios.get(
-      `${API_BASE_URL}/api/source/generate-token`,
-      {
-        params: {
-          sourceId: selectedConf.id,
-          conferenceType: selectedConf.type,
-          date: selectedConf.date,
-          conferenceYear: selectedConf.year,
-        },
-      }
-    );
-
-    if (response.data.token) {
-      localStorage.setItem("sourceToken", response.data.token); // ✅ Save token locally
-      navigate(`/registration?sourceToken=${response.data.token}`);
-    } else {
-      setError("Failed to generate token. Please try again.");
+  const handleProceedWithConference = async (confOption) => {
+    if (!confOption) {
+      alert("Please select a conference.");
+      return;
     }
-  } catch (err) {
-    console.error("Error generating token:", err);
-    setError(
-      err.response?.data?.message ||
-        "Failed to generate token. Please try again."
-    );
-  } finally {
-    setIsLoading(false);
-  }
-};
 
-const handleSubmit = async (event) => {
-  // Prevent the default form submission behavior, but allow the calling function to handle it
-  if (event) {
-    event.preventDefault();
-  }
+    setIsLoading(true);
+    setError(null);
 
-  // --- 1. Client-Side Validation ---
-  if (!participantFullName || !participantEmail || !participantCountry) {
-    alert("Please fill in all required participant information.");
-    return false; // Stop here and signal failure
-  }
+    const selectedConf = confOption.originalConf;
 
-  if (totalAmount <= 0 && Object.keys(selectedItems).length === 0) {
-    alert("Please select at least one registration item.");
-    return false; // Stop here and signal failure
-  }
+    try {
+      const response = await axios.get(
+        `${API_BASE_URL}/api/source/generate-token`,
+        {
+          params: {
+            sourceId: selectedConf.id,
+            conferenceType: selectedConf.type,
+            date: selectedConf.date,
+            conferenceYear: selectedConf.year,
+          },
+        }
+      );
 
-  // --- 2. Prepare Data ---
-  const finalSelectedItems = {};
-  for (const category in selectedItems) {
-    const price =
-      conferenceDetails.pricingPlans[category]?.price ||
-      conferenceDetails.pricingPlans["Add-Ons"]?.[category]?.price;
-
-    finalSelectedItems[category] = {
-      quantity: selectedItems[category].quantity,
-      price: price,
-    };
-  }
-
-  const registrationData = {
-    conferenceId: conferenceDetails.sourceId,
-    conferenceName: conferenceDetails.name,
-    selectedItems: finalSelectedItems,
-    totalAmount: totalAmount,
-    participantInfo: {
-      fullName: participantFullName,
-      email: participantEmail,
-      country: participantCountry,
-      phone: participantPhone,
-      organization: participantOrganization,
-    },
+      if (response.data.token) {
+        localStorage.setItem("sourceToken", response.data.token); // ✅ Save token locally
+        navigate(`/registration?sourceToken=${response.data.token}`);
+      } else {
+        setError("Failed to generate token. Please try again.");
+      }
+    } catch (err) {
+      console.error("Error generating token:", err);
+      setError(
+        err.response?.data?.message ||
+          "Failed to generate token. Please try again."
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  // It's a good practice to update the state with the final items before proceeding
-  setSelectedItems(finalSelectedItems);
+  const handleSubmit = async (event) => {
+    // Prevent the default form submission behavior, but allow the calling function to handle it
+    if (event) {
+      event.preventDefault();
+    }
 
-  console.log("Sending registration details to backend:", registrationData);
+    // --- 1. Client-Side Validation ---
+    if (!participantFullName || !participantEmail || !participantCountry) {
+      alert("Please fill in all required participant information.");
+      return false; // Stop here and signal failure
+    }
 
-  // --- 3. API Call and Error Handling ---
-  try {
-    const response = await axios.post(
-      `${API_BASE_URL}/api/send-registration-email`,
-      registrationData
-    );
+    if (totalAmount <= 0 && Object.keys(selectedItems).length === 0) {
+      alert("Please select at least one registration item.");
+      return false; // Stop here and signal failure
+    }
 
-    if (response.status === 200) {
-      console.log("Registration submitted successfully.");
-      return true; // Signal success
-    } else {
-      // Handle non-200 responses
-      alert("There was an issue submitting your registration.");
+    // --- 2. Prepare Data ---
+    const finalSelectedItems = {};
+    for (const category in selectedItems) {
+      const price =
+        conferenceDetails.pricingPlans[category]?.price ||
+        conferenceDetails.pricingPlans["Add-Ons"]?.[category]?.price;
+
+      finalSelectedItems[category] = {
+        quantity: selectedItems[category].quantity,
+        price: price,
+      };
+    }
+
+    const registrationData = {
+      conferenceId: conferenceDetails.sourceId,
+      conferenceName: conferenceDetails.name,
+      selectedItems: finalSelectedItems,
+      totalAmount: totalAmount,
+      participantInfo: {
+        fullName: participantFullName,
+        email: participantEmail,
+        country: participantCountry,
+        phone: participantPhone,
+        organization: participantOrganization,
+      },
+    };
+
+    // It's a good practice to update the state with the final items before proceeding
+    setSelectedItems(finalSelectedItems);
+
+    console.log("Sending registration details to backend:", registrationData);
+
+    // --- 3. API Call and Error Handling ---
+    try {
+      const response = await axios.post(
+        `${API_BASE_URL}/api/send-registration-email`,
+        registrationData
+      );
+
+      if (response.status === 200) {
+        console.log("Registration submitted successfully.");
+        return true; // Signal success
+      } else {
+        // Handle non-200 responses
+        alert("There was an issue submitting your registration.");
+        return false; // Signal failure
+      }
+    } catch (error) {
+      // Handle network or server errors
+      console.error("Error submitting registration:", error);
+      alert(
+        `Failed to submit registration: ${
+          error.response?.data?.message || error.message
+        }. Please try again.`
+      );
       return false; // Signal failure
     }
-  } catch (error) {
-    // Handle network or server errors
-    console.error("Error submitting registration:", error);
-    alert(
-      `Failed to submit registration: ${
-        error.response?.data?.message || error.message
-      }. Please try again.`
-    );
-    return false; // Signal failure
-  }
-};
+  };
 
-const handleProceedToPayment = async () => {
-  try {
-    setIsLoading(true);
+  const handleProceedToPayment = async () => {
+    try {
+      setIsLoading(true);
 
-    const token = localStorage.getItem('sourceToken');
-    if (!token) {
-      alert("Conference token missing. Please go back and select a conference again.");
-      setIsLoading(false);
-      return;
-    }
-
-    // Build clean orderDetails with validated pricing
-    const orderDetails = Object.entries(selectedItems)
-      .map(([category, { quantity }]) => {
-        // Try to resolve price from both main and add-on plans
-        let price = conferenceDetails.pricingPlans?.[category]?.price;
-        if (!price && conferenceDetails.pricingPlans?.["Add-Ons"]?.[category]?.price) {
-          price = conferenceDetails.pricingPlans["Add-Ons"][category].price;
-        }
-
-        const validPrice = Number(price);
-        if (!validPrice || isNaN(validPrice)) {
-          console.warn(`⚠️ Invalid price for '${category}' — skipping.`);
-          return null;
-        }
-
-        return {
-          name: category,
-          price: validPrice,
-          quantity: quantity,
-        };
-      })
-      .filter(Boolean); // remove any nulls
-
-    if (orderDetails.length === 0) {
-      alert("Your selected items have missing prices. Please reselect valid options.");
-      setIsLoading(false);
-      return;
-    }
-
-    console.log("✅ Final orderDetails for Stripe:", orderDetails);
-
-    const response = await axios.post(
-      `${API_BASE_URL}/api/payment/initiate`,
-      { orderDetails },
-      {
-        headers: {
-          'x-access-token': token,
-        },
+      const token = localStorage.getItem("sourceToken");
+      if (!token) {
+        alert(
+          "Conference token missing. Please go back and select a conference again."
+        );
+        setIsLoading(false);
+        return;
       }
-    );
 
-    const { sessionId } = response.data;
+      // Build clean orderDetails with validated pricing
+      const orderDetails = Object.entries(selectedItems)
+        .map(([category, { quantity }]) => {
+          // Try to resolve price from both main and add-on plans
+          let price = conferenceDetails.pricingPlans?.[category]?.price;
+          if (
+            !price &&
+            conferenceDetails.pricingPlans?.["Add-Ons"]?.[category]?.price
+          ) {
+            price = conferenceDetails.pricingPlans["Add-Ons"][category].price;
+          }
 
-    const stripe = await stripePromise;
-    const result = await stripe.redirectToCheckout({ sessionId });
+          const validPrice = Number(price);
+          if (!validPrice || isNaN(validPrice)) {
+            console.warn(`⚠️ Invalid price for '${category}' — skipping.`);
+            return null;
+          }
 
-    if (result.error) {
-      console.error("Stripe redirect error:", result.error.message);
-      alert("Stripe payment redirect failed.");
+          return {
+            name: category,
+            price: validPrice,
+            quantity: quantity,
+          };
+        })
+        .filter(Boolean); // remove any nulls
+
+      if (orderDetails.length === 0) {
+        alert(
+          "Your selected items have missing prices. Please reselect valid options."
+        );
+        setIsLoading(false);
+        return;
+      }
+
+      console.log("✅ Final orderDetails for Stripe:", orderDetails);
+
+      const response = await axios.post(
+        `${API_BASE_URL}/api/payment/initiate`,
+        { orderDetails },
+        {
+          headers: {
+            "x-access-token": token,
+          },
+        }
+      );
+
+      const { sessionId } = response.data;
+
+      const stripe = await stripePromise;
+      const result = await stripe.redirectToCheckout({ sessionId });
+
+      if (result.error) {
+        console.error("Stripe redirect error:", result.error.message);
+        alert("Stripe payment redirect failed.");
+      }
+    } catch (error) {
+      console.error("Error initiating payment:", error);
+      alert("Failed to initiate payment.");
+    } finally {
+      setIsLoading(false);
     }
-  } catch (error) {
-    console.error("Error initiating payment:", error);
-    alert("Failed to initiate payment.");
-  } finally {
-    setIsLoading(false);
-  }
-};
+  };
 
+  const handleFullRegistrationAndPayment = async (event) => {
+    event.preventDefault();
 
+    // Call handleSubmit and check its return value
+    const isFormValid = await handleSubmit(event);
 
-const handleFullRegistrationAndPayment = async (event) => {
-  event.preventDefault();
-  
-  // Call handleSubmit and check its return value
-  const isFormValid = await handleSubmit(event);
-  
-  // Only proceed to payment if the form submission was successful
-  if (isFormValid) {
-    await handleProceedToPayment();
-  }
-};
-
-
+    // Only proceed to payment if the form submission was successful
+    if (isFormValid) {
+      await handleProceedToPayment();
+    }
+  };
 
   if (isLoading) {
     return (
@@ -1096,229 +936,286 @@ const handleFullRegistrationAndPayment = async (event) => {
 
   if (error || !conferenceDetails) {
     return (
-  <div className="min-h-screen flex flex-col items-center justify-center font-sans bg-gray-50 text-gray-800 p-6 pt-12">
-    {error && (
-      <div className="w-full max-w-xl text-center mb-8 px-4">
-        <p className="text-lg text-red-600 font-medium bg-red-100 p-4 rounded-xl shadow-lg border border-red-200">
-          {error}
-        </p>
-      </div>
-    )}
+      <div className="min-h-screen flex flex-col items-center justify-center font-sans bg-gray-50 text-gray-800 p-6 pt-12">
+        {error && (
+          <div className="w-full max-w-xl text-center mb-8 px-4">
+            <p className="text-lg text-red-600 font-medium bg-red-100 p-4 rounded-xl shadow-lg border border-red-200">
+              {error}
+            </p>
+          </div>
+        )}
 
-    <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-stretch justify-center gap-8 mb-12 px-4">
-      <div className="w-full md:w-1/2 bg-white p-7 md:p-9 rounded-2xl shadow-2xl text-center border border-gray-200 flex flex-col justify-between">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">
-          Select a Conference
-        </h2>
-        <p className="text-base text-gray-600 mb-6">
-          Choose an event to proceed with your registration.
-        </p>
-        <Select
-          value={selectedConferenceOption}
-          onChange={handleReactSelectChange}
-          options={allConferences}
-          placeholder="Type to search or select a conference..."
-          isClearable
-          isSearchable
-          className="mb-6 text-gray-800 text-base"
-          classNamePrefix="react-select"
-          styles={{
-            control: (base) => ({
-              ...base,
-              backgroundColor: "#f9fafb",
-              borderColor: "#d1d5db",
-              boxShadow: "0 1px 2px rgba(0,0,0,0.05)",
-              minHeight: "48px",
-              "&:hover": {
-                borderColor: "#9ca3af",
-              },
-            }),
-            option: (base, state) => ({
-              ...base,
-              backgroundColor: state.isFocused ? "#e0e7ff" : "white",
-              color: "#1f2937",
-              padding: "12px 20px",
-              fontSize: "1rem",
-            }),
-            singleValue: (base) => ({
-              ...base,
-              color: "#1f2937",
-              fontSize: "1rem",
-            }),
-            menu: (base) => ({
-              ...base,
-              backgroundColor: "white",
-              borderRadius: "0.75rem",
-              boxShadow:
-                "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-              marginTop: "8px",
-            }),
-          }}
-        />
-        <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-3">
-          <button
-            type="button"
-            onClick={() =>
-              handleProceedWithConference(selectedConferenceOption)
-            }
-            className="w-full sm:w-auto bg-purple-300 text-purple px-6 py-3 rounded-xl text-base font-semibold
+        <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-stretch justify-center gap-8 mb-12 px-4">
+          <SEO
+            title="Register for Helix Conferences | Secure Your Place at Global Scientific, Medical & Industry Events"
+            description="Join the forefront of innovation with Helix Conferences. Register now for high-impact scientific, medical, and technological conferences, hybrid summits, webinars, and workshops. Network with global experts, present your work, and access unparalleled collaboration opportunities."
+            keywords="conference registration, scientific conference sign up, Helix Conferences register, global event registration, webinar sign up, hybrid summit booking, industry event registration, workshop sign up, academic conference participation, present at conference"
+            url="https://helixconferences.com/register"
+            image="https://helixconferences.com/images/register-banner.jpg"
+            canonical="https://helixconferences.com/register"
+            schema={{
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://helixconferences.com/#organization",
+                  name: "Helix Conferences",
+                  url: "https://helixconferences.com/",
+                  logo: "https://helixconferences.com/images/logo.png",
+                  sameAs: [
+                    "https://www.facebook.com/HelixConferences",
+                    "https://www.linkedin.com/company/helixconferences",
+                    "https://x.com/HelixConfe69272",
+                    "https://www.instagram.com/helix_conferences/",
+                    "https://www.youtube.com/@Helixconferences",
+                  ],
+                  description:
+                    "Helix Conferences brings together scientists, researchers, and industry pioneers at global events, fostering collaboration, innovation, and knowledge sharing.",
+                  foundingDate: "2010",
+                  founders: [{ "@type": "Person", name: "Dr Surya Sarva" }],
+                  contactPoint: [
+                    {
+                      "@type": "ContactPoint",
+                      telephone: "+1-757-656-7778",
+                      contactType: "Customer Service",
+                      areaServed: "Worldwide",
+                      availableLanguage: "English",
+                    },
+                    {
+                      "@type": "ContactPoint",
+                      telephone: "+91-9000146000",
+                      contactType: "Customer Service",
+                      areaServed: "Worldwide",
+                      availableLanguage: "English",
+                    },
+                  ],
+                },
+                {
+                  "@type": "WebPage",
+                  "@id": "https://helixconferences.com/register/#webpage",
+                  url: "https://helixconferences.com/register",
+                  name: "Register for Helix Conferences – Secure Your Place at Global Scientific & Industry Events",
+                  description:
+                    "Sign up to participate in Helix Conferences' global scientific summits, industry workshops, hybrid conferences, and online webinars. Present your research, connect with peers, and explore opportunities.",
+                  inLanguage: "en",
+                },
+              ],
+            }}
+          />
+
+          <div className="w-full md:w-1/2 bg-white p-7 md:p-9 rounded-2xl shadow-2xl text-center border border-gray-200 flex flex-col justify-between">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">
+              Select a Conference
+            </h2>
+            <p className="text-base text-gray-600 mb-6">
+              Choose an event to proceed with your registration.
+            </p>
+            <Select
+              value={selectedConferenceOption}
+              onChange={handleReactSelectChange}
+              options={allConferences}
+              placeholder="Type to search or select a conference..."
+              isClearable
+              isSearchable
+              className="mb-6 text-gray-800 text-base"
+              classNamePrefix="react-select"
+              styles={{
+                control: (base) => ({
+                  ...base,
+                  backgroundColor: "#f9fafb",
+                  borderColor: "#d1d5db",
+                  boxShadow: "0 1px 2px rgba(0,0,0,0.05)",
+                  minHeight: "48px",
+                  "&:hover": {
+                    borderColor: "#9ca3af",
+                  },
+                }),
+                option: (base, state) => ({
+                  ...base,
+                  backgroundColor: state.isFocused ? "#e0e7ff" : "white",
+                  color: "#1f2937",
+                  padding: "12px 20px",
+                  fontSize: "1rem",
+                }),
+                singleValue: (base) => ({
+                  ...base,
+                  color: "#1f2937",
+                  fontSize: "1rem",
+                }),
+                menu: (base) => ({
+                  ...base,
+                  backgroundColor: "white",
+                  borderRadius: "0.75rem",
+                  boxShadow:
+                    "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                  marginTop: "8px",
+                }),
+              }}
+            />
+            <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-3">
+              <button
+                type="button"
+                onClick={() =>
+                  handleProceedWithConference(selectedConferenceOption)
+                }
+                className="w-full sm:w-auto bg-purple-300 text-purple px-6 py-3 rounded-xl text-base font-semibold
                                 hover:bg-purple-400 transition duration-300 transform hover:scale-105 shadow-md
                                 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-          >
-            Proceed to Registration
-          </button>
-          <button
-            type="button"
-            onClick={() => navigate("/")}
-            className="w-full sm:w-auto bg-gray-600 text-white px-6 py-3 rounded-xl text-base font-semibold
+              >
+                Proceed to Registration
+              </button>
+              <button
+                type="button"
+                onClick={() => navigate("/")}
+                className="w-full sm:w-auto bg-gray-600 text-white px-6 py-3 rounded-xl text-base font-semibold
                                 hover:bg-gray-700 transition duration-300 transform hover:scale-105 shadow-md
                                 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-          >
-            Go to Home
-          </button>
-        </div>
-      </div>
-
-      <div className="w-full md:w-1/2 flex items-center justify-center p-4 bg-gray-100 rounded-2xl shadow-inner border border-gray-200">
-        <DotLottieReact
-          src="https://lottie.host/4e9e5c30-2446-4e4f-901a-5db0804727f6/j8hlykUr3q.lottie"
-          loop
-          autoplay
-          className="w-full h-full max-w-md object-contain"
-          style={{ aspectRatio: "1.618/1" }}
-        />
-      </div>
-    </div>
-
-    <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 py-8 md:py-10 bg-white rounded-2xl shadow-xl border border-gray-200">
-      <h3 className="text-3xl md:text-4xl font-extrabold text-center mb-10 text-gray-800">
-        Engage with Experts at{" "}
-        <span className="bg-gradient-to-r from-teal-500 to-green-600 bg-clip-text text-transparent">
-          Our Upcoming Events
-        </span>
-      </h3>
-      <p className="text-lg text-center text-gray-600 mb-8 max-w-xl mx-auto">
-        Click on a conference below to proceed with registration.
-      </p>
-
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
-        {/* Hybrids Section */}
-        <div className="w-full lg:w-1/2 flex flex-col">
-          <h4 className="text-2xl font-bold text-amber-800 mb-6 text-center lg:text-center">
-            Hybrids
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow items-stretch">
-            {allConferenceLists.hybridConfsAll.map((conf) => (
-              <div
-                key={conf.code}
-                className="flex flex-col justify-between bg-fuchsia-50 rounded-xl shadow-md border border-fuchsia-200 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 max-h-[300px]"
               >
-                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-fuchsia-200 text-fuchsia-700 mb-3">
-                  <Mic2 className="h-6 w-6" />
-                </div>
-                <div className="flex flex-col items-center text-center flex-1 overflow-hidden">
-                  <h5 className="font-extrabold text-lg text-fuchsia-900 mb-1 leading-tight line-clamp-2">
-                    {conf.title}
-                  </h5>
-                  {conf.date && (
-                    <p className="text-lg font-bold text-gray-600 mb-2">
-                      {conf.date}
-                    </p>
-                  )}
-                </div>
-                <div className="flex gap-3 justify-center mt-2">
-                  {/* Register Button */}
-                  <button
-                    onClick={() =>
-                      handleProceedWithConference(
-                        allConferences.find(
-                          (option) => option.value === conf.code
-                        )
-                      )
-                    }
-                    className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide bg-purple-500 text-white"
-                  >
-                    <Pencil className="w-4 h-4" />
-                    Register
-                  </button>
-                  {/* Visit Button */}
-                  {conf.link && (
-                    <a
-                      href={conf.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide bg-purple-500 text-white"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Visit
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
+                Go to Home
+              </button>
+            </div>
+          </div>
+
+          <div className="w-full md:w-1/2 flex items-center justify-center p-4 bg-gray-100 rounded-2xl shadow-inner border border-gray-200">
+            <DotLottieReact
+              src="https://lottie.host/4e9e5c30-2446-4e4f-901a-5db0804727f6/j8hlykUr3q.lottie"
+              loop
+              autoplay
+              className="w-full h-full max-w-md object-contain"
+              style={{ aspectRatio: "1.618/1" }}
+            />
           </div>
         </div>
 
-        {/* Webinars Section */}
-        <div className="w-full lg:w-1/2 flex flex-col">
-          <h4 className="text-2xl font-bold text-teal-800 mb-6 text-center lg:text-center">
-            Webinars
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow items-stretch">
-            {allConferenceLists.webinarConfsAll.map((conf) => (
-              <div
-                key={conf.code}
-                className="flex flex-col justify-between bg-emerald-50 rounded-xl shadow-md border border-emerald-200 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 max-h-[300px]"
-              >
-                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-emerald-200 text-emerald-700 mb-3">
-                  <Webcam className="h-6 w-6" />
-                </div>
-                <div className="flex flex-col items-center text-center flex-1 overflow-hidden">
-                  <h5 className="font-extrabold text-lg text-emerald-900 mb-1 leading-tight line-clamp-2">
-                    {conf.title}
-                  </h5>
-                  {conf.date && (
-                    <p className="text-lg font-bold text-gray-600 mb-2">
-                      {conf.date}
-                    </p>
-                  )}
-                </div>
-                <div className="flex gap-3 justify-center mt-2">
-                  {/* Register Button */}
-                  <button
-                    onClick={() =>
-                      handleProceedWithConference(
-                        allConferences.find(
-                          (option) => option.value === conf.code
-                        )
-                      )
-                    }
-                    className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide bg-green-500 text-white"
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 py-8 md:py-10 bg-white rounded-2xl shadow-xl border border-gray-200">
+          <h3 className="text-3xl md:text-4xl font-extrabold text-center mb-10 text-gray-800">
+            Engage with Experts at{" "}
+            <span className="bg-gradient-to-r from-teal-500 to-green-600 bg-clip-text text-transparent">
+              Our Upcoming Events
+            </span>
+          </h3>
+          <p className="text-lg text-center text-gray-600 mb-8 max-w-xl mx-auto">
+            Click on a conference below to proceed with registration.
+          </p>
+
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
+            {/* Hybrids Section */}
+            <div className="w-full lg:w-1/2 flex flex-col">
+              <h4 className="text-2xl font-bold text-amber-800 mb-6 text-center lg:text-center">
+                Hybrids
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow items-stretch">
+                {allConferenceLists.hybridConfsAll.map((conf) => (
+                  <div
+                    key={conf.code}
+                    className="flex flex-col justify-between bg-fuchsia-50 rounded-xl shadow-md border border-fuchsia-200 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 max-h-[300px]"
                   >
-                    <Pencil className="w-4 h-4" />
-                    Register
-                  </button>
-                  {/* Visit Button */}
-                  {conf.link && (
-                    <a
-                      href={conf.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide bg-green-500 text-white"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Visit
-                    </a>
-                  )}
-                </div>
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-fuchsia-200 text-fuchsia-700 mb-3">
+                      <Mic2 className="h-6 w-6" />
+                    </div>
+                    <div className="flex flex-col items-center text-center flex-1 overflow-hidden">
+                      <h5 className="font-extrabold text-lg text-fuchsia-900 mb-1 leading-tight line-clamp-2">
+                        {conf.title}
+                      </h5>
+                      {conf.date && (
+                        <p className="text-lg font-bold text-gray-600 mb-2">
+                          {conf.date}
+                        </p>
+                      )}
+                    </div>
+                    <div className="flex gap-3 justify-center mt-2">
+                      {/* Register Button */}
+                      <button
+                        onClick={() =>
+                          handleProceedWithConference(
+                            allConferences.find(
+                              (option) => option.value === conf.code
+                            )
+                          )
+                        }
+                        className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide bg-purple-500 text-white"
+                      >
+                        <Pencil className="w-4 h-4" />
+                        Register
+                      </button>
+                      {/* Visit Button */}
+                      {conf.link && (
+                        <a
+                          href={conf.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide bg-purple-500 text-white"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          Visit
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Webinars Section */}
+            <div className="w-full lg:w-1/2 flex flex-col">
+              <h4 className="text-2xl font-bold text-teal-800 mb-6 text-center lg:text-center">
+                Webinars
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow items-stretch">
+                {allConferenceLists.webinarConfsAll.map((conf) => (
+                  <div
+                    key={conf.code}
+                    className="flex flex-col justify-between bg-emerald-50 rounded-xl shadow-md border border-emerald-200 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 max-h-[300px]"
+                  >
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-emerald-200 text-emerald-700 mb-3">
+                      <Webcam className="h-6 w-6" />
+                    </div>
+                    <div className="flex flex-col items-center text-center flex-1 overflow-hidden">
+                      <h5 className="font-extrabold text-lg text-emerald-900 mb-1 leading-tight line-clamp-2">
+                        {conf.title}
+                      </h5>
+                      {conf.date && (
+                        <p className="text-lg font-bold text-gray-600 mb-2">
+                          {conf.date}
+                        </p>
+                      )}
+                    </div>
+                    <div className="flex gap-3 justify-center mt-2">
+                      {/* Register Button */}
+                      <button
+                        onClick={() =>
+                          handleProceedWithConference(
+                            allConferences.find(
+                              (option) => option.value === conf.code
+                            )
+                          )
+                        }
+                        className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide bg-green-500 text-white"
+                      >
+                        <Pencil className="w-4 h-4" />
+                        Register
+                      </button>
+                      {/* Visit Button */}
+                      {conf.link && (
+                        <a
+                          href={conf.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide bg-green-500 text-white"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          Visit
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-);
+    );
   }
   return (
     <div className="min-h-screen bg-gray-50 py-8 md:py-12 font-sans text-gray-800 text-base">
@@ -1334,7 +1231,6 @@ const handleFullRegistrationAndPayment = async (event) => {
             {conferenceDetails.date}
           </p>
         )}
-
 
         <form onSubmit={handleSubmit} className="space-y-12 md:space-y-16">
           {registrationCategories.length > 0 && (

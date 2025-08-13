@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 
 const BuyATicket = () => {
   const [ticketType, setTicketType] = useState('standard'); // 'standard' or 'vip'
