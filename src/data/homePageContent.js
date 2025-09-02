@@ -79,35 +79,35 @@ export const heroSlides = [
   {
     backgroundImage: Foodmeet_2026,
     mainTitle: "World Agriculture & Food Sciences Conclave",
-    subHeading: "Nov 25-27, 2025 | Valencia, Spain | (FOODMEET-2025)",
+    subHeading: "FOODMEET-2025 | Nov 25-27, 2025 | Valencia, Spain",
     button1: { text: "View Conference Details", link: "https://foodmeet.helixconferences.com/", target: "_blank" },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
     backgroundImage: Techmatics_2026,
     mainTitle: "International Science & Technology Summit",
-    subHeading: "Nov 25-27, 2025 | Valencia, Spain | (TECHMATICS-2025)",
+    subHeading: " TECHMATICS-2025 | Nov 25-27, 2025 | Valencia, Spain",
     button1: { text: "View Conference Details", link: "https://techmatics.helixconferences.com/", target: "_blank" },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
     backgroundImage: Pharmatech_2025,
     mainTitle: "Global Pharmaceutical Conclave",
-    subHeading: "Nov 25-27, 2025 | Valencia, Spain | (PHARMATECH-2025)",
+    subHeading: "PHARMATECH-2025 | Nov 25-27, 2025 | Valencia, Spain",
     button1: { text: "View Conference Details", link: "https://pharmatech.helixconferences.com/", target: "_blank" },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
     backgroundImage: Biocon_2025,
     mainTitle: "World Biotechnology Summit",
-    subHeading: "Nov 25-27, 2025 | Valancia, Spain | (BIOCON-2025)",
+    subHeading: "BIOCON-2025 | Nov 25-27, 2025 | Valancia, Spain",
     button1: { text: "View Conference Details", link: "https://biocon.helixconferences.com/", target: "_blank" },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
     backgroundImage: Mediclave_2025,
     mainTitle: "Global Medical Conclave",
-    subHeading: "Nov 25-27, 2025 | Valancia, Spain | (MEDICLAVE-2025)",
+    subHeading: "MEDICLAVE-2025 | Nov 25-27, 2025 | Valancia, Spain",
     button1: { text: "View Conference Details", link: "https://mediclave.helixconferences.com/", target: "_blank" },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
@@ -115,10 +115,10 @@ export const heroSlides = [
 
 
 export const statisticsData = [
-  { value: 21, label: "Executed Conferences" },
-  { value: 100, label: "Eminent Speakers" },
-  { value: 900, label: "Speakers" },
-  { value: 1500, label: "Publications" },
+  { value: 27, label: "Executed Conferences" },
+  { value: 137, label: "Eminent Speakers" },
+  { value: 846, label: "Speakers" },
+  { value: 2145, label: "Publications" },
 ];
 
 export const aboutData = {

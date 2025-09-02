@@ -21,6 +21,7 @@ import Schedule from "./pages/Schedule";
 import Gallery from "./components/Gallery/QuantumGallery";
 import CallForPapers from "./pages/CallForPapers";
 import ScrollToTop from "./components/ScrollToTop";
+import SuccessPage from "./pages/SuccessPage";
 
 // Import the NotFound component you created
 import NotFound from "./pages/NotFound";
@@ -28,7 +29,7 @@ import NotFound from "./pages/NotFound";
 // --- NEW: Import the RegistrationForm component ---
 import TermsOfUse from "./pages/TermsOfUse";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import RegistrationForm from "./pages/RegistrationPage";
+import RegistrationForm from "./pages/RegistrationPageUpdated";
 
 // --- NEW: Placeholder components for Stripe redirects ---
 // These will be displayed when Stripe redirects the user back to your site
@@ -88,6 +89,7 @@ function App() {
   useEffect(() => {
     const keepServerAwake = () => {
       fetch("https://backend-code-6vqy.onrender.com/")
+      // fetch("http://localhost:5000/")
         .then(() => console.log("✅ Warm-up ping sent to backend."))
         .catch((err) => console.warn("⚠️ Warm-up ping failed:", err.message));
     };
@@ -171,6 +173,7 @@ function App() {
             <Route path="/terms-of-use" element={<TermsOfUse />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/registration" element={<RegistrationForm />} />
+            <Route path="/success" element={<SuccessPage />} />
 
             {/* --- Routes for Stripe payment redirects --- */}
             <Route path="/stripe-success" element={<StripeSuccessPage />} />

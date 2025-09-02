@@ -31,13 +31,13 @@ export const blogsData = [
   },
   {
     id: 6,
-    title: "International Conferences On Public Health & Nursing",
+    title: "International Conferences on Public Health & Nursing",
     link: "#",
     summary: "Sharing best practices and research to improve community health worldwide."
   },
   {
     id: 7,
-    title: "Global Summit On Nano Engineering & Smart Technology",
+    title: "Global Summit on Nano Engineering & Smart Technology",
     link: "#",
     summary: "Exploring the vast potential of nanotechnology and intelligent systems."
   },

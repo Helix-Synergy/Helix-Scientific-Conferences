@@ -99,7 +99,7 @@ function Header() {
 
     // Function to find the currently active link element for the indicator
     const getActiveLinkElement = useCallback(() => {
-        const primaryPaths = ["/", "/about", "/hybrids", "/webinars", "/gallery", "/blog", "/buy-a-ticket", "/testimonials", "/journals", "/contact"];
+        const primaryPaths = ["/", "/about", "/hybrids", "/webinars", "/gallery", "/testimonials", "/buy-a-ticket", "/blog", "/journals", "/contact"];
         const sortedPrimaryPaths = primaryPaths.sort((a, b) => b.length - a.length); // Longer paths first for better match
 
         for (const path of sortedPrimaryPaths) {
@@ -313,17 +313,17 @@ function Header() {
 
                 {/* Blog */}
                 <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
-                    to="/blog"
+                    to="/testimonials"
                     className={`
             relative h-full flex items-center justify-center
             text-black text-base font-semibold whitespace-nowrap px-4 py-2 z-20 group
           `}
                     onMouseEnter={(e) => { updateIndicator(e.currentTarget); handleLinkMouseEnter(); }}
                     onMouseLeave={handleNavLinkMouseLeave}
-                    ref={(el) => (navRefs.current["/blog"] = el)}
+                    ref={(el) => (navRefs.current["/testimonials"] = el)}
                 >
                     <PencilSquareIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
-                    Blog
+                    Testimonials
                 </MotionNavLink>
 
                 {/* Buy A Ticket (Desktop - styled as a normal NavLink) */}
@@ -379,11 +379,11 @@ function Header() {
                                 onMouseLeave={() => { handleLinkMouseLeave(); setIsDesktopSecondaryMenuOpen(false); }}
                             >
                                 <Link
-                                    to="/testimonials"
+                                    to="/blog"
                                     className="block px-4 py-2 text-black hover:bg-gray-200 transition-colors duration-200"
                                     onClick={() => setIsDesktopSecondaryMenuOpen(false)}
                                 >
-                                    <SparklesIcon className="h-5 w-5 mr-2 inline-block" /> Testimonials
+                                    <SparklesIcon className="h-5 w-5 mr-2 inline-block" /> Blogs
                                 </Link>
                                 <Link
                                     to="/journals"
@@ -503,14 +503,14 @@ function Header() {
 
                         <motion.div variants={mobileMenuItemVariants} className="w-full">
                             <NavLink
-                                to="/blog"
-                                className={mobileNavLinkClasses("/blog")}
+                                to="/testimonials"
+                                className={mobileNavLinkClasses("/testimonials")}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 onMouseEnter={handleLinkMouseEnter}
                                 onMouseLeave={handleLinkMouseLeave}
                             >
                                 <PencilSquareIcon className="h-6 w-6 mr-3 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
-                                Blog
+                                Testimonials
                             </NavLink>
                         </motion.div>
 
@@ -531,14 +531,14 @@ function Header() {
                         {/* Secondary Menu Links (NOW USING NavLink) */}
                         <motion.div variants={mobileMenuItemVariants} className="w-full mt-4 border-t border-gray-200 pt-4">
                             <NavLink
-                                to="/testimonials"
-                                className={mobileNavLinkClasses("/testimonials")}
+                                to="/blog"
+                                className={mobileNavLinkClasses("/blog")}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 onMouseEnter={handleLinkMouseEnter}
                                 onMouseLeave={handleLinkMouseLeave}
                             >
                                 <SparklesIcon className="h-6 w-6 mr-3 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
-                                Testimonials
+                                Blogs
                             </NavLink>
                         </motion.div>
 

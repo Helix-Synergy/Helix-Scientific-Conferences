@@ -501,7 +501,7 @@ export const hybridsData = [
     year: 2025
   },
   {
-    title: "International Conferences On Public Health & Nursing",
+    title: "International Conference on Public Health & Nursing",
     code: "PUBLICHEALTH-2025",
     date: "Nov 25-27, 2025",
     location: "Valancia | Spain",

@@ -197,7 +197,7 @@ const HomeTestimonialsSection = () => {
             <div className="container mx-auto px-4">
                 <div className="text-center md:text-left max-w-4xl mx-auto mb-8 text-white">
                     <h2 className="text-3xl md:text-4xl font-bold mb-2">
-                        What People Speak About <span className="text-blue-300">Helix</span>
+                        What People Speak About <span className="text-white-800 font-serif">Helix</span>
                     </h2>
                     <p className="text-base md:text-lg">
                         Helix Conferences are known for their focus on cutting-edge topics and global collaboration.
