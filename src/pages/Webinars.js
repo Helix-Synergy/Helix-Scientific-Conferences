@@ -558,7 +558,7 @@ const ParticleTrail = ({ children }) => {
 
   return (
     <div ref={containerRef} className="relative w-full h-full">
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {particles.map((p) => (
           <motion.div
             key={p.id}
@@ -578,7 +578,7 @@ const ParticleTrail = ({ children }) => {
             }}
           />
         ))}
-      </AnimatePresence>
+      </AnimatePresence> */}
       {children}
     </div>
   );

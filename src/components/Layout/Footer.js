@@ -200,7 +200,7 @@ function Footer() {
               </div>
               <div className="space-y-5 text-sm">
                 
-                <p className="flex items-center justify-start group">
+                {/* <p className="flex items-center justify-start group">
                   <PhoneIcon className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0" />
                   <a
                     href="tel:+17576567778"
@@ -210,8 +210,8 @@ function Footer() {
                     onMouseEnter={handleLinkMouseEnter}
                     onMouseLeave={handleLinkMouseLeave}
                   >+1 757 656 7778</a>
-                </p>
-                <p className="flex items-center justify-start group">
+                </p> */}
+                {/* <p className="flex items-center justify-start group">
                   <PhoneIcon className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0" />
                   <a
                     href="tel:+91 9000 146 000"
@@ -221,7 +221,7 @@ function Footer() {
                     onMouseEnter={handleLinkMouseEnter}
                     onMouseLeave={handleLinkMouseLeave}
                   >+91 949 211 7897</a>
-                </p>
+                </p> */}
                 <p className="flex items-center justify-start group">
                   <FontAwesomeIcon icon={faWhatsapp} className="w-5 h-5 mr-3 text-green-500 flex-shrink-0" />
                   <a

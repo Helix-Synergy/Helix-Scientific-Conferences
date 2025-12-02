@@ -452,53 +452,53 @@ export const hybridsData = [
   // 2025 Hybrid Events
   {
     title: "World Agriculture & Food Sciences Conclave",
-    code: "FOODMEET-2025",
-    date: "Nov 25-27, 2025",
-    location: "Valencia | Spain",
+    code: "FOODMEET-2026",
+    date: "April 23-24, 2026 ",
+    location: "Barcelona | Spain",
     image: Foodmeet_2026,
     link: "https://foodmeet.helixconferences.com/",
     type: "Hybrid",
-    year: 2025
+    year: 2026
   },
   {
     title: "International Science & Technology Summit",
-    code: "TECHMATICS-2025",
-    date: "Nov 25-27, 2025",
-    location: "Valencia | Spain",
+    code: "TECHMATICS-2026",
+    date: " Sep 24-25, 2026 ",
+    location: " Franfurt | Germany",
     image: Techmatics_2026,
     link: "https://techmatics.helixconferences.com/",
     type: "Hybrid",
-    year: 2025
+    year: 2026
   },
   {
     title: "Global Pharmaceutical Conclave",
-    code: "PHARMATECH-2025",
-    date: "Nov 25-27, 2025",
-    location: "Valencia | Spain",
+    code: "PHARMATECH-2026",
+    date: "Oct 22-23, 2026 ",
+    location: "Singapore | Singapore City",
     image: Pharmatech_2025,
     link: "https://pharmatech.helixconferences.com/",
     type: "Hybrid",
-    year: 2025
+    year: 2026
   },
   {
     title: "World Biotechnology Summit",
-    code: "BIOCON-2025",
-    date: "Nov 25-27, 2025",
-    location: "Valancia | Spain",
+    code: "BIOCON-2026",
+    date: "June 25-26, 2026",
+    location: "Amsterdem | Netherlands",
     image: Biocon_2025,
     link: "https://biocon.helixconferences.com/",
     type: "Hybrid",
-    year: 2025
+    year: 2026
   },
   {
     title: "Global Medical Conclave",
-    code: "MEDICLAVE-2025",
-    date: "Nov 25-27, 2025",
-    location: "Valancia | Spain",
+    code: "MEDICLAVE-2026",
+    date: "May 21-22, 2026",
+    location: "Vinenna | Ausrtia",
     image: Mediclave_2025,
     link: "https://mediclave.helixconferences.com/",
     type: "Hybrid",
-    year: 2025
+    year: 2026
   },
   {
     title: "International Conference on Public Health & Nursing",

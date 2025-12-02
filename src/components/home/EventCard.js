@@ -203,7 +203,7 @@ const EventCard = ({ event }) => {
 
   return (
     <a
-      href={event.link || '#'}
+      href={event.link || undefined}
       target="_blank"
       rel="noopener noreferrer"
       className="block"

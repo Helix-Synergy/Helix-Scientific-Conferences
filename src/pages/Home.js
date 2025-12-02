@@ -155,7 +155,7 @@ function Home() {
           data={webinarsData}
           speed={55} // Adjust speed as needed, slightly different from hybrid for variety
           direction="right"
-          title="Upcoming Webinars"
+          title="Upcoming Conferences"
         />
       </div>
 
