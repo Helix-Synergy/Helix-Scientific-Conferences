@@ -278,11 +278,11 @@ function Header() {
                     ref={(el) => (navRefs.current["/hybrids"] = el)}
                 >
                     <MicrophoneIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
-                    Hybrids
+                    Conference
                 </MotionNavLink>
 
                 {/* Webinars */}
-                <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
+                {/* <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
                     to="/webinars"
                     className={`
             relative h-full flex items-center justify-center
@@ -294,7 +294,26 @@ function Header() {
                 >
                     <ComputerDesktopIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
                     Webinars
+                </MotionNavLink> */}
+
+{/* Journals */}
+<MotionNavLink // <-- CHANGE 1: Use MotionNavLink
+                    to="/journals"
+                    className={`
+            relative h-full flex items-center justify-center
+            text-black text-base font-semibold whitespace-nowrap px-4 py-2 z-20 group
+          `}
+                    onMouseEnter={(e) => { updateIndicator(e.currentTarget); handleLinkMouseEnter(); }}
+                    onMouseLeave={handleNavLinkMouseLeave}
+                    ref={(el) => (navRefs.current["/webinars"] = el)}
+                >
+                    <ComputerDesktopIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
+                    Journals
                 </MotionNavLink>
+
+
+
+
 
                 {/* Gallery */}
                 <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
@@ -326,6 +345,21 @@ function Header() {
                     Testimonials
                 </MotionNavLink>
 
+                {/* Call For Papers */}
+                <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
+                    to="/call"
+                    className={`
+            relative h-full flex items-center justify-center
+            text-black text-base font-semibold whitespace-nowrap px-4 py-2 z-20 group
+          `}
+                    onMouseEnter={(e) => { updateIndicator(e.currentTarget); handleLinkMouseEnter(); }}
+                    onMouseLeave={handleNavLinkMouseLeave}
+                    ref={(el) => (navRefs.current["/webinars"] = el)}
+                >
+                    {/* <ComputerDesktopIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" /> */}
+                  Call For Papers 
+                </MotionNavLink>
+
                 {/* Buy A Ticket (Desktop - styled as a normal NavLink) */}
                 <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
                     to="/buy-a-ticket"
@@ -340,6 +374,8 @@ function Header() {
                     <TicketIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
                     Buy A Ticket
                 </MotionNavLink>
+
+
             </nav>
 
             {/* Right-aligned container for mobile Buy A Ticket and both Hamburger menus */}

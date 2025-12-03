@@ -20,7 +20,7 @@ import Techmatics_2026 from '../assets/images/Hybrid/TECHMATICS_2026.jpg'
 import Biocon_2025 from '../assets/images/Hybrid/BIOCON_2025.jpg'
 import Pharmatech_2025 from '../assets/images/Hybrid/PHARMATECH_2025.jpg'
 import Mediclave_2025 from '../assets/images/Hybrid/MEDICLAVE_2025.jpg'
-
+import Nursing from "../assets/images/Hybrid/Nursing.jpg"
 
 
 
@@ -79,38 +79,46 @@ export const heroSlides = [
   {
     backgroundImage: Foodmeet_2026,
     mainTitle: "World Agriculture & Food Sciences Conclave",
-    subHeading: "FOODMEET-2026 | April 23-24, 2026 | Barcelona, Spain",
+    subHeading: "FOODMEET-2026  - April 23-24, 2026 | Barcelona | Spain",
     button1: { text: "View Conference Details", link: "https://foodmeet.helixconferences.com/", target: "_blank" },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
     backgroundImage: Techmatics_2026,
     mainTitle: "International Science & Technology Summit",
-    subHeading: " TECHMATICS-2026 | Sep 24-25, 2026 | Franfurt, Germany",
+    subHeading: " TECHMATICS-2026 - Sep 24-25, 2026 | Osaka | Japan",
     button1: { text: "View Conference Details", link: "https://techmatics.helixconferences.com/", target: "_blank" },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
     backgroundImage: Pharmatech_2025,
     mainTitle: "Global Pharmaceutical Conclave",
-    subHeading: "PHARMATECH-2026 | Oct 22-23, 2026 | Singapore,Singapore City ",
+    subHeading: "PHARMATECH-2026 - Oct 22-23, 2026 | Singapore ",
     button1: { text: "View Conference Details", link: "https://pharmatech.helixconferences.com/", target: "_blank" },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
     backgroundImage: Biocon_2025,
     mainTitle: "World Biotechnology Summit",
-    subHeading: "BIOCON-2026 | June 25-26, 2026 | Amsterdem, Netherlands",
+    subHeading: "BIOCON-2026 - June 25-26, 2026 | Amsterdem | Netherlands",
     button1: { text: "View Conference Details", link: "https://biocon.helixconferences.com/", target: "_blank" },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
     backgroundImage: Mediclave_2025,
     mainTitle: "Global Medical Conclave",
-    subHeading: "MEDICLAVE-2026 | May 21-22, 2026 | Vinenna, Ausrtia",
+    subHeading: "MEDICLAVE-2026 - May 21-22, 2026 | Vinenna | Ausrtia",
     button1: { text: "View Conference Details", link: "https://mediclave.helixconferences.com/", target: "_blank" },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
+   {
+    backgroundImage: Nursing,
+    mainTitle: "World Summit on Nursing & Nurse Practices",
+    subHeading: "NURSESUMMIT-2026 - Nov 19-20, 2026 | Dubai | UAE",
+    button1: { text: "View Conference Details", link: "https://nursesummit.helixconferences.com/", target: "_blank" },
+    button2: { text: "Register Now", link: "/buy-a-ticket" },
+  },
+
 ];
 
 

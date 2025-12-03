@@ -1,40 +1,60 @@
-import React, { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { SparklesIcon, CalendarDaysIcon } from '@heroicons/react/24/outline'; // Example icons
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 const CallForPapers = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [selectedConference, setSelectedConference] = useState('');
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  const sectionVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.7,
-        ease: "easeOut",
-      },
+  // Conference data with external links
+  const conferences = [
+    { 
+      id: '1', 
+      name: 'World Agriculture & Food Sciences Conclave', 
+      link: 'https://foodmeet.helixconferences.com/abstract-submission'
     },
-  };
+    { 
+      id: '2', 
+      name: 'International Science & Technology Summit', 
+      link: 'https://techmatics.helixconferences.com/abstractsubmission/'
+    },
+    { 
+      id: '3', 
+      name: 'Global Pharmaceutical Conclave', 
+      link: 'https://pharmatech.helixconferences.com/abstract-submission'
+    },
+    { 
+      id: '4', 
+      name: 'World Biotechnology Summit', 
+      link: 'https://biocon.helixconferences.com/abstract-submission'
+    },
+    { 
+      id: '5', 
+      name: 'Global Medical Conclave', 
+      link: 'https://mediclave.helixconferences.com/abstract-submission'
+    },
+    { 
+      id: '6', 
+      name: 'World Summit on Nursing & Nurse Practices', 
+      link: 'https://biocon.helixconferences.com/abstract-submission'
+    },
+  ];
 
-  const iconVariants = {
-    hover: { rotate: 360, transition: { duration: 0.5 } },
+  // Handle conference selection and redirect
+  const handleConferenceSelect = (e) => {
+    const conferenceId = e.target.value;
+    setSelectedConference('');
+    
+    if (conferenceId) {
+      const conference = conferences.find(conf => conf.id === conferenceId);
+      if (conference && conference.link) {
+        // Redirect to external URL
+        window.open(conference.link, '_blank', 'noopener,noreferrer');
+      }
+    }
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden text-white py-20 px-4 bg-gray-900">
+    <div className="min-h-screen relative overflow-hidden text-white bg-gray-900">
       {/* Background: Gentle, Flowing Wave Animation */}
       <div
         className="absolute inset-0 z-0"
@@ -47,99 +67,83 @@ const CallForPapers = () => {
         <div className="absolute inset-0 bg-black opacity-40"></div> {/* Dark overlay */}
       </div>
 
-      <div className="container mx-auto relative z-10">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 animate-fade-in-up">
-          Call For Papers
-        </h1>
-
-        <p className="text-lg text-center mb-10 max-w-3xl mx-auto">
-          We invite researchers, academics, and industry experts to submit their original work
-          for presentation at our upcoming conferences. Your contributions are vital to advancing
-          knowledge and fostering innovation.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={controls}
-            variants={sectionVariants}
-            className="bg-gray-800/70 p-8 rounded-xl shadow-lg backdrop-blur-sm border border-white/10"
-          >
-            <div className="flex items-center mb-6">
-              <motion.div
-                className="p-4 rounded-full bg-blue-600 text-white mr-4 shadow-md"
-                whileHover="hover"
-                variants={iconVariants}
-              >
-                <SparklesIcon className="w-8 h-8" />
-              </motion.div>
-              <h2 className="text-2xl font-semibold">Submission Guidelines</h2>
+      {/* Hero Image Section at the Top */}
+      <div className="relative z-10">
+        <div className="container mx-auto">
+          <div className="relative h-96 md:h-[500px] lg:h-[600px] overflow-hidden">
+            {/* Background Image - Use a placeholder or actual image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')",
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
             </div>
-            <ul className="list-disc list-inside space-y-3 text-gray-300">
-              <li>Abstracts should be between 250-300 words.</li>
-              <li>Full papers should not exceed 10 pages (including references).</li>
-              <li>Submissions must be original and not previously published.</li>
-              <li>Please use our provided template for formatting.</li>
-              <li>All submissions will undergo a rigorous peer-review process.</li>
-            </ul>
-            <motion.img
-              src="https://placehold.co/400x300/4A2868/FFFFFF?text=Submission+Guidelines"
-              alt="Submission Guidelines"
-              className="w-full h-auto rounded-lg mt-8 shadow-md transform transition-transform duration-300 hover:scale-105"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-            />
-          </motion.div>
-
-          <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={controls}
-            variants={{ ...sectionVariants, x: 100 }} // Slide in from right for second column
-            className="bg-gray-800/70 p-8 rounded-xl shadow-lg backdrop-blur-sm border border-white/10"
-          >
-            <div className="flex items-center mb-6">
-              <motion.div
-                className="p-4 rounded-full bg-green-600 text-white mr-4 shadow-md"
-                whileHover="hover"
-                variants={iconVariants}
+            
+            {/* Overlay Content */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+              <motion.h1 
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
               >
-                <CalendarDaysIcon className="w-8 h-8" />
-              </motion.div>
-              <h2 className="text-2xl font-semibold">Important Dates</h2>
+                Call For Papers
+              </motion.h1>
+              <motion.p 
+                className="text-xl md:text-2xl text-gray-200 max-w-3xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                {/* Select a conference to submit your abstract */}
+              </motion.p>
             </div>
-            <ul className="list-disc list-inside space-y-3 text-gray-300">
-              <li>Abstract Submission Deadline: <span className="font-bold text-white">August 15, 2025</span></li>
-              <li>Notification of Acceptance: <span className="font-bold text-white">September 30, 2025</span></li>
-              <li>Early Bird Registration Deadline: <span className="font-bold text-white">October 20, 2025</span></li>
-              <li>Full Paper Submission Deadline: <span className="font-bold text-white">November 10, 2025</span></li>
-              <li>Conference Dates: <span className="font-bold text-white">December 5-7, 2025</span></li>
-            </ul>
-            <motion.img
-              src="https://placehold.co/400x300/2E659A/FFFFFF?text=Important+Dates"
-              alt="Important Dates"
-              className="w-full h-auto rounded-lg mt-8 shadow-md transform transition-transform duration-300 hover:scale-105"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-            />
-          </motion.div>
+          </div>
         </div>
+      </div>
 
+      {/* Conference Selection Dropdown - Directly Below Image */}
+      <div className="container mx-auto relative z-10 -mt-24 md:-mt-32 px-4">
         <motion.div
-          className="text-center mt-12"
+          className="max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <Link
-            to="/contact"
-            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95"
-          >
-            Submit Your Paper
-          </Link>
+          <div className="bg-gray-900/90 backdrop-blur-lg rounded-2xl p-6 md:p-8 shadow-2xl border border-white/20">
+            <div className="relative">
+              <select
+                value={selectedConference}
+                onChange={handleConferenceSelect}
+                className="w-full bg-gray-800/90 border-2 border-purple-500 rounded-xl py-4 px-6 text-white text-lg focus:outline-none focus:ring-4 focus:ring-purple-500/50 focus:border-transparent appearance-none transition-all duration-300 hover:border-purple-400 cursor-pointer"
+              >
+                <option value="" className="text-gray-500 text-lg">
+                  Select a conference to submit your abstract...
+                </option>
+                {conferences.map((conference) => (
+                  <option 
+                    key={conference.id} 
+                    value={conference.id}
+                    className="text-white text-lg py-2"
+                  >
+                    {conference.name}
+                  </option>
+                ))}
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-purple-400">
+                <ChevronDownIcon className="w-6 h-6" />
+              </div>
+            </div>
+
+            {/* Simple Note */}
+            <div className="mt-6 text-center">
+              <p className="text-gray-400 text-sm">
+                Selecting a conference will open the abstract submission page
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>
