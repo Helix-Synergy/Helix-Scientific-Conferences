@@ -2035,27 +2035,40 @@ const RegistrationPageUpdated = () => {
     return { webinarConfsAll, hybridConfsAll };
   }, []);
 
-  const allConferences = useMemo(() => {
-    const webinarConfs = (webinarsData || []).map((conf) => ({
-      value: conf.code,
-      label: `${conf.title} (${
-        (conf.type || "webinar").charAt(0).toUpperCase() +
-        (conf.type || "webinar").slice(1)
-      })${conf.date ? ` - ${conf.date}` : ""}`,
-      originalConf: conf,
-    }));
-    const hybridConfs = (hybridsData || []).map((conf) => ({
-      value: conf.code,
-      label: `${conf.title} (${
-        (conf.type || "hybrid").charAt(0).toUpperCase() +
-        (conf.type || "hybrid").slice(1)
-      })${conf.date ? ` - ${conf.date}` : ""}`,
-      originalConf: conf,
-    }));
-    return [...hybridConfs, ...webinarConfs];
-  }, []);
+  // const allConferences = useMemo(() => {
+  //   const webinarConfs = (webinarsData || []).map((conf) => ({
+  //     value: conf.code,
+  //     label: `${conf.title} (${
+  //       (conf.type || "webinar").charAt(0).toUpperCase() +
+  //       (conf.type || "webinar").slice(1)
+  //     })${conf.date ? ` - ${conf.date}` : ""}`,
+  //     originalConf: conf,
+  //   }));
+  //   const hybridConfs = (hybridsData || []).map((conf) => ({
+  //     value: conf.code,
+  //     label: `${conf.title} (${
+  //       (conf.type || "hybrid").charAt(0).toUpperCase() +
+  //       (conf.type || "hybrid").slice(1)
+  //     })${conf.date ? ` - ${conf.date}` : ""}`,
+  //     originalConf: conf,
+  //   }));
+  //   return [...hybridConfs, ...webinarConfs];
+  // }, []);
 
   // helper placeholder features
+  const allConferences = useMemo(() => {
+  const webinarConfs = (webinarsData || []).map((conf) => ({
+    value: conf.code,
+    label: `${conf.title}`, // Just the title, no type or date
+    originalConf: conf,
+  }));
+  const hybridConfs = (hybridsData || []).map((conf) => ({
+    value: conf.code,
+    label: `${conf.title}`, // Just the title, no type or date
+    originalConf: conf,
+  }));
+  return [...hybridConfs, ...webinarConfs];
+}, []);
   const getPlaceholderFeatures = (category) => {
     switch (category) {
       case "e-Poster Presentation":

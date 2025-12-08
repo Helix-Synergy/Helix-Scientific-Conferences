@@ -11,10 +11,13 @@ import webinarsData from "../data/webinarsData1";
 import JournalsSection from "../components/home/JournalsSection";
 import HomeTestimonialsSection from "../components/home/HomeTestimonialsSection";
 import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 function Home() {
   // If you are using AutoImageCarousel, define its images here
+const HandleAllConferences=()=>{
 
+}
   return (
     <div className="home-page">
       <SEO
@@ -133,12 +136,31 @@ function Home() {
           data={hybridEventsData}
           speed={50} // Adjust speed as needed
           direction="left"
-          title="Upcoming Hybrids"
+          title="Upcoming Conferences"
         />
+        {/* All conferences */}
+  {/* <button onClick={HandleAllConferences}>Read More</button> */}
+ <Link 
+  to="/AllConferences" 
+  style={{
+    display: "block",
+    textAlign: "center",
+    margin: "20px auto",
+    padding: "10px 20px",
+    backgroundColor: "#007bff",
+    color: "white",
+    textDecoration: "none",
+    borderRadius: "5px",
+    width: "fit-content"
+  }}
+>
+  Read More
+</Link>
+
       </div>
 
       {/* Webinars Carousel Section - NOW USING THE GLOBAL GRADIENT */}
-      <div
+      {/* <div
         className="py-16 text-white relative overflow-hidden"
         style={{
           // Applied the new background gradient
@@ -151,13 +173,13 @@ function Home() {
           overflow: "hidden",
         }}
       >
-        <AutoScrollingCarousel
+        {/* <AutoScrollingCarousel
           data={webinarsData}
           speed={55} // Adjust speed as needed, slightly different from hybrid for variety
           direction="right"
           title="Upcoming Conferences"
-        />
-      </div>
+        /> */}
+      {/* </div> */} 
 
       {/* Other sections will go here */}
       <JournalsSection />

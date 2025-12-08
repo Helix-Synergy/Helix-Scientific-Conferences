@@ -4261,9 +4261,9 @@ useEffect(() => {
 
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
             {/* Hybrids Section */}
-            <div className="w-full lg:w-1/2 flex flex-col">
+            <div className="w-full lg:w-1/2 flex flex-col mx-auto">
               <h4 className="text-2xl font-bold text-amber-800 mb-6 text-center lg:text-center">
-                Hybrids
+              Conferences
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {allConferenceLists.hybridConfsAll.map((conf) => (
@@ -4319,7 +4319,7 @@ useEffect(() => {
             </div>
 
             {/* Webinars Section */}
-            <div className="w-full lg:w-1/2 flex flex-col">
+            {/* <div className="w-full lg:w-1/2 flex flex-col">
               <h4 className="text-2xl font-bold text-teal-800 mb-6 text-center lg:text-center">
                 Webinars
               </h4>
@@ -4344,7 +4344,7 @@ useEffect(() => {
                     </div>
                     <div className="flex gap-3 justify-center mt-2">
                       {/* Register Button */}
-                      <button
+                      {/* <button
                         onClick={() =>
                           handleProceedWithConference(
                             allConferences.find(
@@ -4353,12 +4353,12 @@ useEffect(() => {
                           )
                         }
                         className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide bg-green-500 text-white"
-                      >
-                        <Pencil className="w-4 h-4" />
+                      > */}
+                        {/* <Pencil className="w-4 h-4" />
                         Register
-                      </button>
+                      </button> */}
                       {/* Visit Button */}
-                      {conf.link && (
+                      {/* {conf.link && (
                         <a
                           href={conf.link}
                           target="_blank"
@@ -4369,11 +4369,11 @@ useEffect(() => {
                           Visit
                         </a>
                       )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+                    </div> */}
+                  {/* </div>
+                ))} */}
+              {/* </div> */}
+            {/* </div>  */}
           </div>
         </div>
       </div>

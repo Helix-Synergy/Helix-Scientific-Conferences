@@ -30,6 +30,7 @@ import NotFound from "./pages/NotFound";
 import TermsOfUse from "./pages/TermsOfUse";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RegistrationForm from "./pages/RegistrationPageUpdated";
+import AllConferences from "./pages/AllConferences";
 
 // --- NEW: Placeholder components for Stripe redirects ---
 // These will be displayed when Stripe redirects the user back to your site
@@ -156,7 +157,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/conferences" element={<Conferences />} />
-            <Route path="/hybrids" element={<Hybrids />} />
+            <Route path="/conference" element={<Hybrids />} />
             <Route path="/webinars" element={<Webinars />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/blog" element={<Blog />} />
@@ -170,7 +171,7 @@ function App() {
             <Route path="/schedule" element={<Schedule />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/call-for-papers" element={<CallForPapers />} />
-
+<Route path="/AllConferences" element={<AllConferences/>}></Route>
             {/* --- Routes for the Registration Form --- */}
             <Route path="/terms-of-use" element={<TermsOfUse />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

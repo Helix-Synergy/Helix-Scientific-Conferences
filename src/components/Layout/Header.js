@@ -99,7 +99,7 @@ function Header() {
 
     // Function to find the currently active link element for the indicator
     const getActiveLinkElement = useCallback(() => {
-        const primaryPaths = ["/", "/about", "/hybrids", "/webinars", "/gallery", "/testimonials", "/buy-a-ticket", "/blog", "/journals", "/contact"];
+        const primaryPaths = ["/", "/about", "/conference", "/webinars", "/gallery", "/testimonials", "/buy-a-ticket", "/blog", "/journals", "/contact"];
         const sortedPrimaryPaths = primaryPaths.sort((a, b) => b.length - a.length); // Longer paths first for better match
 
         for (const path of sortedPrimaryPaths) {
@@ -221,7 +221,8 @@ function Header() {
             {/* Desktop Primary Navigation (visible on large screens, hides responsively) */}
             <nav
                 ref={navContainerRef}
-                className="relative hidden lg:flex items-center h-full"
+               className="relative hidden xl:flex items-center h-full"
+
             >
                 {/* Page Indicator */}
                 <span
@@ -268,7 +269,7 @@ function Header() {
 
                 {/* Hybrids */}
                 <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
-                    to="/hybrids"
+                    to="/conference"
                     className={`
             relative h-full flex items-center justify-center
             text-black text-base font-semibold whitespace-nowrap px-4 py-2 z-20 group

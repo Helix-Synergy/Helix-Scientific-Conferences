@@ -464,7 +464,7 @@ export const hybridsData = [
     title: "International Science & Technology Summit",
     code: "TECHMATICS-2026",
     date: " Sep 24-25, 2026 ",
-    location: " Franfurt | Germany",
+    location: " Osaka | Japan",
     image: Techmatics_2026,
     link: "https://techmatics.helixconferences.com/",
     type: "Hybrid",
@@ -500,58 +500,58 @@ export const hybridsData = [
     type: "Hybrid",
     year: 2026
   },
-  {
-    title: "International Conference on Public Health & Nursing",
-    code: "PUBLICHEALTH-2025",
-    date: "Nov 25-27, 2025",
-    location: "Valancia | Spain",
-    image: "https://apollouniversity.edu.in/blog/wp-content/uploads/2025/02/Public-Health.jpg",
-    link: "https://publichealth.helixconferences.com/",
-    type: "Hybrid",
-    year: 2025
-  },
+  // {
+  //   title: "International Conference on Public Health & Nursing",
+  //   code: "PUBLICHEALTH-2025",
+  //   date: "Nov 25-27, 2025",
+  //   location: "Valancia | Spain",
+  //   image: "https://apollouniversity.edu.in/blog/wp-content/uploads/2025/02/Public-Health.jpg",
+  //   link: "https://publichealth.helixconferences.com/",
+  //   type: "Hybrid",
+  //   year: 2025
+  // },
 
   // 2026 Hybrid Events (Upcoming)
-  {
-    title: "World Healthcare Summit",
-    code: "Healthcare-2026",
-    date: "May 28-29, 2026",
-    location: "Rome | Italy",
-    image: Health_Sciences_2026,
-    link: "",
-    type: "Hybrid",
-    year: 2026
-  },
-  {
-    title: "World Congress on Infectious Diseases & Antibiotics",
-    code: "Antibiotics-2026",
-    date: "May 28-29, 2026",
-    location: "Rome | Italy",
-    image: Biomed_2026,
-    link: "",
-    type: "Hybrid",
-    year: 2026
-  },
-  {
-    title: "International Conference on Cardiology",
-    code: "Cardiology-2026",
-    date: "May 28-29, 2026",
-    location: "Rome | Italy",
-    image: Critical_Care_2026,
-    link: "",
-    type: "Hybrid",
-    year: 2026
-  },
-  {
-    title: "Global Summit on Cancer & Research",
-    code: "Cancer-2026",
-    date: "May 28-29, 2026",
-    location: "Rome | Italy",
-    image: stemcell_2026,
-    link: "",
-    type: "Hybrid",
-    year: 2026
-  }
+  // {
+  //   title: "World Healthcare Summit",
+  //   code: "Healthcare-2026",
+  //   date: "May 28-29, 2026",
+  //   location: "Rome | Italy",
+  //   image: Health_Sciences_2026,
+  //   link: "",
+  //   type: "Hybrid",
+  //   year: 2026
+  // },
+  // {
+  //   title: "World Congress on Infectious Diseases & Antibiotics",
+  //   code: "Antibiotics-2026",
+  //   date: "May 28-29, 2026",
+  //   location: "Rome | Italy",
+  //   image: Biomed_2026,
+  //   link: "",
+  //   type: "Hybrid",
+  //   year: 2026
+  // },
+  // {
+  //   title: "International Conference on Cardiology",
+  //   code: "Cardiology-2026",
+  //   date: "May 28-29, 2026",
+  //   location: "Rome | Italy",
+  //   image: Critical_Care_2026,
+  //   link: "",
+  //   type: "Hybrid",
+  //   year: 2026
+  // },
+  // {
+  //   title: "Global Summit on Cancer & Research",
+  //   code: "Cancer-2026",
+  //   date: "May 28-29, 2026",
+  //   location: "Rome | Italy",
+  //   image: stemcell_2026,
+  //   link: "",
+  //   type: "Hybrid",
+  //   year: 2026
+  // }
 ];
 
 export default hybridsData;

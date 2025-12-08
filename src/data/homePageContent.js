@@ -115,7 +115,7 @@ export const heroSlides = [
     backgroundImage: Nursing,
     mainTitle: "World Summit on Nursing & Nurse Practices",
     subHeading: "NURSESUMMIT-2026 - Nov 19-20, 2026 | Dubai | UAE",
-    button1: { text: "View Conference Details", link: "https://nursesummit.helixconferences.com/", target: "_blank" },
+    button1: { text: "View Conference Details", link: "/", target: "_blank" },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
 
