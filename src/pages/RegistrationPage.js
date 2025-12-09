@@ -3519,41 +3519,75 @@ const RegistrationPage = () => {
     const webinarConfsAll = webinarsData || [];
     const hybridConfsAll = hybridsData || [];
 
-    return { webinarConfsAll, hybridConfsAll };
+    return {  hybridConfsAll,webinarConfsAll };
   }, []);
+  // ------------code------------------
+//   const allConferenceLists = useMemo(() => {
+//   const webinarConfsAll = webinarsData || [];
+
+//   // 🔥 Hybrid completely removed
+//   const hybridConfsAll = []; 
+
+//   return { webinarConfsAll, hybridConfsAll };
+// }, []);
+
 
   // Combine all conferences for the dropdown and the upcoming events list
+  // const allConferences = useMemo(() => {
+  //   const webinarConfs = webinarsData.map((conf) => ({
+  //     id: conf.code,
+  //     name: conf.title,
+  //     type: conf.type.toLowerCase(),
+  //     description:
+  //       conf.description ||
+  //       "Explore groundbreaking research and connect with leading experts in this dynamic event.",
+  //     year: conf.year,
+  //     date: conf.date,
+  //   }));
+
+    // const hybridConfs = hybridsData.map((conf) => ({
+    //   id: conf.code,
+    //   name: conf.title,
+    //   type: "hybrid",
+    //   description:
+    //     conf.description ||
+    //     "Discover the latest innovations and network with professionals in this unique hybrid conference.",
+    //   year: conf.year,
+    //   date: conf.date,
+    // }));
+
+  //   return [...webinarConfs].map((conf) => ({
+  //     value: conf.id,
+  //     label: `${conf.name} (${
+  //       conf.type.charAt(0).toUpperCase() + conf.type.slice(1)
+  //     })${conf.date ? ` - ${conf.date}` : ""}`,
+  //     originalConf: conf,
+  //   }));
+  // }, []);
+  // code -----------------------------
   const allConferences = useMemo(() => {
-    const webinarConfs = webinarsData.map((conf) => ({
-      id: conf.code,
-      name: conf.title,
-      type: conf.type.toLowerCase(),
-      description:
-        conf.description ||
-        "Explore groundbreaking research and connect with leading experts in this dynamic event.",
-      year: conf.year,
-      date: conf.date,
-    }));
+  // Only take Webinar conferences
+  const webinarConfs = webinarsData.map((conf) => ({
+    id: conf.code,
+    name: conf.title,
+    type: conf.type.toLowerCase(), // Should be 'webinar'
+    description:
+      conf.description ||
+      "Explore groundbreaking research and connect with leading experts in this dynamic event.",
+    year: conf.year,
+    date: conf.date,
+  }));
 
-    const hybridConfs = hybridsData.map((conf) => ({
-      id: conf.code,
-      name: conf.title,
-      type: "hybrid",
-      description:
-        conf.description ||
-        "Discover the latest innovations and network with professionals in this unique hybrid conference.",
-      year: conf.year,
-      date: conf.date,
-    }));
+  // 🔥 ONLY RETURN webinar conferences (NO HYBRIDS)
+  return webinarConfs.map((conf) => ({
+    value: conf.id,
+    label: `${conf.name} (${conf.type.charAt(0).toUpperCase() + conf.type.slice(1)})${
+      conf.date ? ` - ${conf.date}` : ""
+    }`,
+    originalConf: conf,
+  }));
+}, []);
 
-    return [...hybridConfs, ...webinarConfs].map((conf) => ({
-      value: conf.id,
-      label: `${conf.name} (${
-        conf.type.charAt(0).toUpperCase() + conf.type.slice(1)
-      })${conf.date ? ` - ${conf.date}` : ""}`,
-      originalConf: conf,
-    }));
-  }, []);
 
   // Helper to provide placeholder features (should come from backend)
   const getPlaceholderFeatures = (category) => {

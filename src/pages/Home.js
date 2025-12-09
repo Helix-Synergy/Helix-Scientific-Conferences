@@ -12,7 +12,7 @@ import JournalsSection from "../components/home/JournalsSection";
 import HomeTestimonialsSection from "../components/home/HomeTestimonialsSection";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
-
+const homeHybridEvents = hybridEventsData.slice(0, 5)
 function Home() {
   // If you are using AutoImageCarousel, define its images here
 const HandleAllConferences=()=>{
@@ -132,12 +132,13 @@ const HandleAllConferences=()=>{
           overflow: "hidden", // Essential for carousel contents
         }}
       >
-        <AutoScrollingCarousel
-          data={hybridEventsData}
-          speed={50} // Adjust speed as needed
-          direction="left"
-          title="Upcoming Conferences"
-        />
+    <AutoScrollingCarousel
+  data={homeHybridEvents}
+  speed={50}
+  direction="left"
+  title="Upcoming Conferences"
+/>
+
         {/* All conferences */}
   {/* <button onClick={HandleAllConferences}>Read More</button> */}
  <Link 

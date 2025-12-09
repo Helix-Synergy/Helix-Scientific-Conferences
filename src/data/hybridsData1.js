@@ -446,112 +446,355 @@ import Pharmatech_2026 from '../assets/images/Hybrid/Pharmacy_2026.jpg'
 import Biocon_2025 from '../assets/images/Hybrid/BIOCON_2025.jpg'
 import Pharmatech_2025 from '../assets/images/Hybrid/PHARMATECH_2025.jpg'
 import Mediclave_2025 from '../assets/images/Hybrid/MEDICLAVE_2025.jpg'
+import Nursing from "../assets/images/Hybrid/Nursing.jpg"
+
+// export const hybridsData = [
+//   // 2025 Hybrid Events
+//   {
+//     title: "World Agriculture & Food Sciences Conclave",
+//     code: "FOODMEET-2026",
+//     date: "April 23-24, 2026 ",
+//     location: "Barcelona | Spain",
+//     image: Foodmeet_2026,
+//     link: "https://foodmeet.helixconferences.com/",
+//     type: "Hybrid",
+//     year: 2026
+//   },
+//   {
+//     title: "International Science & Technology Summit",
+//     code: "TECHMATICS-2026",
+//     date: " Sep 24-25, 2026 ",
+//     location: " Osaka | Japan",
+//     image: Techmatics_2026,
+//     link: "https://techmatics.helixconferences.com/",
+//     type: "Hybrid",
+//     year: 2026
+//   },
+//   {
+//     title: "Global Pharmaceutical Conclave",
+//     code: "PHARMATECH-2026",
+//     date: "Oct 22-23, 2026 ",
+//     location: "Singapore | Singapore City",
+//     image: Pharmatech_2025,
+//     link: "https://pharmatech.helixconferences.com/",
+//     type: "Hybrid",
+//     year: 2026
+//   },
+//   {
+//     title: "World Biotechnology Summit",
+//     code: "BIOCON-2026",
+//     date: "June 25-26, 2026",
+//     location: "Amsterdem | Netherlands",
+//     image: Biocon_2025,
+//     link: "https://biocon.helixconferences.com/",
+//     type: "Hybrid",
+//     year: 2026
+//   },
+//   {
+//     title: "Global Medical Conclave",
+//     code: "MEDICLAVE-2026",
+//     date: "May 21-22, 2026",
+//     location: "Vinenna | Ausrtia",
+//     image: Mediclave_2025,
+//     link: "https://mediclave.helixconferences.com/",
+//     type: "Hybrid",
+//     year: 2026
+//   },
+
+//     {
+//     title: "World summit on Nursing & Nurse Practices",
+//     code: "NURSESUMMIT-2026",
+//     date: "Nov 19-20, 2026",
+//     location: "Dubai | UAE",
+//     image: Nursing,
+//     link: "",
+//     type: "Hybrid",
+//     year: 2026
+//   },
+  
 
 
+
+
+
+
+
+//   // {
+//   //   title: "International Conference on Public Health & Nursing",
+//   //   code: "PUBLICHEALTH-2025",
+//   //   date: "Nov 25-27, 2025",
+//   //   location: "Valancia | Spain",
+//   //   image: "https://apollouniversity.edu.in/blog/wp-content/uploads/2025/02/Public-Health.jpg",
+//   //   link: "https://publichealth.helixconferences.com/",
+//   //   type: "Hybrid",
+//   //   year: 2025
+//   // },
+
+//   // 2026 Hybrid Events (Upcoming)
+//   // {
+//   //   title: "World Healthcare Summit",
+//   //   code: "Healthcare-2026",
+//   //   date: "May 28-29, 2026",
+//   //   location: "Rome | Italy",
+//   //   image: Health_Sciences_2026,
+//   //   link: "",
+//   //   type: "Hybrid",
+//   //   year: 2026
+//   // },
+//   // {
+//   //   title: "World Congress on Infectious Diseases & Antibiotics",
+//   //   code: "Antibiotics-2026",
+//   //   date: "May 28-29, 2026",
+//   //   location: "Rome | Italy",
+//   //   image: Biomed_2026,
+//   //   link: "",
+//   //   type: "Hybrid",
+//   //   year: 2026
+//   // },
+//   // {
+//   //   title: "International Conference on Cardiology",
+//   //   code: "Cardiology-2026",
+//   //   date: "May 28-29, 2026",
+//   //   location: "Rome | Italy",
+//   //   image: Critical_Care_2026,
+//   //   link: "",
+//   //   type: "Hybrid",
+//   //   year: 2026
+//   // },
+//   // {
+//   //   title: "Global Summit on Cancer & Research",
+//   //   code: "Cancer-2026",
+//   //   date: "May 28-29, 2026",
+//   //   location: "Rome | Italy",
+//   //   image: stemcell_2026,
+//   //   link: "",
+//   //   type: "Hybrid",
+//   //   year: 2026
+//   // }
+// ];
 export const hybridsData = [
-  // 2025 Hybrid Events
+  // 1
   {
-    title: "World Agriculture & Food Sciences Conclave",
+    title: "Global Summit on Food, Agriculture & Environmental Sciences",
     code: "FOODMEET-2026",
-    date: "April 23-24, 2026 ",
+    date: "Apr 23-24, 2026",
     location: "Barcelona | Spain",
     image: Foodmeet_2026,
     link: "https://foodmeet.helixconferences.com/",
     type: "Hybrid",
     year: 2026
   },
+   {
+    title: "World Medical Conclave",
+    code: "MEDICLAVE 2026",
+    date: "May 21-22, 2026",
+    location: "Vienna | Austria",
+    image: MEDICLAVE_2025,
+    link: "https://mediclave.helixconferences.com/",
+    type: "Hybrid",
+    year: 2026
+  },
+
+  // 2
+ 
+   // 7
   {
-    title: "International Science & Technology Summit",
+    title: "International Conference on Applied Lifesciences",
+    code: "BIOCON-2026",
+    date: "Jun 25-26, 2026",
+    location: "Amsterdam | Netherlands",
+    image: Biocon_2025,
+    link: "https://biocon.helixconferences.com/",
+    type: "Hybrid",
+    year: 2026
+  },
+  
+  // 10
+  {
+    title: "World Science & Technology Summit",
     code: "TECHMATICS-2026",
-    date: " Sep 24-25, 2026 ",
-    location: " Osaka | Japan",
+    date: "Sep 24-25, 2026",
+    location: "Osaka | Japan",
     image: Techmatics_2026,
     link: "https://techmatics.helixconferences.com/",
     type: "Hybrid",
     year: 2026
   },
+   // 13
   {
-    title: "Global Pharmaceutical Conclave",
-    code: "PHARMATECH-2026",
-    date: "Oct 22-23, 2026 ",
+    title: "International Conference on Advanced Pharmaceutical Sciences",
+    code: "PHARMTECH-2026",
+    date: "Oct 22-23, 2026",
     location: "Singapore | Singapore City",
     image: Pharmatech_2025,
     link: "https://pharmatech.helixconferences.com/",
     type: "Hybrid",
     year: 2026
   },
+  
+  // 16
   {
-    title: "World Biotechnology Summit",
-    code: "BIOCON-2026",
-    date: "June 25-26, 2026",
-    location: "Amsterdem | Netherlands",
-    image: Biocon_2025,
-    link: "https://biocon.helixconferences.com/",
+    title: "World summit on Nursing & Nurse Practices",
+    code: "NURSESUMMIT-2026",
+    date: "Nov 19-20, 2026",
+    location: "Dubai | UAE",
+    image: Nursing,
+    link: "",
     type: "Hybrid",
     year: 2026
   },
-  {
-    title: "Global Medical Conclave",
-    code: "MEDICLAVE-2026",
-    date: "May 21-22, 2026",
-    location: "Vinenna | Ausrtia",
-    image: Mediclave_2025,
-    link: "https://mediclave.helixconferences.com/",
+   {
+    title: "World Summit on Sustainable Agricultural Practices",
+    code: "Agriprac-2026",
+    date: "Apr 23-24, 2026",
+    location: "Barcelona | Spain",
+    image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=400&h=250&fit=crop",
+    link: "",
     type: "Hybrid",
     year: 2026
   },
-  // {
-  //   title: "International Conference on Public Health & Nursing",
-  //   code: "PUBLICHEALTH-2025",
-  //   date: "Nov 25-27, 2025",
-  //   location: "Valancia | Spain",
-  //   image: "https://apollouniversity.edu.in/blog/wp-content/uploads/2025/02/Public-Health.jpg",
-  //   link: "https://publichealth.helixconferences.com/",
-  //   type: "Hybrid",
-  //   year: 2025
-  // },
 
-  // 2026 Hybrid Events (Upcoming)
-  // {
-  //   title: "World Healthcare Summit",
-  //   code: "Healthcare-2026",
-  //   date: "May 28-29, 2026",
-  //   location: "Rome | Italy",
-  //   image: Health_Sciences_2026,
-  //   link: "",
-  //   type: "Hybrid",
-  //   year: 2026
-  // },
-  // {
-  //   title: "World Congress on Infectious Diseases & Antibiotics",
-  //   code: "Antibiotics-2026",
-  //   date: "May 28-29, 2026",
-  //   location: "Rome | Italy",
-  //   image: Biomed_2026,
-  //   link: "",
-  //   type: "Hybrid",
-  //   year: 2026
-  // },
-  // {
-  //   title: "International Conference on Cardiology",
-  //   code: "Cardiology-2026",
-  //   date: "May 28-29, 2026",
-  //   location: "Rome | Italy",
-  //   image: Critical_Care_2026,
-  //   link: "",
-  //   type: "Hybrid",
-  //   year: 2026
-  // },
-  // {
-  //   title: "Global Summit on Cancer & Research",
-  //   code: "Cancer-2026",
-  //   date: "May 28-29, 2026",
-  //   location: "Rome | Italy",
-  //   image: stemcell_2026,
-  //   link: "",
-  //   type: "Hybrid",
-  //   year: 2026
-  // }
+  // 3
+  {
+    title: "Global Foodomics Conclave",
+    code: "Foodomics-2026",
+    date: "Apr 23-24, 2026",
+    location: "Barcelona | Spain",
+    image:"https://tse4.mm.bing.net/th/id/OIP.o0uJsoIlV3JTZo9K6qEDrQHaE7?pid=Api&P=0&h=180",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+
+  // 4
+ 
+
+  // 5
+  {
+    title: "International Conference on Precision Medicine & Personalized Therapies",
+    code: "Precision Medicine-2026",
+    date: "May 21-22, 2026",
+    location: "Vienna | Austria",
+    image: "https://wallpaperaccess.com/full/3275630.jpg",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+
+  // 6
+  {
+    title: "World Summit Preventive Medicine & Public Health Innovations",
+    code: "Public Health-2026",
+    date: "May 21-22, 2026",
+    location: "Vienna | Austria",
+    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3nI_IzMZq_xlIE_a6wrgFbWYjhWiIzEtROw&s" ,
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+
+ 
+
+  // 8
+  {
+    title: "World Synthetic Biology & Bioengineering Conclave",
+    code: "Synthetic Biology - 2026",
+    date: "Jun 25-26, 2026",
+    location: "Amsterdam | Netherlands",
+    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=250&fit=crop",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+
+  // 9
+  {
+    title: "Global Colloquium on Biosolutions for Global Challenges",
+    code: "Biosol -2026",
+    date: "Jun 25-26, 2026",
+    location: "Amsterdam | Netherlands",
+    image: "https://wallpapercave.com/wp/wp9283244.jpg",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+
+
+  // 11
+  {
+    title: "International conference on Quantum Computing & Information Science",
+    code: "Quantum Computing-2026",
+    date: "Sep 24-25, 2026",
+    location: "Osaka | Japan",
+    image:"https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=250&fit=crop",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+
+  // 12
+  {
+    title: "World Summit on Engineering, Energy & Applied Technologies",
+    code: "EAT-2026",
+    date: "Sep 24-25, 2026",
+    location: "Osaka | Japan",
+    image:"https://wallpaperaccess.com/full/3310619.jpg",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+
+ 
+
+  // 14
+  {
+    title: "Global Conclave on Drug Discovery & Development Innovations",
+    code: "Drugs-2026",
+    date: "Oct 22-23, 2026",
+    location: "Singapore | Singapore City",
+    image: "https://www.idbs.com/wp-content/uploads/2024/01/BL_Blog_Feature_Image_PR_9_Webpage_2048x1152.png",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+
+  // 15
+  {
+    title: "World Summit on Biologics, Biosimilars & Biopharmaceuticals",
+    code: "Biosimilars-2026",
+    date: "Oct 22-23, 2026",
+    location: "Singapore | Singapore City",
+    image:"https://tse2.mm.bing.net/th/id/OIP.M-gUvAXPG88mKN_9tx2uBAHaEK?pid=Api&P=0&h=180",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+
+
+  // 17
+  {
+    title: "International Conference on Critical Care & Emergency Nursing",
+    code: "Critical Care-2026",
+    date: "Nov 19-20, 2026",
+    location: "Dubai | UAE",
+    image:"https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+
+  // 18
+  {
+    title: "Global Digital Health, AI & Nursing Informatics Convlave",
+    code: "Nursing Informative-2026",
+    date: "Nov 19-20, 2026",
+    location: "Dubai | UAE",
+    image: "https://cdn.sanity.io/images/0vv8moc6/mhe/7fbfb1af70cd235247dcf65e5d4aa94b3d02cd1a-8500x4000.jpg?fit=crop&auto=format",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  }
 ];
+
 
 export default hybridsData;

@@ -2032,8 +2032,9 @@ const RegistrationPageUpdated = () => {
   const allConferenceLists = useMemo(() => {
     const webinarConfsAll = webinarsData || [];
     const hybridConfsAll = hybridsData || [];
-    return { webinarConfsAll, hybridConfsAll };
-  }, []);
+    return {...hybridConfsAll, ...webinarConfsAll };
+  }, [webinarsData]);
+
 
   // const allConferences = useMemo(() => {
   //   const webinarConfs = (webinarsData || []).map((conf) => ({
@@ -2056,19 +2057,37 @@ const RegistrationPageUpdated = () => {
   // }, []);
 
   // helper placeholder features
-  const allConferences = useMemo(() => {
+  // const allConferences = useMemo(() => {
+  // const webinarConfs = (webinarsData || []).map((conf) => ({
+  //   value: conf.code,
+  //   label: `${conf.title}`, // Just the title, no type or date
+  //   originalConf: conf,
+  // }));
+  // const hybridConfs = (hybridsData || []).map((conf) => ({
+  //   value: conf.code,
+  //   label: `${conf.title}`, // Just the title, no type or date
+  //   originalConf: conf,
+  // }));
+  // return webinarConfs;
+// }, [ webinarsData]);
+
+// code 1 is here-------------------------------------
+const allConferences = useMemo(() => {
   const webinarConfs = (webinarsData || []).map((conf) => ({
     value: conf.code,
-    label: `${conf.title}`, // Just the title, no type or date
+    label: conf.title,       // show only title
     originalConf: conf,
   }));
-  const hybridConfs = (hybridsData || []).map((conf) => ({
-    value: conf.code,
-    label: `${conf.title}`, // Just the title, no type or date
-    originalConf: conf,
-  }));
-  return [...hybridConfs, ...webinarConfs];
-}, []);
+
+  return webinarConfs; // only webinars returned
+}, [webinarsData]);
+
+
+
+
+
+
+
   const getPlaceholderFeatures = (category) => {
     switch (category) {
       case "e-Poster Presentation":
@@ -2618,6 +2637,7 @@ const RegistrationPageUpdated = () => {
               }}
             />
 
+
             <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-3">
               <button
                 type="button"
@@ -2654,7 +2674,7 @@ const RegistrationPageUpdated = () => {
               <h4 className="text-2xl font-bold text-slate-800 mb-6 text-center">
                 Hybrids
               </h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {allConferenceLists.hybridConfsAll.map((conf) => (
                   <div
                     key={conf.code}
@@ -2697,7 +2717,7 @@ const RegistrationPageUpdated = () => {
                     </div>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             <div className="w-full lg:w-1/2 flex flex-col">
@@ -2727,8 +2747,9 @@ const RegistrationPageUpdated = () => {
                       <button
                         onClick={() =>
                           handleProceedWithConference(
-                            allConferences.find((o) => o.value === conf.code)
+                            allConferences.find((w) => w.value === conf.code)
                           )
+                          
                         }
                         className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wide bg-amber-600 text-white"
                       >
