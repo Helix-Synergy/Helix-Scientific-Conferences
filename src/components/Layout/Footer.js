@@ -143,16 +143,21 @@ function Footer() {
 
   // Reordered navigation links with "Home" at the start
   const navigationLinks = [
-    { name: 'Home', to: '/', icon: <HomeIcon className="w-5 h-5 mr-2" /> },
+    { name: 'Home', to: '/', icon: <HomeIcon className="w-5 h-5 mr-2" /> }, 
+     { name: 'About Us', to: '/about', icon: <UserGroupIcon className="w-5 h-5 mr-2" /> },
+       { name: 'Conference', to: '/conference', icon: <BuildingLibraryIcon className="w-5 h-5 mr-2" /> },
+        { name: 'Journals', to: '/journals', icon: <NewspaperIcon className="w-5 h-5 mr-2" /> },
+            { name: 'Gallery', to: '/gallery', icon: <PhotoIcon className="w-5 h-5 mr-2" /> },
+               { name: 'Testimonials', to: '/testimonials', icon: <ChatBubbleBottomCenterTextIcon className="w-5 h-5 mr-2" /> },
     { name: 'Buy A Ticket', to: '/buy-a-ticket', icon: <TicketIcon className="w-5 h-5 mr-2" /> },
     { name: 'Contact', to: '/contact', icon: <EnvelopeIcon className="w-5 h-5 mr-2" /> },
-    { name: 'About Us', to: '/about', icon: <UserGroupIcon className="w-5 h-5 mr-2" /> },
-    { name: 'Conference', to: '/conference', icon: <BuildingLibraryIcon className="w-5 h-5 mr-2" /> },
+  
+  
     // { name: 'Webinars', to: '/webinars', icon: <VideoCameraIcon className="w-5 h-5 mr-2" /> },
-    { name: 'Gallery', to: '/gallery', icon: <PhotoIcon className="w-5 h-5 mr-2" /> },
-    { name: 'Blog', to: '/blog', icon: <PencilSquareIcon className="w-5 h-5 mr-2" /> },
-    { name: 'Testimonials', to: '/testimonials', icon: <ChatBubbleBottomCenterTextIcon className="w-5 h-5 mr-2" /> },
-    { name: 'Journals', to: '/journals', icon: <NewspaperIcon className="w-5 h-5 mr-2" /> },
+
+    // { name: 'Blog', to: '/blog', icon: <PencilSquareIcon className="w-5 h-5 mr-2" /> },
+ 
+   
   ];
 
   const socialMediaLinks = [
@@ -233,7 +238,7 @@ function Footer() {
                       hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"
                     onMouseEnter={handleLinkMouseEnter}
                     onMouseLeave={handleLinkMouseLeave}
-                  >+1 715 990 5583</a>
+                  >+1-305-239-8055</a>
                 </p>
                 <p className="flex items-center justify-start group">
                   <EnvelopeIcon className="w-5 h-5 mr-3 text-red-500 flex-shrink-0" />

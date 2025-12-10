@@ -275,8 +275,8 @@ const Contact = () => {
                   <PhoneIcon className="w-6 h-6 sm:w-7 sm:h-7 mr-3 sm:mr-4 text-blue-300 flex-shrink-0" />
                   <div>
                     <p className="font-semibold">Phone Numbers</p>
-                    <p>+1757 656 7778</p>
-                    <p>+91 9000146000</p>
+                    <p>+1-305-239-8055</p>
+                    {/* <p>+91 9000146000</p> */}
                   </div>
                 </div>
                 <div className="flex items-center text-base sm:text-lg">
