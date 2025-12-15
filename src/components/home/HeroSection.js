@@ -343,12 +343,19 @@ function HeroSection() {
         initial="hidden"
         animate="visible"
       >
-        <motion.h1
+        {/* <motion.h1
           className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg"
           variants={itemVariants}
         >
           {currentSlide.mainTitle}
-        </motion.h1>
+        </motion.h1> */}
+        <motion.h1
+  className="text-2xl md:text-5xl font-extrabold mb-4 leading-tight drop-shadow-lg"
+  variants={itemVariants}
+>
+  {currentSlide.mainTitle}
+</motion.h1>
+
         <motion.p
           className="text-lg md:text-xl mb-8 opacity-80 drop-shadow-md"
           variants={itemVariants}

@@ -9,32 +9,32 @@ const CallForPapers = () => {
   const conferences = [
     { 
       id: '1', 
-      name: 'World Agriculture & Food Sciences Conclave', 
+      name: 'Food, Agriculture & Environmental Sciences Forum', 
       link: 'https://foodmeet.helixconferences.com/abstract-submission'
     },
     { 
       id: '2', 
-      name: 'International Science & Technology Summit', 
+      name: 'World Quantam Technology Summit', 
       link: 'https://techmatics.helixconferences.com/abstractsubmission/'
     },
     { 
       id: '3', 
-      name: 'Global Pharmaceutical Conclave', 
+      name: 'Advanced Pharmaceutical Sciences Forum', 
       link: 'https://pharmatech.helixconferences.com/abstract-submission'
     },
     { 
       id: '4', 
-      name: 'World Biotechnology Summit', 
+      name: 'International Conference on Applied Lifesciences', 
       link: 'https://biocon.helixconferences.com/abstract-submission'
     },
     { 
       id: '5', 
-      name: 'Global Medical Conclave', 
+      name: ' Advanced Medical Practices Conclave', 
       link: 'https://mediclave.helixconferences.com/abstract-submission'
     },
     { 
       id: '6', 
-      name: 'World Summit on Nursing & Nurse Practices', 
+      name: 'Nursing & Nurse Practices Conclave', 
       link: 'https://biocon.helixconferences.com/abstract-submission'
     },
   ];

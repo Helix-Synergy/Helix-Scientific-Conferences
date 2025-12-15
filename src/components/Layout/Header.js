@@ -269,7 +269,7 @@ function Header() {
 
                 {/* Hybrids */}
                 <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
-                    to="/conference"
+                    to="/Conferences-2026" 
                     className={`
             relative h-full flex items-center justify-center
             text-black text-base font-semibold whitespace-nowrap px-4 py-2 z-20 group
@@ -279,7 +279,7 @@ function Header() {
                     ref={(el) => (navRefs.current["/hybrids"] = el)}
                 >
                     <MicrophoneIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
-                    Conference
+                    Conferences
                 </MotionNavLink>
 
                 {/* Webinars */}
@@ -348,7 +348,7 @@ function Header() {
 
                 {/* Call For Papers */}
                 <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
-                    to="/call"
+                    to="/call-for-papers"
                     className={`
             relative h-full flex items-center justify-center
             text-black text-base font-semibold whitespace-nowrap px-4 py-2 z-20 group

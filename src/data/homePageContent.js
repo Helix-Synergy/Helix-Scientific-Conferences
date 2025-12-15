@@ -4,37 +4,37 @@
 // They are used to ensure the site displays content even without local assets.
 // You MUST REPLACE THESE with your ACTUAL IMAGES from public/assets/images/ AND public/assets/avatars/ LATER.
 
-import GlobalScienceTechnology from '../assets/images/homePage/GlobalScienceTechnology.jpg'
-import ArtificialIntelligenceMachineLearning from '../assets/images/homePage/ArtificialIntelligenceMachineLearning.jpg'
-import BiotechLifeSciencesForum from '../assets/images/homePage/BiotechLifeSciencesForum.jpg'
-import RenewableEnergySustainability from '../assets/images/homePage/RenewableEnergySustainability.jpg'
-import ConnectInspireInnovate from '../assets/images/homePage/ConnectInspireInnovate..jpg'
+import GlobalScienceTechnology from "../assets/images/homePage/GlobalScienceTechnology.jpg";
+import ArtificialIntelligenceMachineLearning from "../assets/images/homePage/ArtificialIntelligenceMachineLearning.jpg";
+import BiotechLifeSciencesForum from "../assets/images/homePage/BiotechLifeSciencesForum.jpg";
+import RenewableEnergySustainability from "../assets/images/homePage/RenewableEnergySustainability.jpg";
+import ConnectInspireInnovate from "../assets/images/homePage/ConnectInspireInnovate..jpg";
 
-import innovationImageA from '../assets/images/homePage/innovationImageA.jpg'
-import innovationImageB from '../assets/images/homePage/innovationImageB.jpg'
-import innovationImageC from '../assets/images/homePage/innovationImageC.jpg'
-import innovationImageD from '../assets/images/homePage/innovationImageD.jpg'
-import innovationImageE from '../assets/images/homePage/innovationImageE.jpg'
+import innovationImageA from "../assets/images/homePage/innovationImageA.jpg";
+import innovationImageB from "../assets/images/homePage/innovationImageB.jpg";
+import innovationImageC from "../assets/images/homePage/innovationImageC.jpg";
+import innovationImageD from "../assets/images/homePage/innovationImageD.jpg";
+import innovationImageE from "../assets/images/homePage/innovationImageE.jpg";
 import Foodmeet_2026 from "../assets/images/Hybrid/Foodmeet_2026.jpg";
-import Techmatics_2026 from '../assets/images/Hybrid/TECHMATICS_2026.jpg'
-import Biocon_2025 from '../assets/images/Hybrid/BIOCON_2025.jpg'
-import Pharmatech_2025 from '../assets/images/Hybrid/PHARMATECH_2025.jpg'
-import Mediclave_2025 from '../assets/images/Hybrid/MEDICLAVE_2025.jpg'
-import Nursing from "../assets/images/Hybrid/Nursing.jpg"
-
-
-
+import Techmatics_2026 from "../assets/images/Hybrid/TECHMATICS_2026.jpg";
+import Biocon_2025 from "../assets/images/Hybrid/BIOCON_2025.jpg";
+import Pharmatech_2025 from "../assets/images/Hybrid/PHARMATECH_2025.jpg";
+import Mediclave_2025 from "../assets/images/Hybrid/MEDICLAVE_2025.jpg";
+import Nursing from "../assets/images/Hybrid/Nursing.jpg";
 
 // About Section Images (Pexels URLs related to collaboration/work)
-const aboutImg1 = "https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-const aboutImg2 = "https://images.pexels.com/photos/1708936/pexels-photo-1708936.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-
+const aboutImg1 =
+  "https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+const aboutImg2 =
+  "https://images.pexels.com/photos/1708936/pexels-photo-1708936.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 
 // Testimonial Avatars (Pexels URLs for diverse headshots)
-const testimonialAvatar1 = "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-const testimonialAvatar2 = "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-const testimonialAvatar3 = "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-
+const testimonialAvatar1 =
+  "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+const testimonialAvatar2 =
+  "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+const testimonialAvatar3 =
+  "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 
 // // heroData is now an array of slides
 // export const heroSlides = [
@@ -78,49 +78,67 @@ const testimonialAvatar3 = "https://images.pexels.com/photos/1040880/pexels-phot
 export const heroSlides = [
   {
     backgroundImage: Foodmeet_2026,
-    mainTitle: "World Agriculture & Food Sciences Conclave",
+    mainTitle: " Food Agriculture & Environmental Sciences Forum",
     subHeading: "FOODMEET-2026  - April 23-24, 2026 | Barcelona | Spain",
-    button1: { text: "View Conference Details", link: "https://foodmeet.helixconferences.com/", target: "_blank" },
+    button1: {
+      text: "View Conference Details",
+      link: "https://foodmeet.helixconferences.com/",
+      target: "_blank",
+    },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
     backgroundImage: Techmatics_2026,
-    mainTitle: "International Science & Technology Summit",
-    subHeading: " TECHMATICS-2026 - Sep 24-25, 2026 | Osaka | Japan",
-    button1: { text: "View Conference Details", link: "https://techmatics.helixconferences.com/", target: "_blank" },
+    mainTitle: "World Quantam Technology Summit",
+    subHeading: " QUANTUMTECH-2026 - Sep 24-25, 2026 | Osaka | Japan",
+    button1: {
+      text: "View Conference Details",
+      link: "https://techmatics.helixconferences.com/",
+      target: "_blank",
+    },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
     backgroundImage: Pharmatech_2025,
-    mainTitle: "Global Pharmaceutical Conclave",
+    mainTitle: "Advanced Pharmaceutical Sciences Forum",
     subHeading: "PHARMATECH-2026 - Oct 22-23, 2026 | Singapore ",
-    button1: { text: "View Conference Details", link: "https://pharmatech.helixconferences.com/", target: "_blank" },
+    button1: {
+      text: "View Conference Details",
+      link: "https://pharmatech.helixconferences.com/",
+      target: "_blank",
+    },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
     backgroundImage: Biocon_2025,
-    mainTitle: "World Biotechnology Summit",
+    mainTitle: "International Conference on Applied Lifesciences",
     subHeading: "BIOCON-2026 - June 25-26, 2026 | Amsterdem | Netherlands",
-    button1: { text: "View Conference Details", link: "https://biocon.helixconferences.com/", target: "_blank" },
+    button1: {
+      text: "View Conference Details",
+      link: "https://biocon.helixconferences.com/",
+      target: "_blank",
+    },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
     backgroundImage: Mediclave_2025,
-    mainTitle: "Global Medical Conclave",
+    mainTitle: "Advanced Medical Practices Conclave",
     subHeading: "MEDICLAVE-2026 - May 21-22, 2026 | Vinenna | Ausrtia",
-    button1: { text: "View Conference Details", link: "https://mediclave.helixconferences.com/", target: "_blank" },
+    button1: {
+      text: "View Conference Details",
+      link: "https://mediclave.helixconferences.com/",
+      target: "_blank",
+    },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
-   {
+  {
     backgroundImage: Nursing,
-    mainTitle: "World Summit on Nursing & Nurse Practices",
+    mainTitle: " Nursing & Nurse Practices Conclave",
     subHeading: "NURSESUMMIT-2026 - Nov 19-20, 2026 | Dubai | UAE",
     button1: { text: "View Conference Details", link: "/", target: "_blank" },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
-
 ];
-
 
 export const statisticsData = [
   { value: 27, label: "Executed Conferences" },
@@ -151,46 +169,42 @@ export const aboutData = {
     innovationImageB,
     innovationImageC,
     innovationImageD,
-    innovationImageE
+    innovationImageE,
   ],
   satisfiedClients: {
     count: 3500,
     label: "Satisfied Clients",
     // These are also Pexels URLs now to avoid local file dependency
-    avatars: [
-      testimonialAvatar1,
-      testimonialAvatar2,
-      testimonialAvatar3,
-    ],
+    avatars: [testimonialAvatar1, testimonialAvatar2, testimonialAvatar3],
   },
 };
-
-
-
-
 
 export const journalsData = {
   heading: "Helix Open Access Journals",
   subHeading: "Publish Your Research with Global Reach",
-  description: "Helix Conferences proudly supports open access publishing through its network of peer-reviewed Journals. Submit your Research and contribute to the Global Scientific community.",
-  button: { text: "View All Journals", link: "/journals" }
+  description:
+    "Helix Conferences proudly supports open access publishing through its network of peer-reviewed Journals. Submit your Research and contribute to the Global Scientific community.",
+  button: { text: "View All Journals", link: "/journals" },
 };
 
 export const testimonialsData = [
   {
-    quote: "Attending Helix Conferences has been a game-changer for my research. The quality of presentations and networking opportunities are unparalleled.",
+    quote:
+      "Attending Helix Conferences has been a game-changer for my research. The quality of presentations and networking opportunities are unparalleled.",
     author: "Dr. Sarah Chen",
     title: "Research Scientist, Tech Innovations Inc.",
     avatar: testimonialAvatar1,
   },
   {
-    quote: "The webinars provided invaluable insights into emerging technologies. Highly recommended for anyone in the tech industry.",
+    quote:
+      "The webinars provided invaluable insights into emerging technologies. Highly recommended for anyone in the tech industry.",
     author: "Mr. David Lee",
     title: "Software Engineer, Global Solutions",
     avatar: testimonialAvatar2,
   },
   {
-    quote: "A truly international platform! I connected with collaborators from different continents, leading to exciting new projects.",
+    quote:
+      "A truly international platform! I connected with collaborators from different continents, leading to exciting new projects.",
     author: "Prof. Emily White",
     title: "University Professor, Global University",
     avatar: testimonialAvatar3,
@@ -200,7 +214,8 @@ export const testimonialsData = [
 export const contactData = {
   heading: "Get In Touch",
   subHeading: "Have questions? We're here to help.",
-  address: "Helix Conferences Office, 123 Science Blvd, Innovation City, 500081, India",
+  address:
+    "Helix Conferences Office, 123 Science Blvd, Innovation City, 500081, India",
   phone: "+91 123 456 7890",
   email: "info@helixconferences.com",
 };
@@ -224,12 +239,5 @@ export const footerLinks = {
     { text: "FAQs", link: "/faqs" },
     { text: "Privacy Policy", link: "/privacy-policy" },
     { text: "Terms & Conditions", link: "/terms-conditions" },
-  ]
+  ],
 };
-
-
-
-
-
-
-

@@ -250,15 +250,24 @@ const fieldImages = {
   "bio": "https://florenciahealthcare.com/wp-content/uploads/2023/10/Slider-01.jpg",
   "medical": "https://www.pixelstalk.net/wp-content/uploads/images1/Medical-Wallpapers-HD-Free-download.jpg",
   "biocon": "https://thesaudiboom.com/wp-content/uploads/2024/01/1-Saudi-Arabia-Launches-National-Biotechnology-Strategy-To-Become-Global-BioTech-Hub-by-2040-scaled.jpeg",
-  "nursing": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlogsZ1LK2PopL1jGerEig3DzWzYk2I8_I3A&s"
+  "nursing": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlogsZ1LK2PopL1jGerEig3DzWzYk2I8_I3A&s",
+
+  "food-tech-expo":"https://images.yourstory.com/cs/wordpress/2016/03/foodtech.jpg",
+  "millets":"https://www.zettafarms.com/wp-content/uploads/2024/01/blog-7.jpg",
+  "medicine":"https://cdn.pixabay.com/photo/2023/10/01/14/40/medicine-8287535_1280.jpg",
+  "rare":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp1rD-4ayjUib1DET_1b2JFcmxrb6ZUcSHkQ&s",
+  "energy":"https://sdg.iisd.org/wp-content/uploads/2023/08/cg642.jpg",
+  "pharma-access":"https://img.freepik.com/free-photo/medicine-capsules-global-health-with-geometric-pattern-digital-remix_53876-126742.jpg",
+  "nursing-lead":"https://wallpapers.com/images/hd/beautiful-indian-nurse-05s83ahwccah9a3i.jpg"
 };
 
 
 // 🔗 Add links for specific conferences
 const conferenceData = [
+  // Food
   {
     field: "Food-Meet",
-    title: "Global Summit on Food, Agriculture & Environmental Sciences",
+    title: "Food, Agriculture & Environmental Sciences Forum",
     shortName: "FOODMEET-2026",
     date: "Apr 23-24 | 2026",
     venue: "Barcelona | Spain",
@@ -266,43 +275,70 @@ const conferenceData = [
   },
   {
     field: "FOOD & AGRI",
-    title: "World Summit on Sustainable Agricultural Practices",
-    shortName: "Agriprac-2026",
+    title: "Food Microbiome Summit",
+    shortName: "FOODMICRO-2026",
     date: "Apr 23-24 | 2026",
     venue: "Barcelona | Spain"
   },
+  // 3
   {
     field: "Food",
-    title: "Global Foodomics Conclave",
-    shortName: "Foodomics-2026",
+    title: "Regenerative AgriTech Forum",
+    shortName: "AGRIREGEN-2026",
     date: "Apr 23-24 | 2026",
     venue: "Barcelona | Spain"
   },
-
+    {
+    field: "food-tech-expo",
+    title: "Future FoodTech Expo",
+    shortName: "FOODTECH-2026",
+    date: "Apr 23-24 | 2026",
+    venue: "Barcelona | Spain"
+  },
+  // 5
+    {
+    field: "millets",
+    title: "Millets & Climate-Resilient Agriculture Summit",
+    shortName: "MILLETS-2026",
+    date: "Apr 23-24 | 2026",
+    venue: "Barcelona | Spain"
+  },
+  // Medical 
+// 1
   {
     field: "medical",
-    title: "World Medical Conclave",
+    title: "Advanced Medical Practices Conclave",
     shortName: "MEDICLAVE 2026",
     date: "May 21-22 | 2026",
     venue: "Vienna | Austria",
     link: "https://mediclave.helixconferences.com/"
   },
-
+// 2
   {
     field: "Medi",
-    title: "International Conference on Precision Medicine & Personalized Therapies",
-    shortName: "Precision Medicine-2026",
+    title: "Digital Pathology & AI Diagnostics Congress",
+    shortName: "DIGIPATH-2026",
     date: "May 21-22 | 2026",
     venue: "Vienna | Austria"
   },
+  // 3
   {
     field: "MEDICAL",
-    title: "World Summit Preventive Medicine & Public Health Innovations",
-    shortName: "Public Health-2026",
+    title: "Precision Medicine Summit",
+    shortName: "PRECISIONMEDICINE-2026",
     date: "May 21-22 | 2026",
     venue: "Vienna | Austria"
   },
-
+  // 4
+    {
+    field: "medicine",
+    title: "Aesthetic Medicine & Cosmetic Innovation Summit",
+    shortName: "AESTHETICA-2026",
+    date: "May 21-22 | 2026",
+    venue: "Vienna | Austria"
+  },
+// Biocon
+// 1
   {
     field: "biocon",
     title: "International Conference on Applied Lifesciences",
@@ -311,47 +347,65 @@ const conferenceData = [
     venue: "Amsterdam | Netherlands",
     link: "https://biocon.helixconferences.com/"
   },
+  //2
   {
     field: "LIFE SCIENCES",
-    title: "World Synthetic Biology & Bioengineering Conclave",
-    shortName: "Synthetic Biology - 2026",
+    title: "International Synthetic Biology & Bioengineering Forum",
+    shortName: "SYNBIO-2026",
     date: "Jun 25-26 | 2026",
     venue: "Amsterdam | Netherlands"
   },
+  // 3
   {
     field: "Bio",
-    title: "Global Colloquium on Biosolutions for Global Challenges",
-    shortName: "Biosol -2026",
+    title: "Microbiome Therapeutics Summit",
+    shortName: "MICROBIOME-2026",
     date: "Jun 25-26 | 2026",
     venue: "Amsterdam | Netherlands"
   },
+    {
+    field: "rare",
+    title: "International Rare Disease & Orphan Drug Congress",
+    shortName: "RAREDISEASE-2026",
+    date: "Jun 25-26 | 2026",
+    venue: "Amsterdam | Netherlands"
+  },
+  // Qunatam
 
   {
     field: "tech",
-    title: "World Science & Technology Summit",
-    shortName: "TECHMATICS-2026",
+    title: "World Quantam Technology Summit",
+    shortName: "QUANTUMTECH-2026",
     date: "Sep 24-25 | 2026",
     venue: "Osaka | Japan",
     link: "https://techmatics.helixconferences.com/"
   },
   {
     field: "SCIENCE & TECHNOLOGY",
-    title: "International conference on Quantum Computing & Information Science",
-    shortName: "Quantum Computing-2026",
+    title: "Zero-Trust Security & AI Defense Forum",
+    shortName: "ZEROTRUSTAI-2026",
     date: "Sep 24-25 | 2026",
     venue: "Osaka | Japan"
   },
   {
     field: "e",
-    title: "World Summit on Engineering, Energy & Applied Technologies",
-    shortName: "EAT-2026",
+    title: "Smart Materials, Nanotech & Advanced Manufacturing Congress",
+    shortName: "SMARTMATERIALS-2026",
     date: "Sep 24-25 | 2026",
     venue: "Osaka | Japan"
   },
-
+  // 4
+    {
+    field: "energy",
+    title: "Advanced Materials & Clean Energy Forum",
+    shortName: "MATENERGY-2026",
+    date: "Sep 24-25 | 2026",
+    venue: "Osaka | Japan"
+  },
+// Pharmatech
   {
     field: "bio",
-    title: "International Conference on Advanced Pharmaceutical Sciences",
+    title: " Advanced Pharmaceutical Sciences Forum",
     shortName: "PHARMTECH-2026",
     date: "Oct 22-23 | 2026",
     venue: "Singapore | Singapore City",
@@ -359,37 +413,53 @@ const conferenceData = [
   },
   {
     field: "ee",
-    title: "Global Conclave on Drug Discovery & Development Innovations",
-    shortName: "Drugs-2026",
+    title: "AI Drug Discovery Conclave",
+    shortName: "AIDRUG-2026",
     date: "Oct 22-23 | 2026",
     venue: "Singapore | Singapore City"
   },
   {
     field: "n",
-    title: "World Summit on Biologics, Biosimilars & Biopharmaceuticals",
-    shortName: "Biosimilars-2026",
+    title: "Cell & Gene Therapy Manufacturing Summit",
+    shortName: "CELLGENE-2026",
     date: "Oct 22-23 | 2026",
     venue: "Singapore | Singapore City"
   },
-
+  // 4
+   {
+    field: "pharma-access",
+    title: "Real-World Evidence & Pharma Access Forum",
+    shortName: "PHARMACCESS-2026",
+    date: "Oct 22-23 | 2026",
+    venue: "Singapore | Singapore City"
+  },
+// Nursing
   {
     field: "nursing",
-    title: "World summit on Nursing & Nurse Practices",
+    title: "Nursing & Nurse Practices Conclave",
     shortName: "NURSESUMMIT-2026",
     date: "Nov 19-20 | 2026",
     venue: "Dubai | UAE"
   },
   {
     field: "NURSING",
-    title: "International Conference on Critical Care & Emergency Nursing",
-    shortName: "Critical Care-2026",
+    title: "AI & Digital Nursing Forum",
+    shortName: "AINURSE-2026",
     date: "Nov 19-20 | 2026",
     venue: "Dubai | UAE"
   },
   {
     field: "Digi",
-    title: "Global Digital Health, AI & Nursing Informatics Convlave",
-    shortName: "Nursing Informative-2026",
+    title: "Critical & Emergency Care Summit",
+    shortName: "ER-SUMMIT-2026",
+    date: "Nov 19-20 | 2026",
+    venue: "Dubai | UAE"
+  },
+  // 4
+    {
+    field: "nursing-lead",
+    title: "Nursing Leadership & Workforce Excellence Congress",
+    shortName: "ER-SUMMIT-2026",
     date: "Nov 19-20 | 2026",
     venue: "Dubai | UAE"
   }

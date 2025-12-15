@@ -145,7 +145,7 @@ function Footer() {
   const navigationLinks = [
     { name: 'Home', to: '/', icon: <HomeIcon className="w-5 h-5 mr-2" /> }, 
      { name: 'About Us', to: '/about', icon: <UserGroupIcon className="w-5 h-5 mr-2" /> },
-       { name: 'Conference', to: '/conference', icon: <BuildingLibraryIcon className="w-5 h-5 mr-2" /> },
+       { name: 'Conference', to: "/Conferences-2026" , icon: <BuildingLibraryIcon className="w-5 h-5 mr-2" /> },
         { name: 'Journals', to: '/journals', icon: <NewspaperIcon className="w-5 h-5 mr-2" /> },
             { name: 'Gallery', to: '/gallery', icon: <PhotoIcon className="w-5 h-5 mr-2" /> },
                { name: 'Testimonials', to: '/testimonials', icon: <ChatBubbleBottomCenterTextIcon className="w-5 h-5 mr-2" /> },

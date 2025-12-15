@@ -4684,7 +4684,7 @@
             {/* Contact Information Section */}
             <div className="bg-white p-6 md:p-8 rounded-2xl shadow-md border border-gray-200">
               <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 text-center">
-                Your Contact Information
+                Your Contact Information 
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>

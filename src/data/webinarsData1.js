@@ -95,7 +95,6 @@
 //     year: 2025
 //   },
 
-
 //   // 2026 webinars (Upcoming)
 //   {
 //     title: "World Gene Therapy Summit",
@@ -371,262 +370,477 @@
 
 // export default WebinarsData;
 
-
-
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 // Import images from your assets folder as per the provided image names
-import Aerotech2026 from '../assets/images/Webinar/Aerotech_2026.jpg';
-import AIR2025 from '../assets/images/Webinar/AIR_2025.jpg';
-import AR2026 from '../assets/images/Webinar/AR_2026.jpg';
-import Battery2026 from '../assets/images/Webinar/Battery_2026.jpg';
-import Bigdata2026 from '../assets/images/Webinar/Bigdata_2026.jpg';
-import Bioelectronics2026 from '../assets/images/Webinar/Bioelectronics_2026.jpg';
-import Biofuel2026 from '../assets/images/Webinar/Biofuel_2026.jpeg';
-import Biomechanics2026 from '../assets/images/Webinar/Biomechanics_2026.jpg';
-import Blockchain2026 from '../assets/images/Webinar/Blockchain_2026.jpg';
-import Cloud2026 from '../assets/images/Webinar/Cloud_2026.jpg';
-import Cyber2026 from '../assets/images/Webinar/Cyber_2026.jpg';
-import DataAnalytics2026 from '../assets/images/Webinar/Data Analytics_2026.jpg';
-import Fermentation2026 from '../assets/images/Webinar/Fermentation_2026.jpg';
-import Food2026 from '../assets/images/Webinar/Food_2026.jpg';
-import Gene2026 from '../assets/images/Webinar/GENE-2026.jpg';
-import Genomics2026 from '../assets/images/Webinar/Genomics_2026.jpg';
-import GPS2026 from '../assets/images/Webinar/GPS_2026.jpg';
-import Green2026 from '../assets/images/Webinar/Green_2026.jpg';
-import Hydrogen2026 from '../assets/images/Webinar/Hydrogen_2026.jpg';
-import IBS2026 from '../assets/images/Webinar/IBS_2026.jpg';
-import IGC2026 from '../assets/images/Webinar/IGC_2026.jpg';
-import Immuno2026 from '../assets/images/Webinar/Immuno_2026.jpg';
-import MachineLearning2026 from '../assets/images/Webinar/Machine_Learning_2026.jpg';
-import Meta2026 from '../assets/images/Webinar/META_2026.jpg';
-import Nano2026 from '../assets/images/Webinar/Nano_2026.jpg';
-import NEST2025 from '../assets/images/Webinar/NEST_2025.jpg';
-import Quantum2026 from '../assets/images/Webinar/Quantum_2026.jpg';
-import Renewable2026 from '../assets/images/Webinar/Renewable_2026.jpg';
-import STEM2026 from '../assets/images/Webinar/STEM_2026.jpg';
-import Vaccine2026 from '../assets/images/Webinar/Vaccine_2026.jpg';
+import Aerotech2026 from "../assets/images/Webinar/Aerotech_2026.jpg";
+import AIR2025 from "../assets/images/Webinar/AIR_2025.jpg";
+import AR2026 from "../assets/images/Webinar/AR_2026.jpg";
+import Battery2026 from "../assets/images/Webinar/Battery_2026.jpg";
+import Bigdata2026 from "../assets/images/Webinar/Bigdata_2026.jpg";
+import Bioelectronics2026 from "../assets/images/Webinar/Bioelectronics_2026.jpg";
+import Biofuel2026 from "../assets/images/Webinar/Biofuel_2026.jpeg";
+import Biomechanics2026 from "../assets/images/Webinar/Biomechanics_2026.jpg";
+import Blockchain2026 from "../assets/images/Webinar/Blockchain_2026.jpg";
+import Cloud2026 from "../assets/images/Webinar/Cloud_2026.jpg";
+import Cyber2026 from "../assets/images/Webinar/Cyber_2026.jpg";
+import DataAnalytics2026 from "../assets/images/Webinar/Data Analytics_2026.jpg";
+import Fermentation2026 from "../assets/images/Webinar/Fermentation_2026.jpg";
+import Food2026 from "../assets/images/Webinar/Food_2026.jpg";
+import Gene2026 from "../assets/images/Webinar/GENE-2026.jpg";
+import Genomics2026 from "../assets/images/Webinar/Genomics_2026.jpg";
+import GPS2026 from "../assets/images/Webinar/GPS_2026.jpg";
+import Green2026 from "../assets/images/Webinar/Green_2026.jpg";
+import Hydrogen2026 from "../assets/images/Webinar/Hydrogen_2026.jpg";
+import IBS2026 from "../assets/images/Webinar/IBS_2026.jpg";
+import IGC2026 from "../assets/images/Webinar/IGC_2026.jpg";
+import Immuno2026 from "../assets/images/Webinar/Immuno_2026.jpg";
+import MachineLearning2026 from "../assets/images/Webinar/Machine_Learning_2026.jpg";
+import Meta2026 from "../assets/images/Webinar/META_2026.jpg";
+import Nano2026 from "../assets/images/Webinar/Nano_2026.jpg";
+import NEST2025 from "../assets/images/Webinar/NEST_2025.jpg";
+import Quantum2026 from "../assets/images/Webinar/Quantum_2026.jpg";
+import Renewable2026 from "../assets/images/Webinar/Renewable_2026.jpg";
+import STEM2026 from "../assets/images/Webinar/STEM_2026.jpg";
+import Vaccine2026 from "../assets/images/Webinar/Vaccine_2026.jpg";
 
-import IDOM2025 from '../assets/images/Webinar/IDOM_2025.jpg';
-import GENT2025 from '../assets/images/Webinar/GENT_2025.jpeg';
-import Ican2025 from '../assets/images/Webinar/Ican_2025.jpg';
-import ARM2025 from '../assets/images/Webinar/ARM_2025.jpg';
+import IDOM2025 from "../assets/images/Webinar/IDOM_2025.jpg";
+import GENT2025 from "../assets/images/Webinar/GENT_2025.jpeg";
+import Ican2025 from "../assets/images/Webinar/Ican_2025.jpg";
+import ARM2025 from "../assets/images/Webinar/ARM_2025.jpg";
 
+// const WebinarsData = [
+
+//  // Updated 2026 webinars
+//   //
+//   {
+//     title: " Food, Agriculture & Environmental Sciences Forum",
+//     code: "FOODMEET-2026",
+//     date: "Apr 23-24, 2026",
+//     type: "Conference",
+//     // image: Foodmeet_2026,
+//     link: "https://foodmeet.helixconferences.com/",
+//     year: 2026
+//   },
+//   {
+//     title: "Advanced Medical Practices Conclave",
+//     code: "MEDICLAVE 2026",
+//     date: "May 21-22, 2026",
+//    type: "Conference",
+//     // image: MEDICLAVE_2025,
+//     link: "https://mediclave.helixconferences.com/",
+//     year: 2026
+//   },
+//   {
+//     title: "World Summit on Sustainable Agricultural Practices",
+//     code: "Agriprac-2026",
+//     date: "Apr 23-24, 2026",
+//     type: "Conference",
+//     image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=400&h=250&fit=crop",
+//     link: "",
+//     year: 2026
+//   },
+//   {
+//     title: "Global Foodomics Conclave",
+//     code: "Foodomics-2026",
+//     date: "Apr 23-24, 2026",
+//     type: "Conference",
+//     image:"https://tse4.mm.bing.net/th/id/OIP.o0uJsoIlV3JTZo9K6qEDrQHaE7?pid=Api&P=0&h=180",
+//     link: "",
+//     year: 2026
+//   },
+//   {
+//     title: "International Conference on Precision Medicine & Personalized Therapies",
+//     code: "Precision Medicine-2026",
+//     date: "May 21-22, 2026",
+//     type: "Conference",
+//     image: "https://wallpaperaccess.com/full/3275630.jpg",
+//     link: "",
+//     year: 2026
+//   },
+//   {
+//     title: "World Summit Preventive Medicine & Public Health Innovations",
+//     code: "Public Health-2026",
+//     date: "May 21-22, 2026",
+//     type: "Conference",
+//     image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3nI_IzMZq_xlIE_a6wrgFbWYjhWiIzEtROw&s",
+//     link: "",
+//     year: 2026
+//   },
+//   {
+//     title: "International Conference on Applied Lifesciences",
+//     code: "BIOCON-2026",
+//     date: "Jun 25-26, 2026",
+//   type: "Conference",
+//     // image: Biocon_2025,
+//     link: "https://biocon.helixconferences.com/",
+//     year: 2026
+//   },
+//   {
+//     title: "World Synthetic Biology & Bioengineering Conclave",
+//     code: "Synthetic Biology - 2026",
+//     date: "Jun 25-26, 2026",
+//    type: "Conference",
+//     image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=250&fit=crop",
+//     link: "",
+//     year: 2026
+//   },
+//   {
+//     title: "Global Colloquium on Biosolutions for Global Challenges",
+//     code: "Biosol -2026",
+//     date: "Jun 25-26, 2026",
+//    type: "Conference",
+//     image: "https://wallpapercave.com/wp/wp9283244.jpg",
+//     link: "",
+//     year: 2026
+//   },
+//   {
+//     title: "World Science & Technology Summit",
+//     code: "QUANTUMTECH-2026",
+//     date: "Sep 24-25, 2026",
+//   type: "Conference",
+//     // image: Techmatics_2026,
+//     link: "https://techmatics.helixconferences.com/",
+//     year: 2026
+//   },
+//   {
+//     title: "International conference on Quantum Computing & Information Science",
+//     code: "Quantum Computing-2026",
+//     date: "Sep 24-25, 2026",
+//   type: "Conference",
+//     image:"https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=250&fit=crop",
+//     link: "",
+//     year: 2026
+//   },
+//   {
+//     title: "World Summit on Engineering, Energy & Applied Technologies",
+//     code: "EAT-2026",
+//     date: "Sep 24-25, 2026",
+//   type: "Conference",
+//     image:"https://wallpaperaccess.com/full/3310619.jpg",
+//     link: "",
+//     year: 2026
+//   },
+//   {
+//     title: " Advanced Pharmaceutical Sciences Forum",
+//     code: "PHARMTECH-2026",
+//     date: "Oct 22-23, 2026",
+//    type: "Conference",
+//     // image: Pharmatech_2025,
+//     link: "https://pharmatech.helixconferences.com/",
+//     year: 2026
+//   },
+//   {
+//     title: "Global Conclave on Drug Discovery & Development Innovations",
+//     code: "Drugs-2026",
+//     date: "Oct 22-23, 2026",
+//     type: "Conference",
+//     image: "https://www.idbs.com/wp-content/uploads/2024/01/BL_Blog_Feature_Image_PR_9_Webpage_2048x1152.png",
+//     link: "",
+//     year: 2026
+//   },
+//   {
+//     title: "World Summit on Biologics, Biosimilars & Biopharmaceuticals",
+//     code: "Biosimilars-2026",
+//     date: "Oct 22-23, 2026",
+//   type: "Conference",
+//     image:"https://tse2.mm.bing.net/th/id/OIP.M-gUvAXPG88mKN_9tx2uBAHaEK?pid=Api&P=0&h=180",
+//     link: "",
+//     year: 2026
+//   },
+//   {
+//     title: "World summit on Nursing & Nurse Practices",
+//     code: "NURSESUMMIT-2026",
+//     date: "Nov 19-20, 2026",
+//  type: "Conference",
+//     // image: Nursing,
+//     link: "",
+//     year: 2026
+//   },
+//   {
+//     title: "International Conference on Critical Care & Emergency Nursing",
+//     code: "Critical Care-2026",
+//     date: "Nov 19-20, 2026",
+//  type: "Conference",
+//     image:"https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop",
+//     link: "",
+//     year: 2026
+//   },
+//   {
+//     title: "Global Digital Health, AI & Nursing Informatics Convlave",
+//     code: "Nursing Informative-2026",
+//     date: "Nov 19-20, 2026",
+//   type: "Conference",
+//     image: "https://cdn.sanity.io/images/0vv8moc6/mhe/7fbfb1af70cd235247dcf65e5d4aa94b3d02cd1a-8500x4000.jpg?fit=crop&auto=format",
+//     link: "",
+//     year: 2026
+//   }
+// ];
 const WebinarsData = [
-  // 2025 webinars
-  // {
-  //   title: "International Conference on Dentistry & Oral Medicine",
-  //   code: "IDOM-2025",
-  //   date: "Sep 12, 2025",
-  //   type: "webinar",
-  //   image: IDOM2025,
-  //   link: "https://IDOM.helixconferences.com/",
-  //   year: 2025
-  // },
-  // {
-  //   title: "Global Summit on Graphene and Nano Technology",
-  //   code: "GENT-2025",
-  //   date: "Sep 16, 2025",
-  //   type: "webinar",
-  //   image: GENT2025,
-  //   link: "https://GENT.helixconferences.com/",
-  //   year: 2025
-  // },
-  // {
-  //   title: "International Conference on Autism and Neuropsychiatry",
-  //   code: "ICAN-2025",
-  //   date: "October 10, 2025",
-  //   type: "webinar",
-  //   image: Ican2025,
-  //   link: "https://ICAN.helixconferences.com/",
-  //   year: 2025
-  // },
-  // {
-  //   title: "Global Conclave on AI, Robotics, & Metaverse",
-  //   code: "ARM-2025",
-  //   date: "October 24, 2025",
-  //   type: "webinar",
-  //   image: ARM2025,
-  //   link: "https://ARM.helixconferences.com/",
-  //   year: 2025
-  // },
-  // {
-  //   title: "Global Women Empowerment & Sustainability Congress",
-  //   code: "WEST-2025",
-  //   date: "Aug 22, 2025",
-  //   type: "webinar",
-  //   image: "https://women.helixconferences.com/static/media/about_img.67ed4ac21add9f07bf21.jpg",
-  //   link: "https://women.helixconferences.com/",
-  //   year: 2025
-  // },
-  
-
-
-  // Updated 2026 webinars
-  // 
+  // 1
   {
-    title: "Global Summit on Food, Agriculture & Environmental Sciences",
+    title: " Food, Agriculture & Environmental Sciences Forum",
     code: "FOODMEET-2026",
     date: "Apr 23-24, 2026",
     type: "Conference",
     // image: Foodmeet_2026,
     link: "https://foodmeet.helixconferences.com/",
-    year: 2026
+    year: 2026,
   },
+  // 2
   {
-    title: "World Medical Conclave",
+    title: " Advanced Medical Practices Conclave",
     code: "MEDICLAVE 2026",
     date: "May 21-22, 2026",
-   type: "Conference",
+    type: "Conference",
     // image: MEDICLAVE_2025,
     link: "https://mediclave.helixconferences.com/",
-    year: 2026
+    year: 2026,
   },
-  {
-    title: "World Summit on Sustainable Agricultural Practices",
-    code: "Agriprac-2026",
-    date: "Apr 23-24, 2026",
-    type: "Conference",
-    image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=400&h=250&fit=crop",
-    link: "",
-    year: 2026
-  },
-  {
-    title: "Global Foodomics Conclave",
-    code: "Foodomics-2026",
-    date: "Apr 23-24, 2026",
-    type: "Conference",
-    image:"https://tse4.mm.bing.net/th/id/OIP.o0uJsoIlV3JTZo9K6qEDrQHaE7?pid=Api&P=0&h=180",
-    link: "",
-    year: 2026
-  },
-  {
-    title: "International Conference on Precision Medicine & Personalized Therapies",
-    code: "Precision Medicine-2026",
-    date: "May 21-22, 2026",
-    type: "Conference",
-    image: "https://wallpaperaccess.com/full/3275630.jpg",
-    link: "",
-    year: 2026
-  },
-  {
-    title: "World Summit Preventive Medicine & Public Health Innovations",
-    code: "Public Health-2026",
-    date: "May 21-22, 2026",
-    type: "Conference",
-    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3nI_IzMZq_xlIE_a6wrgFbWYjhWiIzEtROw&s",
-    link: "",
-    year: 2026
-  },
+  // 3
   {
     title: "International Conference on Applied Lifesciences",
     code: "BIOCON-2026",
     date: "Jun 25-26, 2026",
-  type: "Conference",
+    type: "Conference",
     // image: Biocon_2025,
     link: "https://biocon.helixconferences.com/",
-    year: 2026
+    year: 2026,
   },
+  // 4
   {
-    title: "World Synthetic Biology & Bioengineering Conclave",
-    code: "Synthetic Biology - 2026",
-    date: "Jun 25-26, 2026",
-   type: "Conference",
-    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=250&fit=crop",
-    link: "",
-    year: 2026
-  },
-  {
-    title: "Global Colloquium on Biosolutions for Global Challenges",
-    code: "Biosol -2026",
-    date: "Jun 25-26, 2026",
-   type: "Conference",
-    image: "https://wallpapercave.com/wp/wp9283244.jpg",
-    link: "",
-    year: 2026
-  },
-  {
-    title: "World Science & Technology Summit",
-    code: "TECHMATICS-2026",
+    title: "World Quantam Technology Summit",
+    code: "QUANTUMTECH-2026",
     date: "Sep 24-25, 2026",
-  type: "Conference",
+    type: "Conference",
     // image: Techmatics_2026,
     link: "https://techmatics.helixconferences.com/",
-    year: 2026
+    year: 2026,
   },
+  // 5
   {
-    title: "International conference on Quantum Computing & Information Science",
-    code: "Quantum Computing-2026",
-    date: "Sep 24-25, 2026",
-  type: "Conference",
-    image:"https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=250&fit=crop",
-    link: "",
-    year: 2026
-  },
-  {
-    title: "World Summit on Engineering, Energy & Applied Technologies",
-    code: "EAT-2026",
-    date: "Sep 24-25, 2026",
-  type: "Conference",
-    image:"https://wallpaperaccess.com/full/3310619.jpg",
-    link: "",
-    year: 2026
-  },
-  {
-    title: "International Conference on Advanced Pharmaceutical Sciences",
+
+    title: " Advanced Pharmaceutical Sciences Forum",
     code: "PHARMTECH-2026",
     date: "Oct 22-23, 2026",
-   type: "Conference",
+    type: "Conference",
     // image: Pharmatech_2025,
     link: "https://pharmatech.helixconferences.com/",
-    year: 2026
+    year: 2026,
   },
+  // 6
   {
-    title: "Global Conclave on Drug Discovery & Development Innovations",
-    code: "Drugs-2026",
-    date: "Oct 22-23, 2026",
-    type: "Conference",
-    image: "https://www.idbs.com/wp-content/uploads/2024/01/BL_Blog_Feature_Image_PR_9_Webpage_2048x1152.png",
-    link: "",
-    year: 2026
-  },
-  {
-    title: "World Summit on Biologics, Biosimilars & Biopharmaceuticals",
-    code: "Biosimilars-2026",
-    date: "Oct 22-23, 2026",
-  type: "Conference",
-    image:"https://tse2.mm.bing.net/th/id/OIP.M-gUvAXPG88mKN_9tx2uBAHaEK?pid=Api&P=0&h=180",
-    link: "",
-    year: 2026
-  },
-  {
-    title: "World summit on Nursing & Nurse Practices",
+    title: "Nursing & Nurse Practices Conclave",
     code: "NURSESUMMIT-2026",
     date: "Nov 19-20, 2026",
- type: "Conference",
+    type: "Conference",
     // image: Nursing,
     link: "",
-    year: 2026
+    year: 2026,
   },
+  // 7
+
+  // Additional Hybrid Items (converted)
   {
-    title: "International Conference on Critical Care & Emergency Nursing",
-    code: "Critical Care-2026",
-    date: "Nov 19-20, 2026",
- type: "Conference",
-    image:"https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop",
+    title: "Food Microbiome Summit",
+    code: "FOODMICRO-2026",
+    date: "Apr 23-24, 2026",
+    type: "Conference",
+    image:
+      "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=400&h=250&fit=crop",
     link: "",
-    year: 2026
+    year: 2026,
   },
+  // 8
   {
-    title: "Global Digital Health, AI & Nursing Informatics Convlave",
-    code: "Nursing Informative-2026",
-    date: "Nov 19-20, 2026",
-  type: "Conference",
-    image: "https://cdn.sanity.io/images/0vv8moc6/mhe/7fbfb1af70cd235247dcf65e5d4aa94b3d02cd1a-8500x4000.jpg?fit=crop&auto=format",
+    title: "Regenerative AgriTech Forum",
+    code: "AGRIREGEN-2026",
+    date: "Apr 23-24, 2026",
+    type: "Conference",
+    image:
+      "https://tse4.mm.bing.net/th/id/OIP.o0uJsoIlV3JTZo9K6qEDrQHaE7?pid=Api&P=0&h=180",
     link: "",
-    year: 2026
-  }
+    year: 2026,
+  },
+  // 9
+  {
+    title: "Future FoodTech Expo",
+    code: "FOODTECH-2026",
+    date: "Apr 23-24, 2026",
+    type: "Conference",
+    image: "https://images.yourstory.com/cs/wordpress/2016/03/foodtech.jpg",
+    link: "",
+    year: 2026,
+  },
+  // 10
+  {
+    title: "Millets & Climate-Resilient Agriculture Summit",
+    code: "MILLETS-2026",
+    date: "Apr 23-24, 2026",
+    type: "Conference",
+    image: "https://www.zettafarms.com/wp-content/uploads/2024/01/blog-7.jpg",
+    link: "",
+    year: 2026,
+  },
+  // 11
+  {
+    title: "Digital Pathology & AI Diagnostics Congress",
+    code: "DIGIPATH-2026",
+    date: "May 21-22, 2026",
+    type: "Conference",
+    image: "https://wallpaperaccess.com/full/3275630.jpg",
+    link: "",
+    year: 2026,
+  },
+  // 12
+  {
+    title: "Precision Medicine Summit",
+    code: "PRECISIONMEDICINE-2026",
+    date: "May 21-22, 2026",
+    type: "Conference",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3nI_IzMZq_xlIE_a6wrgFbWYjhWiIzEtROw&s",
+    link: "",
+    year: 2026,
+  },
+  // 13
+  {
+    title: "Aesthetic Medicine & Cosmetic Innovation Summit",
+    code: "AESTHETICA-2026",
+    date: "May 21-22, 2026",
+    type: "Conference",
+    image:
+      "https://cdn.pixabay.com/photo/2023/10/01/14/40/medicine-8287535_1280.jpg",
+    link: "",
+    year: 2026,
+  },
+  // 14
+  {
+    title: "International Synthetic Biology & Bioengineering Forum",
+    code: "SYNBIO-2026",
+    date: "Jun 25-26, 2026",
+    type: "Conference",
+    image:
+      "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=250&fit=crop",
+    link: "",
+    year: 2026,
+  },
+  // 15
+  {
+    title: "Microbiome Therapeutics Summit",
+    code: "MICROBIOME-2026",
+    date: "Jun 25-26, 2026",
+    type: "Conference",
+    image: "https://wallpapercave.com/wp/wp9283244.jpg",
+    link: "",
+    year: 2026,
+  },
+  // 16
+  {
+    title: "International Rare Disease & Orphan Drug Congress",
+    code: "RAREDISEASE-2026",
+    date: "Jun 25-26, 2026",
+    type: "Conference",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp1rD-4ayjUib1DET_1b2JFcmxrb6ZUcSHkQ&s",
+    link: "",
+    year: 2026,
+  },
+  // 17
+  {
+    title: "Zero-Trust Security & AI Defense Forum",
+    code: "ZEROTRUSTAI-2026",
+    date: "Sep 24-25, 2026",
+    type: "Conference",
+    image:
+      "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=250&fit=crop",
+    link: "",
+    year: 2026,
+  },
+  // 18
+  {
+    title: "Smart Materials, Nanotech & Advanced Manufacturing Congress",
+    code: "SMARTMATERIALS-2026",
+    date: "Sep 24-25, 2026",
+    type: "Conference",
+    image: "https://wallpaperaccess.com/full/3310619.jpg",
+    link: "",
+    year: 2026,
+  },
+  // 19
+  {
+    title: "Advanced Materials & Clean Energy Forum",
+    code: "MATENERGY-2026",
+    date: "Sep 24-25, 2026",
+    type: "Conference",
+    image: "https://sdg.iisd.org/wp-content/uploads/2023/08/cg642.jpg",
+    link: "",
+    year: 2026,
+  },
+  // 20
+  {
+    title: "AI Drug Discovery Conclave",
+    code: "AIDRUG-2026",
+    date: "Oct 22-23, 2026",
+    type: "Conference",
+    image:
+      "https://www.idbs.com/wp-content/uploads/2024/01/BL_Blog_Feature_Image_PR_9_Webpage_2048x1152.png",
+    link: "",
+    year: 2026,
+  },
+  // 21
+  {
+    title: "Cell & Gene Therapy Manufacturing Summit",
+    code: "CELLGENE-2026",
+    date: "Oct 22-23, 2026",
+    type: "Conference",
+    image:
+      "https://tse2.mm.bing.net/th/id/OIP.M-gUvAXPG88mKN_9tx2uBAHaEK?pid=Api&P=0&h=180",
+    link: "",
+    year: 2026,
+  },
+  // 22
+  {
+    title: "Real-World Evidence & Pharma Access Forum",
+    code: "PHARMACCESS-2026",
+    date: "Oct 22-23, 2026",
+    type: "Conference",
+    image:
+      "https://tse2.mm.bing.net/th/id/OIP.M-gUvAXPG88mKN_9tx2uBAHaEK?pid=Api&P=0&h=180",
+    link: "",
+    year: 2026,
+  },
+  // 23
+  {
+    title: "AI & Digital Nursing Forum",
+    code: "AINURSE-2026",
+    date: "Nov 19-20, 2026",
+    type: "Conference",
+    // image: Nursing,
+    link: "",
+    year: 2026,
+  },
+  // 24
+  {
+    title: "Critical & Emergency Care Summit",
+    code: "ER-SUMMIT-2026",
+    date: "Nov 19-20, 2026",
+    type: "Conference",
+    // image: Nursing,
+    link: "",
+    year: 2026,
+  },
+  // 25
+  {
+    title: "Nursing Leadership & Workforce Excellence Congress  ",
+    code: "NURSELEAD-2026",
+    date: "Nov 19-20, 2026",
+    type: "Conference",
+    // image: Nursing,
+    link: "",
+    year: 2026,
+  },
 ];
 
 export default WebinarsData;

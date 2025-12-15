@@ -575,7 +575,7 @@ import Nursing from "../assets/images/Hybrid/Nursing.jpg"
 export const hybridsData = [
   // 1
   {
-    title: "Global Summit on Food, Agriculture & Environmental Sciences",
+    title: " Food, Agriculture & Environmental Sciences Forum",
     code: "FOODMEET-2026",
     date: "Apr 23-24, 2026",
     location: "Barcelona | Spain",
@@ -585,7 +585,7 @@ export const hybridsData = [
     year: 2026
   },
    {
-    title: "World Medical Conclave",
+    title: " Advanced Medical Practices Conclave",
     code: "MEDICLAVE 2026",
     date: "May 21-22, 2026",
     location: "Vienna | Austria",
@@ -611,8 +611,8 @@ export const hybridsData = [
   
   // 10
   {
-    title: "World Science & Technology Summit",
-    code: "TECHMATICS-2026",
+    title: "World Quantam Technology Summit",
+    code: "QUANTUMTECH-2026",
     date: "Sep 24-25, 2026",
     location: "Osaka | Japan",
     image: Techmatics_2026,
@@ -622,7 +622,7 @@ export const hybridsData = [
   },
    // 13
   {
-    title: "International Conference on Advanced Pharmaceutical Sciences",
+    title: " Advanced Pharmaceutical Sciences Forum",
     code: "PHARMTECH-2026",
     date: "Oct 22-23, 2026",
     location: "Singapore | Singapore City",
@@ -634,7 +634,7 @@ export const hybridsData = [
   
   // 16
   {
-    title: "World summit on Nursing & Nurse Practices",
+    title: "Nursing & Nurse Practices Conclave",
     code: "NURSESUMMIT-2026",
     date: "Nov 19-20, 2026",
     location: "Dubai | UAE",
@@ -643,9 +643,10 @@ export const hybridsData = [
     type: "Hybrid",
     year: 2026
   },
+  // Food and agri
    {
-    title: "World Summit on Sustainable Agricultural Practices",
-    code: "Agriprac-2026",
+    title: "Food Microbiome Summit",
+    code: "FOODMICRO-2026",
     date: "Apr 23-24, 2026",
     location: "Barcelona | Spain",
     image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=400&h=250&fit=crop",
@@ -656,8 +657,8 @@ export const hybridsData = [
 
   // 3
   {
-    title: "Global Foodomics Conclave",
-    code: "Foodomics-2026",
+    title: "Regenerative AgriTech Forum",
+    code: "AGRIREGEN-2026",
     date: "Apr 23-24, 2026",
     location: "Barcelona | Spain",
     image:"https://tse4.mm.bing.net/th/id/OIP.o0uJsoIlV3JTZo9K6qEDrQHaE7?pid=Api&P=0&h=180",
@@ -665,14 +666,35 @@ export const hybridsData = [
     type: "Hybrid",
     year: 2026
   },
-
+// 4
+  {
+    title: "Future FoodTech Expo",
+    code: "FOODTECH-2026",
+    date: "Apr 23-24, 2026",
+    location: "Barcelona | Spain",
+    image:"https://images.yourstory.com/cs/wordpress/2016/03/foodtech.jpg",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+  // 5
+    {
+    title: "Millets & Climate-Resilient Agriculture Summit",
+    code: "MILLETS-2026",
+    date: "Apr 23-24, 2026",
+    location: "Barcelona | Spain",
+    image:"https://www.zettafarms.com/wp-content/uploads/2024/01/blog-7.jpg",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
   // 4
- 
+//  medical
 
   // 5
   {
-    title: "International Conference on Precision Medicine & Personalized Therapies",
-    code: "Precision Medicine-2026",
+    title: "Digital Pathology & AI Diagnostics Congress",
+    code: "DIGIPATH-2026",
     date: "May 21-22, 2026",
     location: "Vienna | Austria",
     image: "https://wallpaperaccess.com/full/3275630.jpg",
@@ -683,8 +705,8 @@ export const hybridsData = [
 
   // 6
   {
-    title: "World Summit Preventive Medicine & Public Health Innovations",
-    code: "Public Health-2026",
+    title: "Precision Medicine Summit",
+    code: "PRECISIONMEDICINE-2026",
     date: "May 21-22, 2026",
     location: "Vienna | Austria",
     image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3nI_IzMZq_xlIE_a6wrgFbWYjhWiIzEtROw&s" ,
@@ -692,13 +714,25 @@ export const hybridsData = [
     type: "Hybrid",
     year: 2026
   },
+    {
+    title: "Aesthetic Medicine & Cosmetic Innovation Summit",
+    code: "AESTHETICA-2026",
+    date: "May 21-22, 2026",
+    location: "Vienna | Austria",
+    image:"https://cdn.pixabay.com/photo/2023/10/01/14/40/medicine-8287535_1280.jpg" ,
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+  
+
 
  
 
   // 8
   {
-    title: "World Synthetic Biology & Bioengineering Conclave",
-    code: "Synthetic Biology - 2026",
+    title: "International Synthetic Biology & Bioengineering Forum",
+    code: "SYNBIO-2026",
     date: "Jun 25-26, 2026",
     location: "Amsterdam | Netherlands",
     image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=250&fit=crop",
@@ -709,8 +743,8 @@ export const hybridsData = [
 
   // 9
   {
-    title: "Global Colloquium on Biosolutions for Global Challenges",
-    code: "Biosol -2026",
+    title: "Microbiome Therapeutics Summit",
+    code: "MICROBIOME-2026",
     date: "Jun 25-26, 2026",
     location: "Amsterdam | Netherlands",
     image: "https://wallpapercave.com/wp/wp9283244.jpg",
@@ -718,12 +752,24 @@ export const hybridsData = [
     type: "Hybrid",
     year: 2026
   },
+   {
+    title: "International Rare Disease & Orphan Drug Congress",
+    code: "RAREDISEASE-2026",
+    date: "Jun 25-26, 2026",
+    location: "Amsterdam | Netherlands",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp1rD-4ayjUib1DET_1b2JFcmxrb6ZUcSHkQ&s",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+  
+
 
 
   // 11
   {
-    title: "International conference on Quantum Computing & Information Science",
-    code: "Quantum Computing-2026",
+    title: "Zero-Trust Security & AI Defense Forum",
+    code: "ZEROTRUSTAI-2026",
     date: "Sep 24-25, 2026",
     location: "Osaka | Japan",
     image:"https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=250&fit=crop",
@@ -734,11 +780,21 @@ export const hybridsData = [
 
   // 12
   {
-    title: "World Summit on Engineering, Energy & Applied Technologies",
-    code: "EAT-2026",
+    title: "Smart Materials, Nanotech & Advanced Manufacturing Congress",
+    code: "SMARTMATERIALS-2026",
     date: "Sep 24-25, 2026",
     location: "Osaka | Japan",
     image:"https://wallpaperaccess.com/full/3310619.jpg",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+  {
+    title: "Advanced Materials & Clean Energy Forum",
+    code: "MATENERGY-2026",
+    date: "Sep 24-25, 2026",
+    location: "Osaka | Japan",
+    image:"https://sdg.iisd.org/wp-content/uploads/2023/08/cg642.jpg",
     link: "",
     type: "Hybrid",
     year: 2026
@@ -748,8 +804,8 @@ export const hybridsData = [
 
   // 14
   {
-    title: "Global Conclave on Drug Discovery & Development Innovations",
-    code: "Drugs-2026",
+    title: "AI Drug Discovery Conclave",
+    code: "AIDRUG-2026",
     date: "Oct 22-23, 2026",
     location: "Singapore | Singapore City",
     image: "https://www.idbs.com/wp-content/uploads/2024/01/BL_Blog_Feature_Image_PR_9_Webpage_2048x1152.png",
@@ -760,8 +816,8 @@ export const hybridsData = [
 
   // 15
   {
-    title: "World Summit on Biologics, Biosimilars & Biopharmaceuticals",
-    code: "Biosimilars-2026",
+    title: "Cell & Gene Therapy Manufacturing Summit",
+    code: "CELLGENE-2026",
     date: "Oct 22-23, 2026",
     location: "Singapore | Singapore City",
     image:"https://tse2.mm.bing.net/th/id/OIP.M-gUvAXPG88mKN_9tx2uBAHaEK?pid=Api&P=0&h=180",
@@ -770,11 +826,23 @@ export const hybridsData = [
     year: 2026
   },
 
+    {
+    title: "Real-World Evidence & Pharma Access Forum",
+    code: "PHARMACCESS-2026",
+    date: "Oct 22-23, 2026",
+    location: "Singapore | Singapore City",
+    image:"https://img.freepik.com/free-photo/medicine-capsules-global-health-with-geometric-pattern-digital-remix_53876-126742.jpg",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+
 
   // 17
+  // Nursing
   {
-    title: "International Conference on Critical Care & Emergency Nursing",
-    code: "Critical Care-2026",
+    title: "AI & Digital Nursing Forum",
+    code: "AINURSE-2026",
     date: "Nov 19-20, 2026",
     location: "Dubai | UAE",
     image:"https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop",
@@ -785,11 +853,21 @@ export const hybridsData = [
 
   // 18
   {
-    title: "Global Digital Health, AI & Nursing Informatics Convlave",
-    code: "Nursing Informative-2026",
+    title: "Critical & Emergency Care Summit",
+    code: "ER-SUMMIT-2026",
     date: "Nov 19-20, 2026",
     location: "Dubai | UAE",
     image: "https://cdn.sanity.io/images/0vv8moc6/mhe/7fbfb1af70cd235247dcf65e5d4aa94b3d02cd1a-8500x4000.jpg?fit=crop&auto=format",
+    link: "",
+    type: "Hybrid",
+    year: 2026
+  },
+  {
+      title: "Nursing Leadership & Workforce Excellence Congress",
+    code: "NURSELEAD-2026",
+    date: "Nov 19-20, 2026",
+    location: "Dubai | UAE",
+    image: "https://wallpapers.com/images/hd/beautiful-indian-nurse-05s83ahwccah9a3i.jpg",
     link: "",
     type: "Hybrid",
     year: 2026

@@ -90,7 +90,7 @@ function App() {
   useEffect(() => {
     const keepServerAwake = () => {
       fetch("https://backend-code-6vqy.onrender.com/")
-      // fetch("http://localhost:5000/")
+        // fetch("http://localhost:5000/")
         .then(() => console.log("✅ Warm-up ping sent to backend."))
         .catch((err) => console.warn("⚠️ Warm-up ping failed:", err.message));
     };
@@ -164,14 +164,17 @@ function App() {
             <Route path="/journals" element={<Journals />} />
             <Route path="/contact" element={<Contact />} />
             {/* Call for papers */}
-            <Route path="/call" element={<CallForPapers/>}></Route>
+            <Route path="/call-for-papers" element={<CallForPapers />}></Route>
             <Route path="/buy-a-ticket" element={<BuyATicket />} />
             <Route path="/committees" element={<Committees />} />
             <Route path="/speakers" element={<Speakers />} />
             <Route path="/schedule" element={<Schedule />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/call-for-papers" element={<CallForPapers />} />
-<Route path="/AllConferences" element={<AllConferences/>}></Route>
+            <Route
+              path="/Conferences-2026"
+              element={<AllConferences />}
+            ></Route>
             {/* --- Routes for the Registration Form --- */}
             <Route path="/terms-of-use" element={<TermsOfUse />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

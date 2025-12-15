@@ -1,37 +1,37 @@
 export const blogsData = [
   {
     id: 1,
-    title: "World Agriculture & Food Sciences Conclave",
+    title: "Food, Agriculture & Environmental Sciences Forum",
     link: "#",
     summary: "Exploring sustainable farming and food security with global experts."
   },
   {
     id: 2,
-    title: "International Science & Technology Summit",
+    title: "World Quantam Technology Summit",
     link: "#",
     summary: "Discovering groundbreaking innovations shaping our technological future."
   },
   {
     id: 3,
-    title: "Global Pharmaceutical Conclave",
+    title: " Advanced Pharmaceutical Sciences Forum",
     link: "#",
     summary: "Discussing new drug discoveries and advancements in global medicine."
   },
   {
     id: 4,
-    title: "World Biotechnology Summit",
+    title: "International Conference on Applied Lifesciences",
     link: "#",
     summary: "Delving into cutting-edge research in genetics and bioinformatics."
   },
   {
     id: 5,
-    title: "Global Medical Conclave",
+    title: " Advanced Medical Practices Conclave",
     link: "#",
     summary: "A premier event for discussions on advanced medical practices and public health."
   },
   {
     id: 6,
-    title: "International Conferences on Public Health & Nursing",
+    title: "Nursing & Nurse Practices Conclave",
     link: "#",
     summary: "Sharing best practices and research to improve community health worldwide."
   },

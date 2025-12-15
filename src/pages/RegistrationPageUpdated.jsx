@@ -2798,8 +2798,8 @@ const allConferences = useMemo(() => {
         >
           <div className="bg-white p-6 md:p-8 rounded-2xl shadow-md border border-slate-200">
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-6 text-center">
-              Your Contact Information
-            </h2>
+              Your Contact Information 
+            </h2> 
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
