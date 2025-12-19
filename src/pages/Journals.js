@@ -58,10 +58,13 @@ const Journals = () => {
           Our Academic Journals
         </h1>
 
-        <p className="text-lg text-center mb-10 max-w-3xl mx-auto">
-          Explore our collection of peer-reviewed journals, featuring cutting-edge research
-          and insightful articles across various scientific disciplines.
-        </p>
+       <p className="text-lg text-center mb-10 max-w-3xl mx-auto">
+  Explore our{" "}
+  <Link to="/gallery" className=" hover:text-blue-400">
+    collection
+  </Link>{" "}
+  of peer-reviewed journals, featuring cutting-edge research and insightful articles across various scientific disciplines.
+</p>
 
         <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {journalCovers.map((journal, index) => (

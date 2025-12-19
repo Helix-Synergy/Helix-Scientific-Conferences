@@ -84,7 +84,7 @@ const CreativeAboutUs = () => {
       },
     ],
     mainContent: {
-      title: "Helix Conferences—Where Knowledge Meets Opportunity !!!",
+    title: "Helix Conferences—Where Knowledge Meets Opportunity !!!",
       intro:
         "Are you ready to take your Research and professional Network to the next level? Welcome to Helix Conferences, the leading international Organizer of Scientific Conferences that has been at the forefront of Innovation for over six years. With a proven track record of executing more than 150 Conferences across diverse fields—including Medical, Pharma, Biotech, Engineering, Agriculture, and Food—we are your gateway to a world of opportunities",
       bullets: [

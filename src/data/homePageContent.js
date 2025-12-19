@@ -93,7 +93,7 @@ export const heroSlides = [
     subHeading: " QUANTUMTECH-2026 - Sep 24-25, 2026 | Osaka | Japan",
     button1: {
       text: "View Conference Details",
-      link: "https://techmatics.helixconferences.com/",
+      link: "https://quantumtech.helixconferences.com/",
       target: "_blank",
     },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
@@ -131,6 +131,8 @@ export const heroSlides = [
     },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
+  
+
   {
     backgroundImage: Nursing,
     mainTitle: " Nursing & Nurse Practices Conclave",

@@ -178,15 +178,18 @@ function App() {
             {/* --- Routes for the Registration Form --- */}
             <Route path="/terms-of-use" element={<TermsOfUse />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/registration" element={<RegistrationForm />} />
+      {/* <Route path="/registration/:slug" element={<RegistrationForm/>} /> */}
+
             <Route path="/success" element={<SuccessPage />} />
 
             {/* --- Routes for Stripe payment redirects --- */}
             <Route path="/stripe-success" element={<StripeSuccessPage />} />
             <Route path="/stripe-cancel" element={<StripeCancelPage />} />
+<Route path="/registration/:slug" element={<RegistrationForm />} />
 
             {/* Catch-all route for 404 Not Found pages */}
             <Route path="*" element={<NotFound />} />
+
           </Routes>
         </Layout>
       </CursorProvider>

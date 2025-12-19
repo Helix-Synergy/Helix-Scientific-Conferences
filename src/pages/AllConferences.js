@@ -278,7 +278,8 @@ const conferenceData = [
     title: "Food Microbiome Summit",
     shortName: "FOODMICRO-2026",
     date: "Apr 23-24 | 2026",
-    venue: "Barcelona | Spain"
+    venue: "Barcelona | Spain",
+    link:"https://foodmicrobiome.helixconferences.com/"
   },
   // 3
   {
@@ -378,7 +379,7 @@ const conferenceData = [
     shortName: "QUANTUMTECH-2026",
     date: "Sep 24-25 | 2026",
     venue: "Osaka | Japan",
-    link: "https://techmatics.helixconferences.com/"
+    link: "https://quantumtech.helixconferences.com/"
   },
   {
     field: "SCIENCE & TECHNOLOGY",
