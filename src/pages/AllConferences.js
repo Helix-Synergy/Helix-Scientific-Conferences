@@ -287,14 +287,16 @@ const conferenceData = [
     title: "Regenerative AgriTech Forum",
     shortName: "AGRIREGEN-2026",
     date: "Apr 23-24 | 2026",
-    venue: "Barcelona | Spain"
+    venue: "Barcelona | Spain",
+     link:"https://agritech.helixconferences.com/"
   },
     {
     field: "food-tech-expo",
     title: "Future FoodTech Expo",
     shortName: "FOODTECH-2026",
     date: "Apr 23-24 | 2026",
-    venue: "Barcelona | Spain"
+    venue: "Barcelona | Spain",
+     link:"https://foodtech.helixconferences.com/"
   },
   // 5
     {
@@ -302,7 +304,8 @@ const conferenceData = [
     title: "Millets & Climate-Resilient Agriculture Summit",
     shortName: "MILLETS-2026",
     date: "Apr 23-24 | 2026",
-    venue: "Barcelona | Spain"
+    venue: "Barcelona | Spain",
+     link:"https://millets.helixconferences.com/"
   },
   // Medical 
 // 1
@@ -320,7 +323,8 @@ const conferenceData = [
     title: "Digital Pathology & AI Diagnostics Congress",
     shortName: "DIGIPATH-2026",
     date: "May 21-22 | 2026",
-    venue: "Vienna | Austria"
+    venue: "Vienna | Austria",
+     link:"https://digital-pathology.helixconferences.com/"
   },
   // 3
   {
@@ -328,7 +332,9 @@ const conferenceData = [
     title: "Precision Medicine Summit",
     shortName: "PRECISIONMEDICINE-2026",
     date: "May 21-22 | 2026",
-    venue: "Vienna | Austria"
+    venue: "Vienna | Austria",
+     link:"https://precisionmedicine.helixconferences.com/"
+
   },
   // 4
     {
@@ -336,7 +342,8 @@ const conferenceData = [
     title: "Aesthetic Medicine & Cosmetic Innovation Summit",
     shortName: "AESTHETICA-2026",
     date: "May 21-22 | 2026",
-    venue: "Vienna | Austria"
+    venue: "Vienna | Austria",
+     link:"https://cosmetology.helixconferences.com/"
   },
 // Biocon
 // 1
@@ -354,7 +361,8 @@ const conferenceData = [
     title: "International Synthetic Biology & Bioengineering Forum",
     shortName: "SYNBIO-2026",
     date: "Jun 25-26 | 2026",
-    venue: "Amsterdam | Netherlands"
+    venue: "Amsterdam | Netherlands",
+  link: "https://syntheticbiology.helixconferences.com/"
   },
   // 3
   {
@@ -362,14 +370,16 @@ const conferenceData = [
     title: "Microbiome Therapeutics Summit",
     shortName: "MICROBIOME-2026",
     date: "Jun 25-26 | 2026",
-    venue: "Amsterdam | Netherlands"
+    venue: "Amsterdam | Netherlands",
+        link: "https://microbiome.helixconferences.com/"
   },
     {
     field: "rare",
     title: "International Rare Disease & Orphan Drug Congress",
     shortName: "RAREDISEASE-2026",
     date: "Jun 25-26 | 2026",
-    venue: "Amsterdam | Netherlands"
+    venue: "Amsterdam | Netherlands",
+        link: "https://raredisease.helixconferences.com/"
   },
   // Qunatam
 
@@ -386,14 +396,16 @@ const conferenceData = [
     title: "Zero-Trust Security & AI Defense Forum",
     shortName: "ZEROTRUSTAI-2026",
     date: "Sep 24-25 | 2026",
-    venue: "Osaka | Japan"
+    venue: "Osaka | Japan",
+        link: "https://zerotrust-ai.helixconferences.com/"
   },
   {
     field: "e",
     title: "Smart Materials, Nanotech & Advanced Manufacturing Congress",
     shortName: "SMARTMATERIALS-2026",
     date: "Sep 24-25 | 2026",
-    venue: "Osaka | Japan"
+    venue: "Osaka | Japan",
+        link: "https://smartmaterials.helixconferences.com/"
   },
   // 4
     {
@@ -401,7 +413,8 @@ const conferenceData = [
     title: "Advanced Materials & Clean Energy Forum",
     shortName: "MATENERGY-2026",
     date: "Sep 24-25 | 2026",
-    venue: "Osaka | Japan"
+    venue: "Osaka | Japan",
+        link: "https://advancedmaterials.helixconferences.com/"
   },
 // Pharmatech
   {
