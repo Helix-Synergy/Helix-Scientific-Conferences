@@ -430,14 +430,17 @@ const conferenceData = [
     title: "AI Drug Discovery Conclave",
     shortName: "AIDRUG-2026",
     date: "Oct 22-23 | 2026",
-    venue: "Singapore | Singapore City"
+    venue: "Singapore | Singapore City",
+     link:"https://drugdiscovery.helixconferences.com/"
   },
   {
     field: "n",
     title: "Cell & Gene Therapy Manufacturing Summit",
     shortName: "CELLGENE-2026",
     date: "Oct 22-23 | 2026",
-    venue: "Singapore | Singapore City"
+    venue: "Singapore | Singapore City",
+         link:"https://cellgene.helixconferences.com/"
+    
   },
   // 4
    {
@@ -445,7 +448,8 @@ const conferenceData = [
     title: "Real-World Evidence & Pharma Access Forum",
     shortName: "PHARMACCESS-2026",
     date: "Oct 22-23 | 2026",
-    venue: "Singapore | Singapore City"
+    venue: "Singapore | Singapore City",
+    link:"https://pharma.helixconferences.com/"
   },
 // Nursing
   {
@@ -453,21 +457,24 @@ const conferenceData = [
     title: "Nursing & Nurse Practices Conclave",
     shortName: "NURSESUMMIT-2026",
     date: "Nov 19-20 | 2026",
-    venue: "Dubai | UAE"
+    venue: "Dubai | UAE",
+      link:"https://nursesummit.helixconferences.com/"
   },
   {
     field: "NURSING",
     title: "AI & Digital Nursing Forum",
     shortName: "AINURSE-2026",
     date: "Nov 19-20 | 2026",
-    venue: "Dubai | UAE"
+    venue: "Dubai | UAE",
+      link:"https://nursing.helixconferences.com/"
   },
   {
     field: "Digi",
     title: "Critical & Emergency Care Summit",
     shortName: "ER-SUMMIT-2026",
     date: "Nov 19-20 | 2026",
-    venue: "Dubai | UAE"
+    venue: "Dubai | UAE",
+      link:"https://criticalcare.helixconferences.com/"
   },
   // 4
     {
@@ -475,7 +482,8 @@ const conferenceData = [
     title: "Nursing Leadership & Workforce Excellence Congress",
     shortName: "ER-SUMMIT-2026",
     date: "Nov 19-20 | 2026",
-    venue: "Dubai | UAE"
+    venue: "Dubai | UAE",
+      link:"https://nursingleadership.helixconferences.com/"
   }
 ];
 
