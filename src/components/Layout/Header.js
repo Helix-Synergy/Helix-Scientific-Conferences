@@ -13,6 +13,7 @@ import {
   ComputerDesktopIcon,
   MicrophoneIcon,
   XMarkIcon,
+  DocumentTextIcon
 } from "@heroicons/react/24/outline";
 import { useCursor } from "../CustomCursor";
 import AnimatedHamburger from "../hamburger/AnimatedHamburger_AccordionFold";
@@ -124,6 +125,8 @@ function Header() {
       "/blog",
       "/journals",
       "/contact",
+      "/call-for-papers",
+      "/Conferences-2026"
     ];
     const sortedPrimaryPaths = primaryPaths.sort((a, b) => b.length - a.length); // Longer paths first for better match
 
@@ -317,7 +320,7 @@ function Header() {
             handleLinkMouseEnter();
           }}
           onMouseLeave={handleNavLinkMouseLeave}
-          ref={(el) => (navRefs.current["/hybrids"] = el)}
+          ref={(el) => (navRefs.current["/Conferences-2026"] = el)}
         >
           <MicrophoneIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
           Conferences
@@ -350,7 +353,7 @@ function Header() {
             handleLinkMouseEnter();
           }}
           onMouseLeave={handleNavLinkMouseLeave}
-          ref={(el) => (navRefs.current["/webinars"] = el)}
+          ref={(el) => (navRefs.current["/journals"] = el)}
         >
           <ComputerDesktopIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
           Journals
@@ -404,9 +407,11 @@ function Header() {
             handleLinkMouseEnter();
           }}
           onMouseLeave={handleNavLinkMouseLeave}
-          ref={(el) => (navRefs.current["/webinars"] = el)}
+          ref={(el) => (navRefs.current["/call-for-papers"] = el)}
         >
           {/* <ComputerDesktopIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" /> */}
+           <DocumentTextIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
+
           Call For Papers
         </MotionNavLink>
 
@@ -470,13 +475,13 @@ function Header() {
                   setIsDesktopSecondaryMenuOpen(false);
                 }}
               >
-                <Link
+                {/* <Link
                   to="/blog"
                   className="block px-4 py-2 text-black hover:bg-gray-200 transition-colors duration-200"
                   onClick={() => setIsDesktopSecondaryMenuOpen(false)}
                 >
                   <SparklesIcon className="h-5 w-5 mr-2 inline-block" /> Blogs
-                </Link>
+                </Link> */}
                 <Link
                   to="/journals"
                   className="block px-4 py-2 text-black hover:bg-gray-200 transition-colors duration-200"
@@ -557,27 +562,27 @@ function Header() {
 
             <motion.div variants={mobileMenuItemVariants} className="w-full">
               <NavLink
-                to="/hybrids"
+                to="/Conferences-2026"
                 className={mobileNavLinkClasses("/hybrids")}
                 onClick={() => setIsMobileMenuOpen(false)}
                 onMouseEnter={handleLinkMouseEnter}
                 onMouseLeave={handleLinkMouseLeave}
               >
                 <MicrophoneIcon className="h-6 w-6 mr-3 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
-                Hybrids
+                Conferences
               </NavLink>
             </motion.div>
 
             <motion.div variants={mobileMenuItemVariants} className="w-full">
               <NavLink
-                to="/webinars"
+                to="/journals"
                 className={mobileNavLinkClasses("/webinars")}
                 onClick={() => setIsMobileMenuOpen(false)}
                 onMouseEnter={handleLinkMouseEnter}
                 onMouseLeave={handleLinkMouseLeave}
               >
                 <ComputerDesktopIcon className="h-6 w-6 mr-3 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
-                Webinars
+                Journals
               </NavLink>
             </motion.div>
 
@@ -626,7 +631,7 @@ function Header() {
               variants={mobileMenuItemVariants}
               className="w-full mt-4 border-t border-gray-200 pt-4"
             >
-              <NavLink
+              {/* <NavLink
                 to="/blog"
                 className={mobileNavLinkClasses("/blog")}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -635,7 +640,7 @@ function Header() {
               >
                 <SparklesIcon className="h-6 w-6 mr-3 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
                 Blogs
-              </NavLink>
+              </NavLink> */}
             </motion.div>
 
             <motion.div variants={mobileMenuItemVariants} className="w-full">

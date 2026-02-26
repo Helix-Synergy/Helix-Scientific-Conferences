@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 const CallForPapers = () => {
   const [selectedConference, setSelectedConference] = useState('');
+const dropdownRef = useRef(null);
 
   // Conference data with external links
   const conferences = [
@@ -14,28 +15,124 @@ const CallForPapers = () => {
     },
     { 
       id: '2', 
-      name: 'World Quantam Technology Summit', 
-      link: 'https://techmatics.helixconferences.com/abstractsubmission/'
+      name: 'Food Microbiome Summit', 
+      link: 'https://foodmicrobiome.helixconferences.com/abstract-submission'
     },
     { 
       id: '3', 
-      name: 'Advanced Pharmaceutical Sciences Forum', 
-      link: 'https://pharmatech.helixconferences.com/abstract-submission'
+      name: 'Regenerative AgriTech Forum', 
+      link: 'https://agritech.helixconferences.com/abstract-submission'
     },
     { 
       id: '4', 
-      name: 'International Conference on Applied Lifesciences', 
-      link: 'https://biocon.helixconferences.com/abstract-submission'
+      name: 'Future FoodTech Expo', 
+      link: 'https://foodtech.helixconferences.com/abstract-submission'
     },
     { 
       id: '5', 
-      name: ' Advanced Medical Practices Conclave', 
-      link: 'https://mediclave.helixconferences.com/abstract-submission'
+      name: ' Millets & Climate-Resilient Agriculture Summit', 
+      link: 'https://millets.helixconferences.com/abstract-submission'
     },
     { 
       id: '6', 
-      name: 'Nursing & Nurse Practices Conclave', 
+      name: 'Advanced Medical Practices Conclave', 
+      link: 'https://mediclave.helixconferences.com/abstract-submission'
+    },
+      { 
+      id: '7', 
+      name: 'Digital Pathology & AI Diagnostics Congress', 
+      link: 'https://digital-pathology.helixconferences.com/abstract-submission'
+    },
+         { 
+      id: '8', 
+      name: 'Precision Medicine Summit', 
+      link: 'https://precisionmedicine.helixconferences.com/abstract-submission'
+    },
+       { 
+      id: '9', 
+      name: 'Aesthetic Medicine & Cosmetic Innovation Summit', 
+      link: 'https://cosmetology.helixconferences.com/abstract-submission'
+    },
+          { 
+      id: '10', 
+      name: 'International Conference on Applied Lifesciences', 
       link: 'https://biocon.helixconferences.com/abstract-submission'
+    },
+            { 
+      id: '11', 
+      name: 'International Synthetic Biology & Bioengineering Forum', 
+      link: 'https://syntheticbiology.helixconferences.com/abstract-submission'
+    },
+            { 
+      id: '12', 
+      name: 'Microbiome Therapeutics Summit', 
+      link: 'https://microbiome.helixconferences.com/abstract-submission'
+    },
+          { 
+      id: '13', 
+      name: 'International Rare Disease & Orphan Drug Congress', 
+      link: 'https://raredisease.helixconferences.com/abstract-submission'
+    },
+      { 
+      id: '14', 
+      name: 'World Science & Technology Summit', 
+      link: 'https://quantumtech.helixconferences.com/abstract-submission'
+    },
+          { 
+      id: '15', 
+      name: 'Zero-Trust Security & AI Defense Forum', 
+      link: 'https://zerotrust-ai.helixconferences.com/abstract-submission'
+    },
+      { 
+      id: '16', 
+      name: 'Smart Materials, Nanotech & Advanced Manufacturing Congress', 
+      link: 'https://smartmaterials.helixconferences.com/abstract-submission'
+    },
+          { 
+      id: '17', 
+      name: 'Advanced Materials & Clean Energy Forum', 
+      link: 'https://advancedmaterials.helixconferences.com/abstract-submission'
+    },
+          { 
+      id: '18', 
+      name: 'Advanced Pharmaceutical Sciences Forum', 
+      link: 'https://pharmatech.helixconferences.com/abstract-submission'
+    },
+          { 
+      id: '19', 
+      name: 'AI Drug Discovery Conclave', 
+      link: 'https://drugdiscovery.helixconferences.com/abstract-submission'
+    },
+          { 
+      id: '20', 
+      name: 'Cell & Gene Therapy Manufacturing Summit', 
+      link: 'https://cellgene.helixconferences.com/abstract-submission'
+    },
+      { 
+      id: '21', 
+      name: 'Real-World Evidence & Pharma Access Forum', 
+      link: 'https://pharma.helixconferences.com/abstract-submission'
+    },
+          { 
+      id: '22', 
+      name: 'Nursing & Nurse Practices Conclave', 
+      link: 'https://nursesummit.helixconferences.com/abstract-submission'
+    },
+    
+      { 
+      id: '23', 
+      name: 'AI & Digital Nursing Forum', 
+      link: 'https://nursing.helixconferences.com/abstract-submission'
+    },
+          { 
+      id: '24', 
+      name: 'Critical & Emergency Care Summit', 
+      link: 'https://criticalcare.helixconferences.com/abstract-submission'
+    },
+          { 
+      id: '25', 
+      name: 'Nursing Leadership & Workforce Excellence Congress', 
+      link: 'https://nursingleadership.helixconferences.com/abstract-submission'
     },
   ];
 
@@ -99,6 +196,14 @@ const CallForPapers = () => {
               >
                 {/* Select a conference to submit your abstract */}
               </motion.p>
+              <motion.button
+  onClick={() => dropdownRef.current?.scrollIntoView({ behavior: 'smooth' })}
+  className="mt-6 bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-xl text-lg font-semibold transition"
+  whileHover={{ scale: 1.05 }}
+>
+  Browse Conferences ↓
+</motion.button>
+
             </div>
           </div>
         </div>

@@ -510,6 +510,8 @@ import MagneticButton from "../components/MagneticButton";
 import webinarsData from "../data/webinarsData1";
 import SEO from "../components/SEO";
 
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://backend-code-6vqy.onrender.com";
+
 const ParticleTrail = ({ children }) => {
   const [particles, setParticles] = useState([]);
   const containerRef = useRef(null);
@@ -630,7 +632,7 @@ const InteractiveWebinarCard = ({ webinar }) => {
 
     try {
       const response = await fetch(
-        `https://backend-code-6vqy.onrender.com/api/source/generate-token?sourceId=${sourceId}&conferenceType=${conferenceType}&conferenceYear=${conferenceYear}`
+        `${API_BASE_URL}/api/source/generate-token?sourceId=${sourceId}&conferenceType=${conferenceType}&conferenceYear=${conferenceYear}`
       );
       if (!response.ok) {
         const errorData = await response.json();
@@ -800,7 +802,7 @@ const Webinars = () => {
 
       try {
         const response = await fetch(
-          `https://backend-code-6vqy.onrender.com/api/source/generate-token?sourceId=${encodeURIComponent(
+          `${API_BASE_URL}/api/source/generate-token?sourceId=${encodeURIComponent(
             genericSourceId
           )}&conferenceType=${genericConferenceType}&conferenceYear=${conferenceYear}`
         );

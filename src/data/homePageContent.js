@@ -16,12 +16,11 @@ import innovationImageC from "../assets/images/homePage/innovationImageC.jpg";
 import innovationImageD from "../assets/images/homePage/innovationImageD.jpg";
 import innovationImageE from "../assets/images/homePage/innovationImageE.jpg";
 import Foodmeet_2026 from "../assets/images/Hybrid/Foodmeet_2026.jpg";
-import Techmatics_2026 from "../assets/images/Hybrid/TECHMATICS_2026.jpg";
-import Biocon_2025 from "../assets/images/Hybrid/BIOCON_2025.jpg";
-import Pharmatech_2025 from "../assets/images/Hybrid/PHARMATECH_2025.jpg";
-import Mediclave_2025 from "../assets/images/Hybrid/MEDICLAVE_2025.jpg";
-import Nursing from "../assets/images/Hybrid/Nursing.jpg";
 
+import FoodMircobiome from "../assets/images/Hybrid/FoodMicroBiome.jpg";
+import Agritech from "../assets/images/Hybrid/Agritech.jpg";
+import FoodTech from "../assets/images/Hybrid/FoodTech.jpg";
+import Millets from "../assets/images/Hybrid/Millets.jpg";
 // About Section Images (Pexels URLs related to collaboration/work)
 const aboutImg1 =
   "https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
@@ -36,44 +35,7 @@ const testimonialAvatar2 =
 const testimonialAvatar3 =
   "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 
-// // heroData is now an array of slides
-// export const heroSlides = [
-//   {
-//     backgroundImage: GlobalScienceTechnology,
-//     mainTitle: "Global Science & Technology Summit 2025",
-//     subHeading: "Driving Innovation, Collaboration, And Discovery Across Disciplines",
-//     button1: { text: "Explore Conferences", link: "/hybrids" },
-//     button2: { text: "About Helix", link: "/about" },
-//   },
-//   {
-//     backgroundImage: ArtificialIntelligenceMachineLearning,
-//     mainTitle: "Artificial Intelligence & Machine Learning Congress",
-//     subHeading: "Join Global Leaders Shaping The Future Of Intelligent Systems",
-//     button1: { text: "AI & Robotics Tracks", link: "https://arm.helixconferences.com/", target: "_blank" },
-//     button2: { text: "Submit Your Abstract", link: "/contact" },
-//   },
-//   {
-//     backgroundImage: BiotechLifeSciencesForum,
-//     mainTitle: "International Biotech & Life Sciences Forum",
-//     subHeading: "Breakthrough Research In Genomics, Proteomics & Medical Innovation",
-//     button1: { text: "Biotech Conference Agenda", link: "https://biocon.helixconferences.com/", target: "_blank" },
-//     button2: { text: "Register To Attend", link: "/buy-a-ticket" },
-//   },
-//   {
-//     backgroundImage: RenewableEnergySustainability,
-//     mainTitle: "Genetic Engineering & Nanotechnology Summit",
-//     subHeading: "Bridging Genetics And Nanotechnology For Future Innovations",
-//     button1: { text: "Explore GENT Sessions", link: "https://gent.helixconferences.com/", target: "_blank" },
-//     button2: { text: "Partner With Helix", link: "/contact" },
-//   },
-//   {
-//     backgroundImage: ConnectInspireInnovate,
-//     mainTitle: "Connect. Inspire. Innovate.",
-//     subHeading: "Empowering Global Scientific Dialogue Through Helix Conferences",
-//     button1: { text: "Apply As A Speaker", link: "/speakers" },
-//     button2: { text: "Success Stories", link: "/testimonials" },
-//   },
-// ];
+
 
 export const heroSlides = [
   {
@@ -87,59 +49,60 @@ export const heroSlides = [
     },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
+  // FoodMic
   {
-    backgroundImage: Techmatics_2026,
-    mainTitle: "World Quantam Technology Summit",
-    subHeading: " QUANTUMTECH-2026 - Sep 24-25, 2026 | Osaka | Japan",
+    backgroundImage: FoodMircobiome,
+    mainTitle: "Food Microbiome Summit",
+    subHeading: "FOOD MICROBIOME-2026 - April 23-24, 2026 | Barcelona | Spain",
     button1: {
       text: "View Conference Details",
-      link: "https://quantumtech.helixconferences.com/",
+      link: "https://foodmicrobiome.helixconferences.com/",
       target: "_blank",
     },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
-    backgroundImage: Pharmatech_2025,
-    mainTitle: "Advanced Pharmaceutical Sciences Forum",
-    subHeading: "PHARMATECH-2026 - Oct 22-23, 2026 | Singapore ",
+    backgroundImage: Agritech,
+    mainTitle: "Regenerative AgriTech Forum",
+    subHeading: "AGRIREGEN-2026 - April 23-24, 2026 | Barcelona | Spain",
     button1: {
       text: "View Conference Details",
-      link: "https://pharmatech.helixconferences.com/",
+      link: "https://agritech.helixconferences.com/",
       target: "_blank",
     },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
-    backgroundImage: Biocon_2025,
-    mainTitle: "International Conference on Applied Lifesciences",
-    subHeading: "BIOCON-2026 - June 25-26, 2026 | Amsterdem | Netherlands",
+    backgroundImage: FoodTech,
+    mainTitle: "Future FoodTech Expo",
+    subHeading: "FOODTECH-2026 - April 23-24, 2026 | Barcelona | Spain",
     button1: {
       text: "View Conference Details",
-      link: "https://biocon.helixconferences.com/",
+      link: "https://foodtech.helixconferences.com/",
       target: "_blank",
     },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
-    backgroundImage: Mediclave_2025,
-    mainTitle: "Advanced Medical Practices Conclave",
-    subHeading: "MEDICLAVE-2026 - May 21-22, 2026 | Vinenna | Ausrtia",
+    backgroundImage: Millets,
+    mainTitle: "Millets & Climate-Resilient Agriculture Summit",
+    subHeading: "MILLETS-2026 - April 23-24, 2026 | Barcelona | Spain",
     button1: {
       text: "View Conference Details",
-      link: "https://mediclave.helixconferences.com/",
+      link: "https://millets.helixconferences.com/",
       target: "_blank",
     },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   
 
-  {
-    backgroundImage: Nursing,
-    mainTitle: " Nursing & Nurse Practices Conclave",
-    subHeading: "NURSESUMMIT-2026 - Nov 19-20, 2026 | Dubai | UAE",
-    button1: { text: "View Conference Details", link: "/", target: "_blank" },
-    button2: { text: "Register Now", link: "/buy-a-ticket" },
-  },
+  // {
+  //   backgroundImage: Nursing,
+  //   mainTitle: " Nursing & Nurse Practices Conclave",
+  //   subHeading: "NURSESUMMIT-2026 - Nov 19-20, 2026 | Dubai | UAE",
+  //   button1: { text: "View Conference Details", link: "/", target: "_blank" },
+  //   button2: { text: "Register Now", link: "/buy-a-ticket" },
+  // },
 ];
 
 export const statisticsData = [

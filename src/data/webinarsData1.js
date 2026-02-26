@@ -580,7 +580,7 @@ import ARM2025 from "../assets/images/Webinar/ARM_2025.jpg";
 const WebinarsData = [
   // 1
   {
-    title: " Food, Agriculture & Environmental Sciences Forum",
+    title: " Food, Agriculture & Environmental Sciences Forumeeeeeeee",
     code: "FOODMEET-2026",
     date: "Apr 23-24, 2026",
     type: "Conference",

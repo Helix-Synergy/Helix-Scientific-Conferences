@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   PhoneIcon,
@@ -8,7 +8,8 @@ import {
 import Logo from "../assets/images/journal-logo.png";
 import WorldMap from "../components/Map/map.js";
 import { Helmet } from "react-helmet";
-
+import axios from "axios";
+const API_URL = process.env.REACT_APP_EMAIL;
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -23,19 +24,30 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("submitting");
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      console.log("Form submitted:", formData);
-      setStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (error) {
-      console.error("Form submission error:", error);
-      setStatus("error");
-    }
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus("submitting");
+
+  try {
+    const res = await axios.post(
+      `${API_URL}/contact/contactform`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    console.log("Server response:", res.data);
+
+    setStatus("success");
+    setFormData({ name: "", email: "", subject: "", message: "" });
+  } catch (error) {
+    console.error("Form submission error:", error.response?.data || error.message);
+    setStatus("error");
+  }
+};
 
   return (
     <div className="min-h-screen relative overflow-hidden text-white bg-gray-900">
@@ -117,10 +129,10 @@ const Contact = () => {
             ],
             address: {
               "@type": "PostalAddress",
-              streetAddress: "45573 Shepard Drive, Suite 101",
-              addressLocality: "Sterling",
-              addressRegion: "VA",
-              postalCode: "20164",
+              streetAddress: "",
+              addressLocality: "",
+              addressRegion: "",
+              postalCode: "",
               addressCountry: "USA",
             },
             email: "hello@helixconferences.com",
@@ -267,8 +279,8 @@ const Contact = () => {
                   <MapPinIcon className="w-6 h-6 sm:w-7 sm:h-7 mr-3 sm:mr-4 text-yellow-300 flex-shrink-0" />
                   <div>
                     <p className="font-semibold">Our Office</p>
-                    <p>45573, Shepard Drive, Suit#101,</p>
-                    <p>Sterling, Virginia-20164, USA</p>
+                    <p>Vancouver | Canada</p>
+                   
                   </div>
                 </div>
                 <div className="flex items-center text-base sm:text-lg">

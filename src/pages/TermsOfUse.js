@@ -61,7 +61,7 @@ const TermsOfUse = () => {
         <section>
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 mt-6 text-[#4a5568]">6. Contact Us</h2>
           <p className="text-base leading-relaxed mb-4">
-            If you have any questions about these Terms of Use, please contact us at <a href="mailto:contact@helixconferences.com" className="text-[#3182ce] hover:underline font-medium">contact@helixconferences.com</a>.
+            If you have any questions about these Terms of Use, please contact us at <a href="mailto:hello@helixconferences.com" className="text-[#3182ce] hover:underline font-medium">hello@helixconferences.com</a>.
           </p>
         </section>
       </div>

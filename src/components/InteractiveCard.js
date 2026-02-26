@@ -89,7 +89,7 @@ const InteractiveCard = ({ event }) => {
             rel="noopener noreferrer"
             className="inline-block bg-secondary hover:bg-secondary-dark text-white font-bold py-2 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 text-sm"
           >
-            Learn More
+            Learn More 
           </Link>
         )}
       </motion.div>

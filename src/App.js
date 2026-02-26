@@ -83,14 +83,12 @@ const StripeCancelPage = () => (
 // It's highly recommended to use environment variables for this in a real project:
 // const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
 // For demonstration, hardcoding for now, but switch to env var in production.
-const API_BASE_URL = "https://backend-code-6vqy.onrender.com";
-// const API_BASE_URL = 'http://localhost:5000'; // Use this for local development,
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://backend-code-6vqy.onrender.com";
 
 function App() {
   useEffect(() => {
     const keepServerAwake = () => {
-      fetch("https://backend-code-6vqy.onrender.com/")
-        // fetch("http://localhost:5000/")
+      fetch(`${API_BASE_URL}/`)
         .then(() => console.log("✅ Warm-up ping sent to backend."))
         .catch((err) => console.warn("⚠️ Warm-up ping failed:", err.message));
     };

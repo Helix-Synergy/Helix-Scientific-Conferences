@@ -232,7 +232,7 @@ import './AllConferences.css';
 // Image URLs for each field
 const fieldImages = {
   "FOOD & AGRI": "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=400&h=250&fit=crop",
-  "MEDICAL": "https://images.unsplash.com/photo-1516549655669-df565bcfbc19?w=400&h=250&fit=crop",
+  "MEDICAL": "https://images.unsplash.com/photo-1516549655669-df565bcfbc19?w=400&h=250&fit=cro",
   "LIFE SCIENCES": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=250&fit=crop",
   "SCIENCE & TECHNOLOGY": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=250&fit=crop",
   "PHARMA": "https://images.unsplash.com/photo-1585435557343-3b092031d77a?w=400&h=250&fit=crop",

@@ -1670,8 +1670,7 @@ import hybridsData from "../data/hybridsData1";
 import SEO from "../components/SEO";
 
 // Backend base (change to your production backend)
-const API_BASE_URL =
-  "https://backend-code-6vqy.onrender.com" || "http://localhost:5000";
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://backend-code-6vqy.onrender.com";
 
 // small Modal component (in-file)
 const Modal = ({ open, title, message, onClose, actions }) => {

@@ -411,167 +411,14 @@
 
 // src/data/hybridsData.js
 
-import AI_Healthcare_2026 from "../assets/images/Hybrid/AI_Healthcare_2026.jpg";
-import Agritech_2026 from "../assets/images/Hybrid/Agritech_2026.jpg";
-import Biochemistry_2026 from "../assets/images/Hybrid/Biochemistry_2026.jpg";
-import Biomed_2026 from "../assets/images/Hybrid/Biomed_2026.jpg";
-import Climate_2026 from "../assets/images/Hybrid/Climate_2026.jpg";
-import Critical_Care_2026 from "../assets/images/Hybrid/Critical_Care_2026.jpg";
-import Earth_Sciences_2026 from "../assets/images/Hybrid/Earth_Sciences_2026.jpg";
-import Environmental_Chemistry_2026 from "../assets/images/Hybrid/Environmental_Chemistry_2026.jpg";
-import Environmental_Medicine_2026 from "../assets/images/Hybrid/Environmental_Medicine_2026.jpg";
+
+
 import Foodmeet_2026 from "../assets/images/Hybrid/Foodmeet_2026.jpg";
-import Foodtech_2026 from "../assets/images/Hybrid/Foodtech_2026.jpg";
-import Forensics_2026 from "../assets/images/Hybrid/Forensics_2026.jpg";
-import GBS_2026 from "../assets/images/Hybrid/GBS_2026.jpg";
-import GPS_2026 from "../assets/images/Hybrid/GPS_2026.jpg";
-import Health_Sciences_2026 from "../assets/images/Hybrid/Health_Sciences_2026.jpg";
-import IBC_2026 from "../assets/images/Hybrid/IBC_2026.jpg";
-import ICC_2026 from "../assets/images/Hybrid/ICC_2026.jpg";
-import Industrial_Engineering_2026 from "../assets/images/Hybrid/Industrial_Engineering_2026.jpg";
-import Material_Sciences_2026 from "../assets/images/Hybrid/Material_Sciences_2026.jpg";
-import MEDICLAVE_2025 from "../assets/images/Hybrid/MEDICLAVE_2025.jpg";
-import Nanomaterials_2026 from "../assets/images/Hybrid/Nanomaterials_2026.jpg";
-import Nanomedicine_2026 from "../assets/images/Hybrid/Nanomedicine_2026.jpg";
-import Nanotechnology_2026 from "../assets/images/Hybrid/Nanotechnology_2026.jpg";
-import Nursing_2026 from "../assets/images/Hybrid/Nursing_2026.jpg";
-import PHARMAMEET_2026 from "../assets/images/Hybrid/PHARMAMEET_2026.jpg";
-import Pharmacy_2026 from "../assets/images/Hybrid/Pharmacy_2026.jpg";
-import Surgical_Nursing_2026 from "../assets/images/Hybrid/Surgical_Nursing_2026.jpg";
-import TECHMATICS_2026 from "../assets/images/Hybrid/TECHMATICS_2026.jpg";
-import WBC_2026 from "../assets/images/Hybrid/WBC_2026.jpg";
-import stemcell_2026 from "../assets/images/Hybrid/stemcell_2026.jpg";
 import Techmatics_2026 from '../assets/images/Hybrid/TECHMATICS_2026.jpg'
-import Pharmatech_2026 from '../assets/images/Hybrid/Pharmacy_2026.jpg'
 import Biocon_2025 from '../assets/images/Hybrid/BIOCON_2025.jpg'
 import Pharmatech_2025 from '../assets/images/Hybrid/PHARMATECH_2025.jpg'
 import Mediclave_2025 from '../assets/images/Hybrid/MEDICLAVE_2025.jpg'
 import Nursing from "../assets/images/Hybrid/Nursing.jpg"
-
-// export const hybridsData = [
-//   // 2025 Hybrid Events
-//   {
-//     title: "World Agriculture & Food Sciences Conclave",
-//     code: "FOODMEET-2026",
-//     date: "April 23-24, 2026 ",
-//     location: "Barcelona | Spain",
-//     image: Foodmeet_2026,
-//     link: "https://foodmeet.helixconferences.com/",
-//     type: "Hybrid",
-//     year: 2026
-//   },
-//   {
-//     title: "International Science & Technology Summit",
-//     code: "TECHMATICS-2026",
-//     date: " Sep 24-25, 2026 ",
-//     location: " Osaka | Japan",
-//     image: Techmatics_2026,
-//     link: "https://techmatics.helixconferences.com/",
-//     type: "Hybrid",
-//     year: 2026
-//   },
-//   {
-//     title: "Global Pharmaceutical Conclave",
-//     code: "PHARMATECH-2026",
-//     date: "Oct 22-23, 2026 ",
-//     location: "Singapore | Singapore City",
-//     image: Pharmatech_2025,
-//     link: "https://pharmatech.helixconferences.com/",
-//     type: "Hybrid",
-//     year: 2026
-//   },
-//   {
-//     title: "World Biotechnology Summit",
-//     code: "BIOCON-2026",
-//     date: "June 25-26, 2026",
-//     location: "Amsterdem | Netherlands",
-//     image: Biocon_2025,
-//     link: "https://biocon.helixconferences.com/",
-//     type: "Hybrid",
-//     year: 2026
-//   },
-//   {
-//     title: "Global Medical Conclave",
-//     code: "MEDICLAVE-2026",
-//     date: "May 21-22, 2026",
-//     location: "Vinenna | Ausrtia",
-//     image: Mediclave_2025,
-//     link: "https://mediclave.helixconferences.com/",
-//     type: "Hybrid",
-//     year: 2026
-//   },
-
-//     {
-//     title: "World summit on Nursing & Nurse Practices",
-//     code: "NURSESUMMIT-2026",
-//     date: "Nov 19-20, 2026",
-//     location: "Dubai | UAE",
-//     image: Nursing,
-//     link: "",
-//     type: "Hybrid",
-//     year: 2026
-//   },
-  
-
-
-
-
-
-
-
-//   // {
-//   //   title: "International Conference on Public Health & Nursing",
-//   //   code: "PUBLICHEALTH-2025",
-//   //   date: "Nov 25-27, 2025",
-//   //   location: "Valancia | Spain",
-//   //   image: "https://apollouniversity.edu.in/blog/wp-content/uploads/2025/02/Public-Health.jpg",
-//   //   link: "https://publichealth.helixconferences.com/",
-//   //   type: "Hybrid",
-//   //   year: 2025
-//   // },
-
-//   // 2026 Hybrid Events (Upcoming)
-//   // {
-//   //   title: "World Healthcare Summit",
-//   //   code: "Healthcare-2026",
-//   //   date: "May 28-29, 2026",
-//   //   location: "Rome | Italy",
-//   //   image: Health_Sciences_2026,
-//   //   link: "",
-//   //   type: "Hybrid",
-//   //   year: 2026
-//   // },
-//   // {
-//   //   title: "World Congress on Infectious Diseases & Antibiotics",
-//   //   code: "Antibiotics-2026",
-//   //   date: "May 28-29, 2026",
-//   //   location: "Rome | Italy",
-//   //   image: Biomed_2026,
-//   //   link: "",
-//   //   type: "Hybrid",
-//   //   year: 2026
-//   // },
-//   // {
-//   //   title: "International Conference on Cardiology",
-//   //   code: "Cardiology-2026",
-//   //   date: "May 28-29, 2026",
-//   //   location: "Rome | Italy",
-//   //   image: Critical_Care_2026,
-//   //   link: "",
-//   //   type: "Hybrid",
-//   //   year: 2026
-//   // },
-//   // {
-//   //   title: "Global Summit on Cancer & Research",
-//   //   code: "Cancer-2026",
-//   //   date: "May 28-29, 2026",
-//   //   location: "Rome | Italy",
-//   //   image: stemcell_2026,
-//   //   link: "",
-//   //   type: "Hybrid",
-//   //   year: 2026
-//   // }
-// ];
 export const hybridsData = [
   // 1
   {
@@ -589,7 +436,7 @@ export const hybridsData = [
     code: "MEDICLAVE 2026",
     date: "May 21-22, 2026",
     location: "Vienna | Austria",
-    image: MEDICLAVE_2025,
+    image: Mediclave_2025,
     link: "https://mediclave.helixconferences.com/",
     type: "Hybrid",
     year: 2026

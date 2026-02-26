@@ -15,20 +15,20 @@ const WorldMap = ({ width, height }) => {
 
     // Detailed office location data
     const officeLocations = {
-        'United States of America': {
+        'Canada': {
             name: 'Helix Conferences LLC',
-            address: '45573 Shepard Drive, Suit#101, Sterling, Virginia-20164, USA'
+            address: 'Vancouver | Canada'
         },
         'India': {
-            name: 'Manjeera Trinity Corporate',
-            address: '#402, 4th floor, KPHB, Hyderabad, Telangana 500072, India'
+            name: 'Raheja Mindspace IT Park, HITEC City, ',
+            address: 'Madhapur, Hyderabad, Telangana, 500081 India'
         }
     };
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');
+                const response = await fetch('/data/countries-110m.json');
                 const topojsonData = await response.json();
                 
                 const countries = topojson.feature(topojsonData, topojsonData.objects.countries);
@@ -49,10 +49,10 @@ const WorldMap = ({ width, height }) => {
 
         svg.selectAll('*').remove();
         const g = svg.append('g');
-        const glowingCountries = ['United States of America', 'India'];
+        const glowingCountries = ['Canada', 'India'];
         const pinData = [
             { name: "Hyderabad, India", coordinates: [78.4867, 17.3850] },
-            { name: "Virginia, USA", coordinates: [-77.4360, 37.5407] }
+            { name: "Vancouver , Canada", coordinates: [-123.1207, 49.2827] }
         ];
 
         // Draw country paths
