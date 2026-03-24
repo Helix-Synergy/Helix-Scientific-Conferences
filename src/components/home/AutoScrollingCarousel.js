@@ -76,7 +76,7 @@ useEffect(() => {
 
 
   return (
-<section className="relative w-full overflow-hidden py-8" ref={containerRef}>
+<section className="relative w-full overflow-x-hidden py-8" ref={containerRef}>
 
       <h2 className="text-4xl md:text-5xl font-extrabold text-center text-white mb-12 drop-shadow-lg leading-tight tracking-wide">
         {title}

@@ -126,7 +126,7 @@ function Header() {
       "/journals",
       "/contact",
       "/call-for-papers",
-      "/Conferences-2026"
+      "/Conferences"
     ];
     const sortedPrimaryPaths = primaryPaths.sort((a, b) => b.length - a.length); // Longer paths first for better match
 
@@ -310,7 +310,7 @@ function Header() {
 
         {/* Hybrids */}
         <MotionNavLink // <-- CHANGE 1: Use MotionNavLink
-          to="/Conferences-2026"
+          to="/Conferences"
           className={`
             relative h-full flex items-center justify-center
             text-black text-base font-semibold whitespace-nowrap px-4 py-2 z-20 group
@@ -320,7 +320,7 @@ function Header() {
             handleLinkMouseEnter();
           }}
           onMouseLeave={handleNavLinkMouseLeave}
-          ref={(el) => (navRefs.current["/Conferences-2026"] = el)}
+          ref={(el) => (navRefs.current["/Conferences"] = el)}
         >
           <MicrophoneIcon className="h-5 w-5 mr-1 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
           Conferences
@@ -482,14 +482,14 @@ function Header() {
                 >
                   <SparklesIcon className="h-5 w-5 mr-2 inline-block" /> Blogs
                 </Link> */}
-                <Link
+                {/* <Link
                   to="/journals"
                   className="block px-4 py-2 text-black hover:bg-gray-200 transition-colors duration-200"
                   onClick={() => setIsDesktopSecondaryMenuOpen(false)}
                 >
                   <NewspaperIcon className="h-5 w-5 mr-2 inline-block" />{" "}
                   Journals
-                </Link>
+                </Link> */}
                 <Link
                   to="/contact"
                   className="block px-4 py-2 text-black hover:bg-gray-200 transition-colors duration-200"
@@ -562,7 +562,7 @@ function Header() {
 
             <motion.div variants={mobileMenuItemVariants} className="w-full">
               <NavLink
-                to="/Conferences-2026"
+                to="/Conferences"
                 className={mobileNavLinkClasses("/hybrids")}
                 onClick={() => setIsMobileMenuOpen(false)}
                 onMouseEnter={handleLinkMouseEnter}
@@ -644,7 +644,7 @@ function Header() {
             </motion.div>
 
             <motion.div variants={mobileMenuItemVariants} className="w-full">
-              <NavLink
+              {/* <NavLink
                 to="/journals"
                 className={mobileNavLinkClasses("/journals")}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -653,7 +653,7 @@ function Header() {
               >
                 <NewspaperIcon className="h-6 w-6 mr-3 text-black group-hover:rotate-[380deg] transition-transform duration-200" />
                 Journals
-              </NavLink>
+              </NavLink> */}
             </motion.div>
 
             <motion.div variants={mobileMenuItemVariants} className="w-full">

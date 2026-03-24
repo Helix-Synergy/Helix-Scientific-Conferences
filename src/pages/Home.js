@@ -142,7 +142,7 @@ const HandleAllConferences=()=>{
         {/* All conferences */}
   {/* <button onClick={HandleAllConferences}>Read More</button> */}
  <Link 
-  to="/Conferences-2026" 
+  to="/Conferences" 
   style={{
     display: "block",
     textAlign: "center",

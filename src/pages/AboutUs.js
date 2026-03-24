@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import AboutBanner from "../assets/images/About_banner.jpg"; // Correct import
 import SEO from "../components/SEO";
-
+import image1 from "../assets/aboutusImage/image1.png"
+import image2 from "../assets/aboutusImage/image.png"
 const CreativeAboutUs = () => {
   // Animation variants for different element types
   const sectionVariants = {
@@ -118,8 +119,8 @@ const CreativeAboutUs = () => {
         },
       ],
       images: [
-        "https://html.storebuild.shop/tecz-prv/tecz/assets/img/about/five/about-5-thumb-1.jpg",
-        "https://html.storebuild.shop/tecz-prv/tecz/assets/img/about/five/about-5-thumb-2.jpg",
+        image1,
+        image2,
       ],
     },
   };
@@ -164,7 +165,7 @@ const CreativeAboutUs = () => {
               contactPoint: [
                 {
                   "@type": "ContactPoint",
-                  telephone: "+1-757-656-7778",
+                  telephone: "+1-305-239-8055",
                   contactType: "Customer Service",
                   areaServed: "Worldwide",
                   availableLanguage: "English",

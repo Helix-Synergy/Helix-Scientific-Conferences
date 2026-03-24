@@ -154,7 +154,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
-            <Route path="/conferences" element={<Conferences />} />
+            {/* <Route path="/conferences" element={<Conferences />} /> */}
             <Route path="/conference" element={<Hybrids />} />
             <Route path="/webinars" element={<Webinars />} />
             <Route path="/testimonials" element={<Testimonials />} />
@@ -170,7 +170,7 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/call-for-papers" element={<CallForPapers />} />
             <Route
-              path="/Conferences-2026"
+              path="/Conferences"
               element={<AllConferences />}
             ></Route>
             {/* --- Routes for the Registration Form --- */}

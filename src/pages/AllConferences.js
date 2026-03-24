@@ -264,125 +264,8 @@ const fieldImages = {
 
 // 🔗 Add links for specific conferences
 const conferenceData = [
-  // Food
-  {
-    field: "Food-Meet",
-    title: "Food, Agriculture & Environmental Sciences Forum",
-    shortName: "FOODMEET-2026",
-    date: "Apr 23-24 | 2026",
-    venue: "Barcelona | Spain",
-    link: "https://foodmeet.helixconferences.com/"
-  },
-  {
-    field: "FOOD & AGRI",
-    title: "Food Microbiome Summit",
-    shortName: "FOODMICRO-2026",
-    date: "Apr 23-24 | 2026",
-    venue: "Barcelona | Spain",
-    link:"https://foodmicrobiome.helixconferences.com/"
-  },
-  // 3
-  {
-    field: "Food",
-    title: "Regenerative AgriTech Forum",
-    shortName: "AGRIREGEN-2026",
-    date: "Apr 23-24 | 2026",
-    venue: "Barcelona | Spain",
-     link:"https://agritech.helixconferences.com/"
-  },
-    {
-    field: "food-tech-expo",
-    title: "Future FoodTech Expo",
-    shortName: "FOODTECH-2026",
-    date: "Apr 23-24 | 2026",
-    venue: "Barcelona | Spain",
-     link:"https://foodtech.helixconferences.com/"
-  },
-  // 5
-    {
-    field: "millets",
-    title: "Millets & Climate-Resilient Agriculture Summit",
-    shortName: "MILLETS-2026",
-    date: "Apr 23-24 | 2026",
-    venue: "Barcelona | Spain",
-     link:"https://millets.helixconferences.com/"
-  },
-  // Medical 
-// 1
-  {
-    field: "medical",
-    title: "Advanced Medical Practices Conclave",
-    shortName: "MEDICLAVE 2026",
-    date: "May 21-22 | 2026",
-    venue: "Vienna | Austria",
-    link: "https://mediclave.helixconferences.com/"
-  },
-// 2
-  {
-    field: "Medi",
-    title: "Digital Pathology & AI Diagnostics Congress",
-    shortName: "DIGIPATH-2026",
-    date: "May 21-22 | 2026",
-    venue: "Vienna | Austria",
-     link:"https://digital-pathology.helixconferences.com/"
-  },
-  // 3
-  {
-    field: "MEDICAL",
-    title: "Precision Medicine Summit",
-    shortName: "PRECISIONMEDICINE-2026",
-    date: "May 21-22 | 2026",
-    venue: "Vienna | Austria",
-     link:"https://precisionmedicine.helixconferences.com/"
-
-  },
-  // 4
-    {
-    field: "medicine",
-    title: "Aesthetic Medicine & Cosmetic Innovation Summit",
-    shortName: "AESTHETICA-2026",
-    date: "May 21-22 | 2026",
-    venue: "Vienna | Austria",
-     link:"https://cosmetology.helixconferences.com/"
-  },
-// Biocon
-// 1
-  {
-    field: "biocon",
-    title: "International Conference on Applied Lifesciences",
-    shortName: "BIOCON-2026",
-    date: "Jun 25-26 | 2026",
-    venue: "Amsterdam | Netherlands",
-    link: "https://biocon.helixconferences.com/"
-  },
-  //2
-  {
-    field: "LIFE SCIENCES",
-    title: "International Synthetic Biology & Bioengineering Forum",
-    shortName: "SYNBIO-2026",
-    date: "Jun 25-26 | 2026",
-    venue: "Amsterdam | Netherlands",
-  link: "https://syntheticbiology.helixconferences.com/"
-  },
-  // 3
-  {
-    field: "Bio",
-    title: "Microbiome Therapeutics Summit",
-    shortName: "MICROBIOME-2026",
-    date: "Jun 25-26 | 2026",
-    venue: "Amsterdam | Netherlands",
-        link: "https://microbiome.helixconferences.com/"
-  },
-    {
-    field: "rare",
-    title: "International Rare Disease & Orphan Drug Congress",
-    shortName: "RAREDISEASE-2026",
-    date: "Jun 25-26 | 2026",
-    venue: "Amsterdam | Netherlands",
-        link: "https://raredisease.helixconferences.com/"
-  },
+ 
   // Qunatam
-
   {
     field: "tech",
     title: "World Quantam Technology Summit",
@@ -486,18 +369,191 @@ const conferenceData = [
       link:"https://nursingleadership.helixconferences.com/"
   }
 ];
+const conferenceData1 = [
+  // Food
+  {
+    field: "Food-Meet",
+    title: "Food, Agriculture & Environmental Sciences Forum",
+    shortName: "FOODMEET-2027",
+    date: "Apr 26-27 | 2027",
+    venue: "Barcelona | Spain",
+    link: "https://foodmeet.helixconferences.com/"
+  },
+  {
+    field: "FOOD & AGRI",
+    title: "Food Microbiome Summit",
+    shortName: "FOODMICRO-2027",
+   date: "Apr 26-27 | 2027",
+    venue: "Barcelona | Spain",
+    link:"https://foodmicrobiome.helixconferences.com/"
+  },
+  // 3
+  {
+    field: "Food",
+    title: "Regenerative AgriTech Forum",
+    shortName: "AGRIREGEN-2027",
+  date: "Apr 26-27 | 2027",
+    venue: "Barcelona | Spain",
+     link:"https://agritech.helixconferences.com/"
+  },
+    {
+    field: "food-tech-expo",
+    title: "Future FoodTech Expo",
+    shortName: "FOODTECH-2027",
+     date: "Apr 26-27 | 2027",
+    venue: "Barcelona | Spain",
+     link:"https://foodtech.helixconferences.com/"
+  },
+  // 5
+    {
+    field: "millets",
+    title: "Millets & Climate-Resilient Agriculture Summit",
+    shortName: "MILLETS-2027",
+    date: "Apr 26-27 | 2027",
+    venue: "Barcelona | Spain",
+     link:"https://millets.helixconferences.com/"
+  },
+  // Medical 
+// 1
+  {
+    field: "medical",
+    title: "Advanced Medical Practices Conclave",
+    shortName: "MEDICLAVE 2027",
+    date: "May  24-25 | 2027",
+    venue: "Vienna | Austria",
+    link: "https://mediclave.helixconferences.com/"
+  },
+// 2
+  {
+    field: "Medi",
+    title: "Digital Pathology & AI Diagnostics Congress",
+    shortName: "DIGIPATH-2027",
+   date: "May  24-25 | 2027",
+    venue: "Vienna | Austria",
+     link:"https://digital-pathology.helixconferences.com/"
+  },
+  // 3
+  {
+    field: "MEDICAL",
+    title: "Precision Medicine Summit",
+    shortName: "PRECISIONMEDICINE-2027",
+   date: "May  24-25 | 2027",
+    venue: "Vienna | Austria",
+     link:"https://precisionmedicine.helixconferences.com/"
 
+  },
+  // 4
+    {
+    field: "medicine",
+    title: "Aesthetic Medicine & Cosmetic Innovation Summit",
+    shortName: "AESTHETICA-2027",
+ date: "May  24-25 | 2027",
+    venue: "Vienna | Austria",
+     link:"https://cosmetology.helixconferences.com/"
+  },
+// Biocon
+// 1
+  {
+    field: "biocon",
+    title: "International Conference on Applied Lifesciences",
+    shortName: "BIOCON-2027",
+    date: "Jun 29-30 | 2027",
+    venue: "Amsterdam | Netherlands",
+    link: "https://biocon.helixconferences.com/"
+  },
+  //2
+  {
+    field: "LIFE SCIENCES",
+    title: "International Synthetic Biology & Bioengineering Forum",
+    shortName: "SYNBIO-2027",
+   date: "Jun 29-30 | 2027",
+    venue: "Amsterdam | Netherlands",
+  link: "https://syntheticbiology.helixconferences.com/"
+  },
+  // 3
+  {
+    field: "Bio",
+    title: "Microbiome Therapeutics Summit",
+    shortName: "MICROBIOME-2027",
+   date: "Jun 29-30 | 2027",
+    venue: "Amsterdam | Netherlands",
+        link: "https://microbiome.helixconferences.com/"
+  },
+    {
+    field: "rare",
+    title: "International Rare Disease & Orphan Drug Congress",
+    shortName: "RAREDISEASE-2027",
+    date: "Jun 29-30 | 2027",
+    venue: "Amsterdam | Netherlands",
+        link: "https://raredisease.helixconferences.com/"
+  },
+  
+];
 
 const AllConferences = () => {
   return (
     <div className="conferences-container">
 
       <header className="conferences-header">
-        <h1>HELIX CONFERENCES - 2026</h1>
+        <h1>HELIX CONFERENCES</h1>
       </header>
-
+    <h2 className="text-center text-3xl font-semibold text-gray-700 mb-8">
+        Helix Conferences - 2026
+      </h2>
       <div className="cards-container">
         {conferenceData.map((conference, index) => (
+          <div
+            key={index}
+            className="conference-card"
+            onClick={() => {
+              if (conference.link) {
+                window.open(conference.link, "_blank");
+              } else {
+                window.location.reload(); // same page refresh
+              }
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="card-image">
+              <img
+                src={fieldImages[conference.field] || fieldImages["MEDICAL"]}
+                alt={conference.field}
+                onError={(e) => {
+                  e.target.src =
+                    "https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&h=250&fit=crop";
+                }}
+              />
+              <div className="image-overlay"></div>
+              <div className="date-badge">{conference.date}</div>
+            </div>
+
+            <div className="card-content">
+              <h3 className="conference-title">{conference.title}</h3>
+
+              <div className="card-details">
+                <div className="detail-item">
+                  <span className="detail-icon">📅</span>
+                  <span className="detail-value">{conference.date}</span>
+                </div>
+
+                <div className="detail-item">
+                  <span className="detail-icon">📍</span>
+                  <span className="detail-value">{conference.venue}</span>
+                </div>
+              </div>
+
+              <div className="card-footer"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <br></br>
+      <br></br>
+       <h2 className="text-center text-4xl font-semibold text-gray-700 mb-8">
+        Helix Conferences - 2027
+      </h2>
+      <div className="cards-container">
+        {conferenceData1.map((conference, index) => (
           <div
             key={index}
             className="conference-card"

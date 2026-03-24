@@ -149,7 +149,7 @@ function Footer() {
     },
     {
       name: "Conference",
-      to: "/Conferences-2026",
+      to: "/Conferences",
       icon: <BuildingLibraryIcon className="w-5 h-5 mr-2" />,
     },
     {
@@ -517,7 +517,7 @@ function Footer() {
               <p className="mb-4 md:mb-0 text-center">
                 Copyright © {new Date().getFullYear()}{" "}
                 <Link
-                  to="/Conferences-2026"
+                  to="/Conferences"
                   className="
                     hover:opacity-80 transition-opacity duration-200
                     text-transparent font-semibold

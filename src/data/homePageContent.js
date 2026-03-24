@@ -21,6 +21,12 @@ import FoodMircobiome from "../assets/images/Hybrid/FoodMicroBiome.jpg";
 import Agritech from "../assets/images/Hybrid/Agritech.jpg";
 import FoodTech from "../assets/images/Hybrid/FoodTech.jpg";
 import Millets from "../assets/images/Hybrid/Millets.jpg";
+import Quantum from "../assets/images/Hybrid/Quantum1.jpg";
+import ZeroTrustAI from "../assets/images/Hybrid/ZeroTrustAi.jpg";
+import Pharma from "../assets/images/Hybrid/PharmaTech.jpg";
+import AiDrug from "../assets/images/Hybrid/AiDrug.jpg";
+import NurseSummit from "../assets/images/Hybrid/NurseSummit.jpg";
+import AiNurse from "../assets/images/Hybrid/AiNurse.jpg";
 // About Section Images (Pexels URLs related to collaboration/work)
 const aboutImg1 =
   "https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
@@ -39,57 +45,68 @@ const testimonialAvatar3 =
 
 export const heroSlides = [
   {
-    backgroundImage: Foodmeet_2026,
-    mainTitle: " Food Agriculture & Environmental Sciences Forum",
-    subHeading: "FOODMEET-2026  - April 23-24, 2026 | Barcelona | Spain",
+    backgroundImage: Quantum,
+    mainTitle: "World Science & Technology Summit",
+    subHeading: "QUANTUMTECH-2026  - Sept 24-25, 2026 | Osaka | Japan",
     button1: {
       text: "View Conference Details",
-      link: "https://foodmeet.helixconferences.com/",
+      link: "https://quantumtech.helixconferences.com/",
       target: "_blank",
     },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   // FoodMic
   {
-    backgroundImage: FoodMircobiome,
-    mainTitle: "Food Microbiome Summit",
-    subHeading: "FOOD MICROBIOME-2026 - April 23-24, 2026 | Barcelona | Spain",
+    backgroundImage:  ZeroTrustAI,
+    mainTitle: "Zero-Trust Security & AI Defense Forum",
+    subHeading: "ZERO-TRUST AI-2026  - Sept 24-25, 2026 | Osaka | Japan",
     button1: {
       text: "View Conference Details",
-      link: "https://foodmicrobiome.helixconferences.com/",
+      link: "https://zerotrust-ai.helixconferences.com/",
       target: "_blank",
     },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
-    backgroundImage: Agritech,
-    mainTitle: "Regenerative AgriTech Forum",
-    subHeading: "AGRIREGEN-2026 - April 23-24, 2026 | Barcelona | Spain",
+    backgroundImage: Pharma,
+    mainTitle: "Advanced Pharmaceutical Sciences Forum",
+    subHeading: "PHARMATECH-2026 - Oct 22-23, 2026 | Singapore | Singapore City",
     button1: {
       text: "View Conference Details",
-      link: "https://agritech.helixconferences.com/",
+      link: "https://pharmatech.helixconferences.com/",
       target: "_blank",
     },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
-    backgroundImage: FoodTech,
-    mainTitle: "Future FoodTech Expo",
-    subHeading: "FOODTECH-2026 - April 23-24, 2026 | Barcelona | Spain",
+    backgroundImage: AiDrug,
+    mainTitle: "AI Drug Discovery Conclave",
+    subHeading: "AI DRUG-2026 - Oct 22-23, 2026 | Singapore | Singapore City",
     button1: {
       text: "View Conference Details",
-      link: "https://foodtech.helixconferences.com/",
+      link: "https://drugdiscovery.helixconferences.com/",
       target: "_blank",
     },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
   },
   {
-    backgroundImage: Millets,
-    mainTitle: "Millets & Climate-Resilient Agriculture Summit",
-    subHeading: "MILLETS-2026 - April 23-24, 2026 | Barcelona | Spain",
+    backgroundImage: NurseSummit,
+    mainTitle: "Nursing & Nurse Practices Conclave",
+    subHeading: "NURSESUMMIT-2026 - Nov 19-20, 2026 | Dubai | UAE",
     button1: {
       text: "View Conference Details",
-      link: "https://millets.helixconferences.com/",
+      link: "https://nursesummit.helixconferences.com/",
+      target: "_blank",
+    },
+    button2: { text: "Register Now", link: "/buy-a-ticket" },
+  },
+   {
+    backgroundImage: AiNurse,
+    mainTitle: "AI & Digital Nursing Forum",
+    subHeading: "AINURSE-2026 - Nov 19-20, 2026 | Dubai | UAE",
+    button1: {
+      text: "View Conference Details",
+      link: "https://nursing.helixconferences.com/",
       target: "_blank",
     },
     button2: { text: "Register Now", link: "/buy-a-ticket" },
