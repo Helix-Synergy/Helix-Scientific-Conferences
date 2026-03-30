@@ -279,7 +279,7 @@ const handleSubmit = async (e) => {
                   <MapPinIcon className="w-6 h-6 sm:w-7 sm:h-7 mr-3 sm:mr-4 text-yellow-300 flex-shrink-0" />
                   <div>
                     <p className="font-semibold">Our Office</p>
-                    <p>Vancouver | Canada</p>
+                    <p>1200 West 73rd Avenue #1100, Vancouver, British Columbia‎, Canada</p>
                    
                   </div>
                 </div>

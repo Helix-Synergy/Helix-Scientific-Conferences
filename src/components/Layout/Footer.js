@@ -314,15 +314,23 @@ function Footer() {
                     hello@helixconferences.com
                   </a>
                 </p>
-                <address className="not-italic flex font-bold items-start justify-start group">
-                  <MapPinIcon className="w-5 h-5 mr-3  text-yellow-500 flex-shrink-0 mt-1" />
-                  <span className="max-w-[250px]">
-                    Vancouver | Canada
-                    {/* Helix Conferences LLC <br />
-                    45573, Shepard Drive, Suit#101, <br />
-                    Sterling, Virginia-20164, USA */}
-                  </span>
-                </address>
+              <address className="not-italic flex font-bold items-start justify-start group">
+  <MapPinIcon className="w-5 h-5 mr-3 text-yellow-500 flex-shrink-0 mt-1" />
+  
+  <span
+    className="
+      max-w-[250px] inline-block
+      transition-all duration-200
+      hover:text-transparent hover:bg-clip-text 
+      hover:bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500
+      hover:scale-105 cursor-pointer
+    "
+    onMouseEnter={handleLinkMouseEnter}
+    onMouseLeave={handleLinkMouseLeave}
+  >
+    1200 West 73rd Avenue #1100, Vancouver, British Columbia‎, Canada
+  </span>
+</address>
               </div>
             </motion.div>
 

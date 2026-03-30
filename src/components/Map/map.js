@@ -17,7 +17,7 @@ const WorldMap = ({ width, height }) => {
     const officeLocations = {
         'Canada': {
             name: 'Helix Conferences LLC',
-            address: 'Vancouver | Canada'
+            address: '1200 West 73rd Avenue #1100, Vancouver, British Columbia‎, Canada'
         },
         'India': {
             name: 'Raheja Mindspace IT Park, HITEC City, ',
