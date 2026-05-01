@@ -3,7 +3,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { BookOpenIcon, } from '@heroicons/react/24/outline'; // Example icons
 import { Link } from 'react-router-dom';
-
+import SEO from "../components/SEO";
 const Journals = () => {
   const journalCovers = [
     { id: 1, title: 'Journal of Advanced AI', imageUrl: 'https://placehold.co/400x550/2E659A/FFFFFF?text=AI+Journal', link: '#' },
@@ -39,6 +39,23 @@ const Journals = () => {
   };
 
   return (
+    <>
+     <SEO
+      title="Open Access Academic Journals | Helix Conferences"
+      description="Explore open access academic journals, peer-reviewed research articles, and editorial publications across various scientific disciplines."
+      keywords="open access, academic journals, editor, research articles, peer reviewed journals, scientific publications"
+      url="https://helixconferences.com/journals"
+      image="https://helixconferences.com/social-preview.jpg"
+      canonical="https://helixconferences.com/journals"
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Academic Journals",
+        description:
+          "Browse open access academic journals and peer-reviewed research articles from Helix Conferences.",
+        url: "https://helixconferences.com/journals",
+      }}
+    />
     <div className="min-h-screen relative overflow-hidden text-white py-20 px-4 bg-gray-900">
       {/* Background: Abstract, Flowing Lines Animation */}
       <div
@@ -127,6 +144,7 @@ const Journals = () => {
         </motion.div>
       </div>
     </div>
+    </>
   );
 };
 

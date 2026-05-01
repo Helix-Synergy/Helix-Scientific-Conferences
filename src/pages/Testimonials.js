@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { StarIcon } from '@heroicons/react/24/solid'; // For rating stars
-
+import SEO from "../components/SEO";
 
 import srividyaNarayananImg from '../assets/images/testimonials/srividya-narayanan.jpg';
 import julieCondliffeImg from '../assets/images/testimonials/julie-condliffe.jpg';
@@ -118,6 +118,24 @@ const Testimonials = () => {
   };
 
   return (
+    <>
+     <SEO
+      title="Testimonials | Global Events, Speakers & Exhibitors | Helix Conferences"
+      description="Read testimonials from global event speakers, exhibitors, and participants who have experienced Helix Conferences. Discover real feedback from international conferences and events."
+      keywords="testimonials, global events, speakers, exhibitors, conference feedback, event reviews, international conferences, Helix Conferences"
+      url="https://helixconferences.com/testimonials"
+      image="https://helixconferences.com/social-preview.jpg"
+      canonical="https://helixconferences.com/testimonials"
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Testimonials - Helix Conferences",
+        description:
+          "Explore testimonials from global speakers, exhibitors, and participants of Helix Conferences.",
+        url: "https://helixconferences.com/testimonials",
+      }}
+    />
+  
     <div className="min-h-screen relative overflow-hidden text-white py-20 px-4 bg-gray-900">
       {/* Background: Soft, Swirling Nebula Effect */}
       <div
@@ -181,6 +199,7 @@ const Testimonials = () => {
         </div>
       </div>
     </div>
+      </>
   );
 };
 

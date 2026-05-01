@@ -85,7 +85,7 @@ const CreativeAboutUs = () => {
       },
     ],
     mainContent: {
-    title: "Helix Conferences—Where Knowledge Meets Opportunity !!!",
+      title: "Helix Conferences—Where Knowledge Meets Opportunity !!!",
       intro:
         "Are you ready to take your Research and professional Network to the next level? Welcome to Helix Conferences, the leading international Organizer of Scientific Conferences that has been at the forefront of Innovation for over six years. With a proven track record of executing more than 150 Conferences across diverse fields—including Medical, Pharma, Biotech, Engineering, Agriculture, and Food—we are your gateway to a world of opportunities",
       bullets: [
@@ -138,7 +138,7 @@ const CreativeAboutUs = () => {
       <SEO
         title="About Helix Conferences | Global Leader in Conferences, Webinars, Workshops, Expos & Exhibitions"
         description="Learn about Helix Conferences, a global platform for organizing impactful international conferences, scientific webinars, academic workshops, expos, and exhibitions. Discover our mission, vision, and commitment to connecting professionals, researchers, and innovators worldwide."
-        keywords="about Helix Conferences, global conference organizer, international conferences, professional events, scientific webinars, academic workshops, industry expos, trade exhibitions, worldwide summits, networking events, innovation forums, business conferences, research symposiums, Helix mission, Helix vision"
+        keywords="Gobal Sympoisia | met Event | World congressabout Helix Conferences, global conference organizer, international conferences, professional events, scientific webinars, academic workshops, industry expos, trade exhibitions, worldwide summits, networking events, innovation forums, business conferences, research symposiums, Helix mission, Helix vision"
         url="https://helixconferences.com/about"
         image="https://helixconferences.com/social-preview.jpg"
         canonical="https://helixconferences.com/about"

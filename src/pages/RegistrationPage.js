@@ -146,9 +146,28 @@
 import React from "react";
 import { Mail } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-
+import SEO from "../components/SEO";
 const RegistrationPage = () => {
   return (
+    <>
+    <SEO
+      title="Conference Registration | Buy Tickets & Reserve Your Slot | Helix Conferences"
+      description="Register for global conferences, reserve your academic slot, and connect with experts. Buy tickets and secure your participation in Helix Conferences."
+      keywords="conference registration, buy ticket, reserve slot, academic registration, event registration, conference tickets, Helix Conferences"
+      url="https://helixconferences.com/registration"
+      image="https://helixconferences.com/social-preview.jpg"
+      canonical="https://helixconferences.com/registration"
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Conference Registration",
+        description:
+          "Register for conferences, buy tickets, and reserve your academic participation slot at Helix Conferences.",
+        url: "https://helixconferences.com/registration",
+      }}
+    />
+
+ 
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       {/* Contact Card */}
       <div
@@ -192,6 +211,7 @@ const RegistrationPage = () => {
         </a>
       </div>
     </div>
+       </>
   );
 };
 
